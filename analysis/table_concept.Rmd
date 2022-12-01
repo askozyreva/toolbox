@@ -1,0 +1,287 @@
+---
+title: "Toolbox: Conceptual overview"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    # rmdcss::html_air
+    # toc: false
+    # code_folding: hide
+    theme: flatly
+    highlight: monochrome
+    # css: modest.css
+
+---
+
+This part of the online supplement is a digital toolbox in the form of a dynamic table that offers a conceptual overview of interventions. For useful links and other details ___click on the arrow or the “Expand” button___ to the left of the intervention type. To search through the whole table, use the search function below. Use the smaller search field under a column’s header to search within that column. You can sort a column by clicking on its header, or sort multiple columns by holding the shift key while sorting. 
+
+
+```{r setup, include=FALSE}
+
+
+if(!require("pacman")) install.packages("pacman"); library(pacman)
+p_load("tidyverse", "here", "readr",  "workflowr",
+          "readxl", "jtools", "broom", "kableExtra", "knitr",
+          "sjlabelled", "dplyr", "janitor", "ggplot2", "kableExtra", "wesanderson",  "webshot", "ggthemes", "questionr", "shiny", "formattable", "DT", "reactable", "png", "glue", "htmltools", "reactablefmtr", "rmdcss")
+
+
+
+options(scipen = 999)
+
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+
+```{r, html function, include = FALSE}
+html <- function(x, inline = FALSE) {
+  container <- if (inline)
+    htmltools::span
+  else
+    htmltools::div
+  container(dangerouslySetInnerHTML = list("__html" = x))
+}
+```
+
+```{r load and filter data, include=FALSE}
+
+
+
+dat_path <-
+  here("data/toolbox_concept.xlsx")
+data <- read_xlsx(dat_path, na = "")
+
+
+df1 <- data  %>%
+  select(-Outtakes,-Experts) 
+
+
+```
+
+
+```{r, include = FALSE, echo = FALSE}
+
+#based on https://glin.github.io/reactable/articles/cran-packages/cran-packages.html
+#http://haozhu233.github.io/kableExtra/use_kableExtra_with_formattable.html
+# function for details row
+
+row_details <- function(index) {
+  data <- df1[index,]
+  # pkg <- data2[data2$Intervention == df2$Intervention[index],
+  urls <-
+    unlist(strsplit(gsub(",", " , ", data$Links, perl = TRUE), "[ \n]"))
+  evidence <-
+    unlist(strsplit(gsub(",", " , ", data$Evidence_link, perl = TRUE), "[ \n]"))
+  
+  pkg_field <- function(name, ...) {
+    if (any(is.na(...)))
+      NULL
+    else
+      tagList(div(class = "detail-label", name), ...)
+  }
+  
+  
+  detail <-  htmltools::div(
+    class = "package-detail",
+    pkg_field("References", data$Reference_concept),
+    pkg_field("Useful links", lapply(urls, function(url) {
+      if (grepl("https?://", url))
+        tags$a(href = url, url)
+      else if (identical(url, ","))
+        ", "
+      else
+        url
+    })),
+    pkg_field(
+      "For a selection of experimental evidence click here",
+      lapply(evidence, function(url) {
+        if (grepl("https?://", url))
+          tags$a(href = url, url)
+        else if (identical(url, ","))
+          ", "
+        else
+          url
+      })
+    )
+  )
+}
+
+```
+
+```{r, include = TRUE, echo =FALSE}
+
+htmltools::browsable(tagList(
+  tags$button("Click here to expand/collapse all rows",
+              onclick = "Reactable.toggleAllRowsExpanded('concept-table')"),
+  
+  reactable(
+    df1[, c(
+      "Intervention",
+      "Description",
+      "Example",
+      "Conceptual framework",
+      "Category",
+      "Problem",
+      "Targeted outcomes",
+      "Audience",
+      "Implementation",
+      "Scalability",
+      "Limitations"
+    )],
+    elementId = "concept-table",
+    searchable = TRUE,
+    filterable = TRUE,
+    showSortable = TRUE,
+    striped = TRUE,
+    highlight = TRUE,
+    bordered = TRUE,
+    width = 1800,
+    defaultColDef = colDef(minWidth = 100),
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(4, 8, 12),
+    defaultPageSize = 11,
+    theme = reactableTheme(
+      borderColor = "#dfe2e5",
+      stripedColor = "#f6f8fa",
+      highlightColor = "#f0f5f9",
+      style = list(fontFamily = "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"),
+      searchInputStyle = list(width = "100%")
+    ),
+    columns = list(
+      Intervention = colDef(
+        minWidth = 110,
+        align = "center",
+        html = TRUE,
+        style = list(fontWeight = 600),
+        cell = function(value) {
+          img_src <- knitr::image_uri(sprintf("./logos/%s.png", value))
+          image <- img(src = img_src,
+                       width = "100px",
+                       alt = value)
+          tagList(div(style = list(display = "inline-block", width = "120px"), image),
+                  value)
+        }
+      ),
+      Description = colDef(minWidth = 150),
+      Example = colDef(minWidth = 150),
+      "Conceptual framework" = colDef(minWidth = 120),
+      "Targeted process" = colDef(minWidth = 160),
+      Implementation = colDef(minWidth = 160),
+      Scalability = colDef(minWidth = 140),
+      Limitations = colDef(minWidth = 170),
+      Links = colDef(show = FALSE)
+    ),
+    details = colDef(
+      width = 75,
+      name = "Details",
+      details = row_details,
+      cell = function()
+        htmltools::tags$button("Expand", class = "button2")
+    )
+  )
+))
+
+```
+
+[Privacy policy](https://ai_society.mpib.dev/intervention_toolbox/privacy.html) - [Imprint/Provider Identification](https://ai_society.mpib.dev/intervention_toolbox/terms.html)
+
+
+```{css, echo=FALSE}
+p {
+ font-size: 20px;
+ width: 1200px;
+  margin: 10px 15px 15px 0px;
+ }
+
+
+
+li {
+  font-size: 20px;
+  }
+
+
+
+h1 {
+  font-size: 32px;
+  width: 1200px;
+}
+
+
+
+ button { color: white;
+ background-color: rgba(14, 114, 186, 0.8);
+ margin: 10px 15px 15px 0px;
+ border: none;
+ padding: 7px 7px;
+ <!-- text-align: center; -->
+ <!-- text-decoration: none; -->
+ <!-- <!-- display: inline-block; --> -->
+ <!-- font-size: 16px -->
+  }
+
+ .button2 { color: black;
+ background-color: rgba(14, 114, 186, 0.1);
+ margin: 10px 30px 0px 5px;
+ border: none;
+ padding: 4px 4px;
+ font-size: 12px;
+  }
+
+
+body {
+  # background-color: rgba(176, 219, 234, 0.5);
+   <!-- margin-top: 10px; -->
+  <!-- margin-left: 5px; -->
+ padding-left: 0px;
+   width: 50%;
+}
+
+.btn-workflowr {
+  display: none
+}
+
+
+.btn-workflowr-sessioninfo {
+  visibility: hidden
+}
+
+.btn-default {
+  visibility: hidden
+}
+
+.package-detail {
+  padding: 24px;
+  box-shadow: inset 0 1px 3px #dbdbdb;
+  background: hsl(213, 20%, 99%);
+}
+
+.detail-label {
+  margin: 20px 0 4px;  
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.detail-header {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.detail-title {
+  margin-left: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.detail-description {
+  font-size: 14px;
+}
+
+.archived-table {
+  border: 1px solid hsl(213, 33%, 93%);
+  border-radius: 4px;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+}
+
+```
+

@@ -1,0 +1,118 @@
+---
+title: "Toolbox of interventions against online misinformation and manipulation"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+    code_folding: hide
+    theme: flatly
+    highlight: monochrome
+
+---
+
+
+This is an online supplement for the expert review project "Toolbox of Interventions Against online Misinformation and Manipulation"
+
+_Coordinating authors_: 
+Anastasia Kozyreva<sup>1</sup>, Philipp Lorenz-Spreen <sup>1</sup>, Stefan Herzog<sup>1</sup>, Stephan Lewandowsky<sup>2</sup>, Ullrich Ecker<sup>3</sup>, and Ralph Hertwig <sup>1</sup>
+
+<sup>1</sup>Center for Adaptive Rationality, Max Planck Institute for Human Development, Berlin, Germany.
+
+<sup>2</sup>School of Psychological Science, University of Bristol, England.
+
+<sup>2</sup>School of Psychological Science, University of Western Australia.
+
+_Contributing authors_: Melisa Basol,  Adam Berinsky, Cornelia Betsch, John Cook, Lisa Fazio, Michael Geers, Andrew Guess, Rakoen Maertens, Folco Panizza, Gordon Pennycook, David Rand, Steve Rathje, Jason Reifler, Jon Roozenbeek, Philipp Schmid, Mark Smith, Briony Swire-Thomson, Paula Szewach, Sander van der Linden, Sam Wineburg.
+
+
+_Research assistance_: Spela Vrtovec, Friederike Stock.
+
+_Abstract_: Spread of false and misleading information through media and social networks can result in a variety of detrimental effects, including adverse consequences for public health and the state of democracies. One of the key policy questions is how to prevent the spread and influence of misinformation without resorting to censorship. Behavioral and cognitive sciences have developed diverse individual-focused interventions that share the aim of reducing harm from online misinformation and manipulation. In a collaborative effort of an international group of experts, we  review such tools and interventions. The expert review's outcome provides a resource for scientists, an up-to-date overview, and an actionable toolbox for policy makers. The toolbox is based on the input of 28 experts and 42 scientific papers, and it delivers: (1) a conceptual overview of the breadth of interventions, as well as their target and scope, and (2) a summary of the empirical evidence supporting the interventions and the methods and experimental paradigms used to test them. Our review covers the following classes of interventions: accuracy prompts; debunking; inoculation; lateral reading; media-literacy tips; rebuttals of science denialism; self-reflection tools; social norms; warning and fact-checking labels.
+
+[Privacy policy](https://ai_society.mpib.dev/intervention_toolbox/privacy.html) - [Imprint/Provider Identification](https://ai_society.mpib.dev/intervention_toolbox/terms.html)
+
+```{css, echo=FALSE}
+
+p {
+ font-size: 16px;
+ width: 1400px;
+  margin: 10px 15px 15px 0px;
+ }
+
+
+
+li {
+  font-size: 20px;
+  }
+
+
+
+h1 {
+  font-size: 32px;
+  width: 1400px;
+}
+
+
+
+body {
+  # background-color: rgba(176, 219, 234, 0.5);
+   <!-- margin-top: 10px; -->
+  <!-- margin-left: 5px; -->
+ padding-left: 0px;
+   width: 50%;
+}
+
+.btn-workflowr {
+  display: none
+}
+
+
+.btn-workflowr-sessioninfo {
+  visibility: hidden
+}
+
+.btn-default {
+  visibility: hidden
+}
+
+.package-detail {
+  padding: 24px;
+  box-shadow: inset 0 1px 3px #dbdbdb;
+  background: hsl(213, 20%, 99%);
+}
+
+.detail-label {
+  margin: 20px 0 4px;  
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.detail-header {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.detail-title {
+  margin-left: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.detail-description {
+  font-size: 14px;
+}
+
+.archived-table {
+  border: 1px solid hsl(213, 33%, 93%);
+  border-radius: 4px;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+}
+
+
+```
+
+
+

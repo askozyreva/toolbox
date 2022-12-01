@@ -1,0 +1,309 @@
+---
+title: "Toolbox: Experimental evidence"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+    code_folding: hide
+    theme: flatly
+    highlight: monochrome
+---
+This part of the online supplement is a digital toolbox in the form of a dynamic table that offers an overview of published evidence . For publication details, links to articles, and detailed results, ___click on the arrow or the “Expand” button___ to the left of the intervention type. To search through the whole table, use the search function below. Use the smaller search fields under a column’s header to search within that column. You can sort a column by clicking on its header, or sort multiple columns by holding the shift key while sorting. 
+
+
+```{r setup, include=FALSE, echo=FALSE}
+
+if(!require("pacman"))
+  install.packages("pacman")
+library(pacman)
+p_load(
+  "tidyverse",
+  "here",
+  "readr",
+  "workflowr",
+  "readxl",
+  "dplyr",
+  "ggplot2",
+  "reactable",
+  "glue",
+  "htmltools",
+  "jsonlite",
+  "sparkline"
+)
+
+
+knitr::opts_chunk$set(echo = FALSE
+)
+```
+
+
+
+```{r load and filter data, include = FALSE, echo = FALSE}
+
+
+
+dat_path2 <-
+  here("data/toolbox_evidence.xlsx")
+data2 <- read_xlsx(dat_path2)
+
+versions <- jsonlite::read_json("output/infos_refined.json", simplifyDataFrame = TRUE)
+
+
+```
+
+
+```{r, include = FALSE, echo = FALSE}
+
+#based on https://glin.github.io/reactable/articles/cran-packages/cran-packages.html
+# function for details row
+
+row_details <- function(index) {
+  data <- data2[index, ] 
+   # pkg <- data2[data2$Intervention == df2$Intervention[index],
+  urls <- unlist(strsplit(gsub(",", " , ", data$OSF_link, perl = TRUE), "[ \n]"))
+ doi <- unlist(strsplit(gsub(",", " , ", data$DOI, perl = TRUE), "[ \n]"))
+
+  pkg_field <- function(name, ...) {
+    if (any(is.na(...))) NULL
+    else tagList(div(class = "detail-label", name), ...)
+  }
+ 
+
+  detail <-  htmltools::div(
+    class = "package-detail",
+    div(class = "detail-header", data$Intervention
+        # , span(class = "detail-title", data$References_long)
+        ),
+    div(
+      class = "detail-description", data$References_long),
+       # pkg_field("Reference", data$References_long),
+      pkg_field("DOI", lapply(doi, function(url) {
+      if (grepl("https?://", url)) tags$a(href = url, url)
+      else if (identical(url, ",")) ", "
+      else url
+    })),
+    pkg_field("Open data", lapply(urls, function(url) {
+      if (grepl("https?://", url)) tags$a(href = url, url)
+      else if (identical(url, ",")) ", "
+      else url
+    })),
+    pkg_field("Abstract", data$Abstract),
+      pkg_field("Method", data$Method),
+    # pkg_field("Design", data$Design),
+     pkg_field("Test stimuli", data$"Test stimuli"),
+     pkg_field("Additional measures", data$Measures),
+     pkg_field("Comment", data$Comment)
+      )
+
+  # if (versions[[data$References]]!= "") {
+    archived <- pkg_field(
+      "Results",
+      reactable(
+        versions[[data$References]],
+        pagination = FALSE,
+        defaultColDef = colDef(headerClass = "header"),
+        columns = list(
+          Study = colDef(minWidth = 100),
+          N = colDef(minWidth = 80),
+           Description= colDef(minWidth = 400),
+          "Effect size" = colDef(minWidth = 200),
+           Comments = colDef(name = "Results", minWidth = 400)
+          ),
+        fullWidth = FALSE,
+        class = "archived-table",
+        theme = reactableTheme(cellPadding = "8px 12px")
+      ))
+    
+    detail <- tagAppendChild(detail, archived)
+ 
+  detail
+  
+}
+
+
+
+```
+
+```{r, include = TRUE, echo = FALSE}
+
+
+
+# add expand all button https://github.com/glin/reactable/issues/28#issuecomment-962796616
+#https://glin.github.io/reactable/articles/javascript-api.html
+
+htmltools::browsable(tagList(
+  tags$button("Click here to expand/collapse all rows",
+              onclick = "Reactable.toggleAllRowsExpanded('evidence-table')"),
+  
+  
+  reactable(
+    data2[, c(
+      "Intervention",
+      "References",
+      "Experimental setting",
+      "Design",
+      "Treatment",
+      "Outcome variable",
+      "Sample size",
+      "Sample Country",
+      "Sample demographics",
+      "Recruitment",
+      "Longevity",
+      "Main findings"
+    )],
+    elementId = "evidence-table",
+    searchable = TRUE,
+    showSortable = TRUE,
+    filterable = TRUE,
+    striped = TRUE,
+    highlight = TRUE,
+    bordered = TRUE,
+    width = 1800,
+    defaultColDef = colDef(minWidth = 75),
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(4, 8, 12),
+    defaultPageSize = 6,
+    theme = reactableTheme(
+      borderColor = "#dfe2e5",
+      stripedColor = "#f6f8fa",
+      highlightColor = "#f0f5f9",
+      
+      style = list(fontFamily = "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"),
+      searchInputStyle = list(width = "100%")
+    ),
+    
+    columns = list(
+      Intervention = colDef(
+        minWidth = 80,
+        rowHeader = TRUE,
+        style = list(fontWeight = 600)
+      ),
+      References = colDef(minWidth = 100),
+      "Experimental setting" = colDef(minWidth = 90,  aggregate = "frequency"),
+      
+      Design = colDef(minWidth = 80,  aggregate = "frequency"),
+      "Sample Country" = colDef(aggregate = "frequency"),
+      "Outcome variable" = colDef(minWidth = 100),
+      Treatment = colDef(minWidth = 120),
+      "Sample demographics" = colDef(
+        name = "Demographics",
+        minWidth = 100,
+        aggregate = "frequency"
+      ),
+      "Main findings" = colDef(minWidth = 160),
+      Recruitement = colDef(aggregate = "frequency"),
+      "Sample size" = colDef(align = "left", format = colFormat(digits = 0))
+      
+    ),
+    details = colDef(
+      width = 75,
+      name = "Details",
+      details = row_details,
+      cell = function()
+        htmltools::tags$button("Expand", class = "button2")
+    )
+    
+  )
+))
+
+```
+[Privacy policy](https://ai_society.mpib.dev/intervention_toolbox/privacy.html) - [Imprint/Provider Identification](https://ai_society.mpib.dev/intervention_toolbox/terms.html)
+
+```{css, echo=FALSE}
+p {
+ font-size: 20px;
+ width: 1200px;
+  margin: 10px 15px 15px 0px;
+ }
+
+li {
+  font-size: 20px;
+  }
+
+
+h1 {
+  font-size: 32px;
+  width: 1200px;
+}
+
+
+
+ button { color: white;
+ background-color: rgba(14, 114, 186, 0.7);
+ margin: 10px 15px 15px 0px;
+ border: none;
+ padding: 7px 7px;
+ <!-- text-align: center; -->
+ <!-- text-decoration: none; -->
+ <!-- <!-- display: inline-block; --> -->
+ <!-- font-size: 16px -->
+  }
+  
+  
+ .button2 { color: black;
+ background-color: rgba(14, 114, 186, 0.1);
+ margin: 10px 30px 0px 5px;
+ border: none;
+ padding: 4px 4px;
+ font-size: 12px;
+  }
+
+
+body {
+  # background-color: rgba(176, 219, 234, 0.5);
+   <!-- margin-top: 10px; -->
+  <!-- margin-left: 5px; -->
+ padding-left: 0px;
+   width: 50%;
+}
+
+.btn-workflowr {
+  display: none
+}
+
+
+.btn-workflowr-sessioninfo {
+  visibility: hidden
+}
+
+.btn-default {
+  visibility: hidden
+}
+
+.package-detail {
+  padding: 24px;
+  box-shadow: inset 0 1px 3px #dbdbdb;
+  background: hsl(213, 20%, 99%);
+}
+
+.detail-label {
+  margin: 20px 0 4px;  
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.detail-header {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.detail-title {
+  margin-left: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.detail-description {
+  font-size: 14px;
+}
+
+.archived-table {
+  border: 1px solid hsl(213, 33%, 93%);
+  border-radius: 4px;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+}
+
+```
