@@ -1,6 +1,5 @@
 ### workflowr management
-#
-# Note: `dry_run` is set to `TRUE`
+
 library(workflowr)
 
 
@@ -34,22 +33,3 @@ wflow_publish(
 
 wflow_git_push()
 
-#
-# getwd()
-# dir.exists(".git")
-# packageVersion("git2r")
-# git2r::repository(".", discover = TRUE)
-
-
-#Deploying the project website (only needs to be set once)
-# wflow_status()
-#
-# wflow_git_config(user.name = "Kozyreva", user.email = "kozyreva@mpib-berlin.mpg.de", overwrite=TRUE)
-#
-#  wflow_use_gitlab(
-#    username = "ai_society",
-#   repository = "intervention_toolbox",
-#   domain = "arc-git.mpib-berlin.mpg.de"
-#  )
-
-# install.packages("workflowr")
