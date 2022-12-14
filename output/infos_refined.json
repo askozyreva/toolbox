@@ -364,16 +364,16 @@
     {
       "Study": "1",
       "Description": "Experiment 1 tested separately the efficacy of pop-up (incl. lateral reading) and monetary incentives, and compared their effects to a control condition with no interventions.",
-      "N": 2384,
-      "Effect size": "(no standard effect size available/yet extracted)",
-      "Comments": "Results showed a significant effect of incentive (β=0.293 [0.092, 0.494], z=3.225, p=0.003) and a lack of significance for the pop-up (β=−0.009 [−0.207,0.188], z=−0.103, p=.918). Technique adoption: both incentive and pop-up increased technique adoption (Fig. 3; incentive: β=1.042 [0.527, 1.556], z=4.728, p<0.001; pop-up: β=1.556 [1.065, 2.046], z=7.405, p<0.001), but that the increase was markedly higher with the presence of the pop-up than with monetary incentives (β=0.514 [0.157, 0.871], z=3.362, p<0.001). Participants were more likely to use lateral reading when the source was unknown (stimuli included known sources, such as BBC)."
+      "N": 517,
+      "Effect size": "Common Language Effect Size: 0.54 (95%-CI: 0.49-0.58)",
+      "Comments": "In the first study (whole sample N = 2384), results showed a significant effect of incentive (β=0.293 [0.092, 0.494], z=3.225, p=0.003) and a lack of significance for the pop-up (β=−0.009 [−0.207,0.188], z=−0.103, p=.918). Technique adoption: both incentive and pop-up increased technique adoption ( incentive: β=1.042 [0.527, 1.556], z=4.728, p<0.001; pop-up: β=1.556 [1.065, 2.046], z=7.405, p<0.001), but that the increase was markedly higher with the presence of the pop-up than with monetary incentives (β=0.514 [0.157, 0.871], z=3.362, p<0.001). Participants were more likely to use lateral reading when the source was unknown (stimuli included known sources, such as BBC)."
     },
     {
       "Study": "2",
       "Description": "Experiment 2 replicated the format of the first one, with two main modifications: 1) a pre-screening survey to identify lesser-known sources of information and only used those sources as the basis for the Facebook posts the participants were asked to evaluate; 2) added an experimental condition that included both incentive and pop-up interventions, to test the interaction between the two.",
       "N": 3003,
-      "Effect size": "(no standard effect size available/yet extracted)",
-      "Comments": "Results revealed a significant effect of pop-up on accuracy scores (β=0.137 [−0.018,0.292], z=2.115, p=0.034; Mixed-effects regression with errors clustered by post: p=0.052), but not on correct guessing (β=0.076 [−0.112,0.265], z=0.966, p=0.334). The combination of the two interventions significantly increased both accuracy indices compared to control (accuracy score: β=0.487 [0.268, 0.705], z=5.315, p<0.001; correct guessing: β=0.389 [0.123, 0.654], z=3.496, p<0.001), and that the contribution of incentive was greater than the contribution of pop-up (accuracy score: β=0.213 [−0.007,0.432], z=2.307, p=0.028; correct guessing: β=0.2362 [−0.032,0.504], z=2.103, p=0.047). According to the ordinal logistic regression model, the combination of the two interventions led to a 10.4% [5.4%,14.2%] increase in correct guessing, and a 6.9% [2.8%,12.4%] increase in  correct responses compared to control."
+      "Effect size": "Common Language Effect Size: 0.52 (95%-CI: 0.5-0.54)",
+      "Comments": "In the second study, results revealed a significant effect of pop-up on accuracy scores (β=0.137 [−0.018,0.292], z=2.115, p=0.034; Mixed-effects regression with errors clustered by post: p=0.052), but not on correct guessing (β=0.076 [−0.112,0.265], z=0.966, p=0.334). The combination of the two interventions significantly increased both accuracy indices compared to control (accuracy score: β=0.487 [0.268, 0.705], z=5.315, p<0.001; correct guessing: β=0.389 [0.123, 0.654], z=3.496, p<0.001), and that the contribution of incentive was greater than the contribution of pop-up (accuracy score: β=0.213 [−0.007,0.432], z=2.307, p=0.028; correct guessing: β=0.2362 [−0.032,0.504], z=2.103, p=0.047). According to the ordinal logistic regression model, the combination of the two interventions led to a 10.4% [5.4%,14.2%] increase in correct guessing, and a 6.9% [2.8%,12.4%] increase in  correct responses compared to control."
     }
   ],
   "Donovan et al., Mem Cogn (2020).": [
