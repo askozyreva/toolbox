@@ -368,7 +368,7 @@ misinformation and manipulation</h1>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -379,8 +379,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -389,13 +389,13 @@ aria-hidden="true"></span> </a>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-12-01
+<strong>Last updated:</strong> 2022-12-14
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>toolbox/</code> <span
@@ -418,21 +418,18 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of
-the R Markdown file created these results, you’ll want to first commit
-it to the Git repo. If you’re still working on the analysis, you can
-ignore this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
@@ -523,13 +520,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong6522ccd">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomaskozyrevatoolboxtree67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904targetblank67aaf8da">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> 6522ccd
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/askozyreva/toolbox/tree/67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904" target="_blank">67aaf8d</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong6522ccd"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomaskozyrevatoolboxtree67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904targetblank67aaf8da"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -538,7 +537,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 6522ccd.
+The results in this page were generated with repository version
+<a href="https://github.com/askozyreva/toolbox/tree/67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904" target="_blank">67aaf8d</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -555,27 +555,11 @@ were generated:
 Ignored files:
     Ignored:    .Rproj.user/
 
-Untracked files:
-    Untracked:  _workflowr.R
-    Untracked:  analysis/privacy.rmd
-    Untracked:  analysis/table_concept.Rmd
-    Untracked:  analysis/table_evidence.Rmd
-    Untracked:  analysis/terms.rmd
-    Untracked:  code/process-JSON-POC.R
-    Untracked:  data/results_all.json
-    Untracked:  data/toolbox_concept.xlsx
-    Untracked:  data/toolbox_evidence.xlsx
-    Untracked:  logos/
-    Untracked:  output/infos_raw.json
-    Untracked:  output/infos_refined.json
-    Untracked:  toolbox.Rproj
-
 Unstaged changes:
-    Modified:   analysis/_site.yml
-    Deleted:    analysis/about.Rmd
-    Modified:   analysis/index.Rmd
-    Deleted:    analysis/license.Rmd
-    Deleted:    myproject.Rproj
+    Modified:   README.md
+    Modified:   _workflowr.R
+    Deleted:    data/results_all.json
+    Modified:   data/toolbox_evidence.xlsx
 
 </code></pre>
 <p>
@@ -626,7 +610,24 @@ Message
 Rmd
 </td>
 <td>
-6522ccd
+<a href="https://github.com/askozyreva/toolbox/blob/67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904/analysis/index.Rmd" target="_blank">67aaf8d</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2022-12-14
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/askozyreva/toolbox/blob/caa5a423f90c9020a43bd382f2bf29647a281aa9/analysis/index.Rmd" target="_blank">caa5a42</a>
 </td>
 <td>
 Kozyreva
@@ -635,7 +636,24 @@ Kozyreva
 2022-12-01
 </td>
 <td>
-Start workflowr project.
+initial commit
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/askozyreva/toolbox/caa5a423f90c9020a43bd382f2bf29647a281aa9/public/index.html" target="_blank">caa5a42</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2022-12-01
+</td>
+<td>
+initial commit
 </td>
 </tr>
 </tbody>
@@ -646,43 +664,58 @@ Start workflowr project.
 </div>
 </div>
 <p>This is an online supplement for the expert review project “Toolbox
-of Interventions Against online Misinformation and Manipulation”</p>
+of Interventions Against Online Misinformation and Manipulation”</p>
 <p><em>Coordinating authors</em>: Anastasia Kozyreva<sup>1</sup>,
-Philipp Lorenz-Spreen <sup>1</sup>, Stefan Herzog<sup>1</sup>, Stephan
-Lewandowsky<sup>2</sup>, Ullrich Ecker<sup>3</sup>, and Ralph Hertwig
-<sup>1</sup></p>
+Philipp Lorenz-Spreen <sup>1</sup>, Stefan Herzog<sup>1</sup>, Ullrich
+Ecker<sup>2</sup>, Stephan Lewandowsky<sup>2,3,4</sup>, and Ralph
+Hertwig <sup>1</sup></p>
+<p><em>Contributing authors</em>: Melisa Basol<sup>5</sup>, Adam J.
+Berinsky<sup>6</sup>, Cornelia Betsch<sup>7,8</sup>, John
+Cook<sup>9</sup>, Lisa K. Fazio<sup>10</sup>, Michael
+Geers<sup>1,11</sup>, Andrew M. Guess<sup>12</sup>, Rakoen
+Maertens<sup>5</sup>, Folco Panizza<sup>13</sup>, Gordon
+Pennycook<sup>14</sup>, David J. Rand<sup>6</sup>, Steve
+Rathje<sup>15</sup>, Jason Reifler<sup>16</sup>, Jon
+Roozenbeek<sup>5</sup>, Philipp Schmid<sup>7,8</sup>, Mark
+Smith<sup>17</sup>, Briony Swire-Thomson<sup>18</sup>, Paula
+Szewach<sup>16,19</sup>, Sander van der Linden<sup>5</sup>, Sam
+Wineburg<sup>17</sup>.</p>
 <p><sup>1</sup>Center for Adaptive Rationality, Max Planck Institute for
-Human Development, Berlin, Germany.</p>
-<p><sup>2</sup>School of Psychological Science, University of Bristol,
-England.</p>
-<p><sup>2</sup>School of Psychological Science, University of Western
-Australia.</p>
-<p><em>Contributing authors</em>: Melisa Basol, Adam Berinsky, Cornelia
-Betsch, John Cook, Lisa Fazio, Michael Geers, Andrew Guess, Rakoen
-Maertens, Folco Panizza, Gordon Pennycook, David Rand, Steve Rathje,
-Jason Reifler, Jon Roozenbeek, Philipp Schmid, Mark Smith, Briony
-Swire-Thomson, Paula Szewach, Sander van der Linden, Sam Wineburg.</p>
+Human Development, Germany. <sup>2</sup>School of Psychological Science,
+University of Western Australia. <sup>3</sup>School of Psychological
+Science, University of Bristol, England. <sup>4</sup>University of
+Potsdam, Germany. <sup>5</sup>University of Cambridge, United Kingdom.
+<sup>6</sup>Massachusetts Institute of Technology, United States.
+<sup>7</sup>University of Erfurt, Germany. <sup>8</sup>Bernhard Nocht
+Institute for Tropical Medicine, Germany. <sup>9</sup>Climate Change
+Communication Research Hub, Monash University, Australia.
+<sup>10</sup>Vanderbilt University, United States. <sup>11</sup>Humboldt
+University of Berlin, Germany. <sup>12</sup>Princeton University, United
+States. <sup>13</sup>IMT School for Advanced Studies Lucca, Italy.
+<sup>14</sup>University of Regina, Canada. <sup>15</sup>New York
+University, United States. <sup>16</sup>University of Exeter, United
+Kingdom. <sup>17</sup>Stanford University, United States.
+<sup>18</sup>Northeastern University, United States.
+<sup>19</sup>University of Essex, United Kingdom.</p>
 <p><em>Research assistance</em>: Spela Vrtovec, Friederike Stock.</p>
-<p><em>Abstract</em>: Spread of false and misleading information through
-media and social networks can result in a variety of detrimental
-effects, including adverse consequences for public health and the state
-of democracies. One of the key policy questions is how to prevent the
-spread and influence of misinformation without resorting to censorship.
-Behavioral and cognitive sciences have developed diverse
-individual-focused interventions that share the aim of reducing harm
-from online misinformation and manipulation. In a collaborative effort
-of an international group of experts, we review such tools and
-interventions. The expert review’s outcome provides a resource for
-scientists, an up-to-date overview, and an actionable toolbox for policy
-makers. The toolbox is based on the input of 28 experts and 42
-scientific papers, and it delivers: (1) a conceptual overview of the
-breadth of interventions, as well as their target and scope, and (2) a
-summary of the empirical evidence supporting the interventions and the
-methods and experimental paradigms used to test them. Our review covers
-the following classes of interventions: accuracy prompts; debunking;
-inoculation; lateral reading; media-literacy tips; rebuttals of science
-denialism; self-reflection tools; social norms; warning and
-fact-checking labels.</p>
+<p><em>Editorial assistance</em>: Deb Ain.</p>
+<p><em>Abstract</em>: The spread of misinformation through media and
+social networks threatens many aspects of society, including public
+health and the state of democracies. A wide range of individual-focused
+interventions aimed at reducing harm from online misinformation have
+been developed in the behavioral and cognitive sciences. Here, we
+introduce and analyze our toolbox of interventions against
+misinformation, which includes an up-to-date account of the
+interventions featured in 42 scientific papers. A resource for
+scientists, policy makers, and the public, the toolbox delivers both a
+conceptual overview of the breadth of interventions, including their
+target and scope, and a summary of the empirical evidence supporting the
+interventions, including the methods and experimental paradigms used to
+test them. The toolbox covers 10 types of interventions: accuracy
+prompts, debunking, friction, inoculation, lateral reading,
+media-literacy tips, rebuttals of science denialism, self-reflection
+tools, social norms, and warning and fact-checking labels.</p>
+<p><em>Preprint</em>:</p>
 <p><a
 href="https://ai_society.mpib.dev/intervention_toolbox/privacy.html">Privacy
 policy</a> - <a
@@ -795,17 +828,21 @@ locale:
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
+other attached packages:
+[1] workflowr_1.7.0
+
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        whisker_0.4       knitr_1.33        magrittr_2.0.1   
- [5] workflowr_1.7.0   R6_2.5.0          rlang_0.4.11      fansi_0.5.0      
- [9] stringr_1.4.0     tools_4.1.0       xfun_0.31         utf8_1.2.1       
-[13] git2r_0.28.0      jquerylib_0.1.4   htmltools_0.5.1.1 ellipsis_0.3.2   
-[17] rprojroot_2.0.2   yaml_2.2.1        digest_0.6.27     tibble_3.1.6     
-[21] lifecycle_1.0.0   crayon_1.4.1      later_1.2.0       sass_0.4.0       
-[25] vctrs_0.3.8       promises_1.2.0.1  fs_1.5.0          glue_1.4.2       
-[29] evaluate_0.14     rmarkdown_2.14    stringi_1.6.1     bslib_0.2.5.1    
-[33] compiler_4.1.0    pillar_1.6.4      jsonlite_1.7.2    httpuv_1.6.1     
-[37] pkgconfig_2.0.3  </code></pre>
+ [1] Rcpp_1.0.7        pillar_1.6.4      compiler_4.1.0    bslib_0.2.5.1    
+ [5] later_1.2.0       git2r_0.28.0      jquerylib_0.1.4   tools_4.1.0      
+ [9] getPass_0.2-2     digest_0.6.27     jsonlite_1.7.2    evaluate_0.14    
+[13] lifecycle_1.0.0   tibble_3.1.6      pkgconfig_2.0.3   rlang_0.4.11     
+[17] rstudioapi_0.13   yaml_2.2.1        xfun_0.31         httr_1.4.2       
+[21] stringr_1.4.0     knitr_1.33        sass_0.4.0        fs_1.5.0         
+[25] vctrs_0.3.8       rprojroot_2.0.2   glue_1.4.2        R6_2.5.0         
+[29] processx_3.5.2    fansi_0.5.0       rmarkdown_2.14    callr_3.7.0      
+[33] magrittr_2.0.1    whisker_0.4       ps_1.6.0          promises_1.2.0.1 
+[37] ellipsis_0.3.2    htmltools_0.5.1.1 httpuv_1.6.1      utf8_1.2.1       
+[41] stringi_1.6.1     crayon_1.4.1     </code></pre>
 </div>
 
 

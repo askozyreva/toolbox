@@ -275,7 +275,7 @@ $(document).ready(function () {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -286,8 +286,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -296,16 +296,16 @@ aria-hidden="true"></span> </a>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-12-01
+<strong>Last updated:</strong> 2022-12-14
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
-<strong>Knit directory:</strong> <code>myproject/</code> <span
+<strong>Knit directory:</strong> <code>toolbox/</code> <span
 class="glyphicon glyphicon-question-sign" aria-hidden="true"
 title="This is the local directory in which the code in this file was executed.">
 </span>
@@ -325,21 +325,18 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R
-Markdown file created these results, you’ll want to first commit it to
-the Git repo. If you’re still working on the analysis, you can ignore
-this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
@@ -430,13 +427,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong6522ccd">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomaskozyrevatoolboxtree67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904targetblank67aaf8da">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> 6522ccd
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/askozyreva/toolbox/tree/67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904" target="_blank">67aaf8d</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong6522ccd"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomaskozyrevatoolboxtree67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904targetblank67aaf8da"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -445,7 +444,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 6522ccd.
+The results in this page were generated with repository version
+<a href="https://github.com/askozyreva/toolbox/tree/67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904" target="_blank">67aaf8d</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -462,25 +462,11 @@ were generated:
 Ignored files:
     Ignored:    .Rproj.user/
 
-Untracked files:
-    Untracked:  _workflowr.R
-    Untracked:  analysis/privacy.rmd
-    Untracked:  analysis/table_concept.Rmd
-    Untracked:  analysis/table_evidence.Rmd
-    Untracked:  analysis/terms.rmd
-    Untracked:  code/process-JSON-POC.R
-    Untracked:  data/results_all.json
-    Untracked:  data/toolbox_concept.xlsx
-    Untracked:  data/toolbox_evidence.xlsx
-    Untracked:  logos/
-    Untracked:  output/infos_raw.json
-    Untracked:  output/infos_refined.json
-
 Unstaged changes:
-    Modified:   analysis/_site.yml
-    Deleted:    analysis/about.Rmd
-    Modified:   analysis/index.Rmd
-    Deleted:    analysis/license.Rmd
+    Modified:   README.md
+    Modified:   _workflowr.R
+    Deleted:    data/results_all.json
+    Modified:   data/toolbox_evidence.xlsx
 
 </code></pre>
 <p>
@@ -495,10 +481,91 @@ have uncommitted changes.
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
+
 <p>
-There are no past versions. Publish this analysis with
-<code>wflow_publish()</code> to start tracking its development.
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>analysis/table_concept.Rmd</code>) and
+HTML (<code>public/table_concept.html</code>) files. If you’ve
+configured a remote Git repository (see <code>?wflow_git_remote</code>),
+click on the hyperlinks in the table below to view the files as they
+were in that past version.
 </p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/askozyreva/toolbox/blob/67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904/analysis/table_concept.Rmd" target="_blank">67aaf8d</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2022-12-14
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/askozyreva/toolbox/blob/caa5a423f90c9020a43bd382f2bf29647a281aa9/analysis/table_concept.Rmd" target="_blank">caa5a42</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2022-12-01
+</td>
+<td>
+initial commit
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/askozyreva/toolbox/caa5a423f90c9020a43bd382f2bf29647a281aa9/public/table_concept.html" target="_blank">caa5a42</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2022-12-01
+</td>
+<td>
+initial commit
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </div>
 </div>
