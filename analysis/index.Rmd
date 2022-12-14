@@ -11,23 +11,42 @@ output:
 ---
 
 
-This is an online supplement for the expert review project "Toolbox of Interventions Against online Misinformation and Manipulation"
+This is an online supplement for the expert review project "Toolbox of Interventions Against Online Misinformation and Manipulation"
 
 _Coordinating authors_: 
-Anastasia Kozyreva<sup>1</sup>, Philipp Lorenz-Spreen <sup>1</sup>, Stefan Herzog<sup>1</sup>, Stephan Lewandowsky<sup>2</sup>, Ullrich Ecker<sup>3</sup>, and Ralph Hertwig <sup>1</sup>
+Anastasia Kozyreva<sup>1</sup>, Philipp Lorenz-Spreen <sup>1</sup>, Stefan Herzog<sup>1</sup>, Ullrich Ecker<sup>2</sup>, Stephan Lewandowsky<sup>2,3,4</sup>, and Ralph Hertwig <sup>1</sup>
 
-<sup>1</sup>Center for Adaptive Rationality, Max Planck Institute for Human Development, Berlin, Germany.
 
-<sup>2</sup>School of Psychological Science, University of Bristol, England.
+_Contributing authors_: Melisa Basol<sup>5</sup>, Adam J. Berinsky<sup>6</sup>, Cornelia Betsch<sup>7,8</sup>, John Cook<sup>9</sup>, Lisa K. Fazio<sup>10</sup>, Michael Geers<sup>1,11</sup>, Andrew M. Guess<sup>12</sup>, Rakoen Maertens<sup>5</sup>, Folco Panizza<sup>13</sup>, Gordon Pennycook<sup>14</sup>, David J. Rand<sup>6</sup>, Steve Rathje<sup>15</sup>, Jason Reifler<sup>16</sup>, Jon Roozenbeek<sup>5</sup>, Philipp Schmid<sup>7,8</sup>, Mark Smith<sup>17</sup>, Briony Swire-Thomson<sup>18</sup>, Paula Szewach<sup>16,19</sup>, Sander van der Linden<sup>5</sup>, Sam Wineburg<sup>17</sup>.
 
+<sup>1</sup>Center for Adaptive Rationality, Max Planck Institute for Human Development, Germany.
 <sup>2</sup>School of Psychological Science, University of Western Australia.
-
-_Contributing authors_: Melisa Basol,  Adam Berinsky, Cornelia Betsch, John Cook, Lisa Fazio, Michael Geers, Andrew Guess, Rakoen Maertens, Folco Panizza, Gordon Pennycook, David Rand, Steve Rathje, Jason Reifler, Jon Roozenbeek, Philipp Schmid, Mark Smith, Briony Swire-Thomson, Paula Szewach, Sander van der Linden, Sam Wineburg.
+<sup>3</sup>School of Psychological Science, University of Bristol, England.
+<sup>4</sup>University of Potsdam, Germany.
+<sup>5</sup>University of Cambridge, United Kingdom.
+<sup>6</sup>Massachusetts Institute of Technology, United States.
+<sup>7</sup>University of Erfurt, Germany.
+<sup>8</sup>Bernhard Nocht Institute for Tropical Medicine, Germany.
+<sup>9</sup>Climate Change Communication Research Hub, Monash University, Australia.
+<sup>10</sup>Vanderbilt University, United States.
+<sup>11</sup>Humboldt University of Berlin, Germany.
+<sup>12</sup>Princeton University, United States.
+<sup>13</sup>IMT School for Advanced Studies Lucca, Italy.
+<sup>14</sup>University of Regina, Canada.
+<sup>15</sup>New York University, United States.
+<sup>16</sup>University of Exeter, United Kingdom.
+<sup>17</sup>Stanford University, United States.
+<sup>18</sup>Northeastern University, United States.
+<sup>19</sup>University of Essex, United Kingdom.
 
 
 _Research assistance_: Spela Vrtovec, Friederike Stock.
 
-_Abstract_: Spread of false and misleading information through media and social networks can result in a variety of detrimental effects, including adverse consequences for public health and the state of democracies. One of the key policy questions is how to prevent the spread and influence of misinformation without resorting to censorship. Behavioral and cognitive sciences have developed diverse individual-focused interventions that share the aim of reducing harm from online misinformation and manipulation. In a collaborative effort of an international group of experts, we  review such tools and interventions. The expert review's outcome provides a resource for scientists, an up-to-date overview, and an actionable toolbox for policy makers. The toolbox is based on the input of 28 experts and 42 scientific papers, and it delivers: (1) a conceptual overview of the breadth of interventions, as well as their target and scope, and (2) a summary of the empirical evidence supporting the interventions and the methods and experimental paradigms used to test them. Our review covers the following classes of interventions: accuracy prompts; debunking; inoculation; lateral reading; media-literacy tips; rebuttals of science denialism; self-reflection tools; social norms; warning and fact-checking labels.
+_Editorial assistance_: Deb Ain.
+
+_Abstract_: The spread of misinformation through media and social networks threatens many aspects of society, including public health and the state of democracies. A wide range of individual-focused interventions aimed at reducing harm from online misinformation have been developed in the behavioral and cognitive sciences. Here, we introduce and analyze our toolbox of interventions against misinformation, which includes an up-to-date account of the interventions featured in 42 scientific papers. A resource for scientists, policy makers, and the public, the toolbox delivers both a conceptual overview of the breadth of interventions, including their target and scope, and a summary of the empirical evidence supporting the interventions, including the methods and experimental paradigms used to test them. The toolbox covers 10 types of interventions: accuracy prompts, debunking, friction, inoculation, lateral reading, media-literacy tips, rebuttals of science denialism, self-reflection tools, social norms, and warning and fact-checking labels.
+
+_Preprint_:
 
 [Privacy policy](https://ai_society.mpib.dev/intervention_toolbox/privacy.html) - [Imprint/Provider Identification](https://ai_society.mpib.dev/intervention_toolbox/terms.html)
 
