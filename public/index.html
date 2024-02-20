@@ -11,9 +11,9 @@
 
 
 
-<title>Toolbox of interventions against online misinformation and manipulation</title>
+<title>Toolbox of interventions against online misinformation – Version 2.0</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -125,13 +125,20 @@ code span.wa { font-style: italic; } /* Warning */
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -226,11 +233,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -259,8 +270,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -268,16 +279,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -339,6 +343,12 @@ $(document).ready(function () {
 <li>
   <a href="table_evidence.html">Evidence toolbox</a>
 </li>
+<li>
+  <a href="table_examples.html">Examples of interventions</a>
+</li>
+<li>
+  <a href="toolbox_map.html">Map of evidence</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -360,7 +370,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Toolbox of interventions against online
-misinformation and manipulation</h1>
+misinformation – Version 2.0</h1>
 
 </div>
 
@@ -389,7 +399,7 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-12-14
+<strong>Last updated:</strong> 2024-02-20
 </p>
 <p>
 <strong>Checks:</strong> <span
@@ -407,7 +417,7 @@ title="This is the local directory in which the code in this file was executed."
 This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
 analysis was created with <a
   href="https://github.com/workflowr/workflowr">workflowr</a> (version
-1.7.0). The <em>Checks</em> tab describes the reproducibility checks
+1.7.1). The <em>Checks</em> tab describes the reproducibility checks
 that were applied when the results were created. The <em>Past
 versions</em> tab lists the development history.
 </p>
@@ -453,16 +463,16 @@ empty environment.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20221201code">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220228code">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Seed:</strong>
-<code>set.seed(20221201)</code> </a>
+<code>set.seed(20220228)</code> </a>
 </p>
 </div>
-<div id="strongSeedstrongcodesetseed20221201code"
+<div id="strongSeedstrongcodesetseed20220228code"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The command <code>set.seed(20221201)</code> was run prior to running
+<p>The command <code>set.seed(20220228)</code> was run prior to running
 the code in the R Markdown file. Setting a seed ensures that any results
 that rely on randomness, e.g. subsampling or permutations, are
 reproducible.</p>
@@ -520,15 +530,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomaskozyrevatoolboxtreea0ed13c271874f628bcbe59457e9cf278e84ff5btargetblanka0ed13ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsarcgitmpibberlinmpgdeaisocietyinterventiontoolboxtreeb19567bf1157463db5747cbefc992e59873a517ctargetblankb19567ba">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/askozyreva/toolbox/tree/a0ed13c271874f628bcbe59457e9cf278e84ff5b" target="_blank">a0ed13c</a>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/tree/b19567bf1157463db5747cbefc992e59873a517c" target="_blank">b19567b</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomaskozyrevatoolboxtreea0ed13c271874f628bcbe59457e9cf278e84ff5btargetblanka0ed13ca"
+id="strongRepositoryversionstrongahrefhttpsarcgitmpibberlinmpgdeaisocietyinterventiontoolboxtreeb19567bf1157463db5747cbefc992e59873a517ctargetblankb19567ba"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -538,7 +548,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/askozyreva/toolbox/tree/a0ed13c271874f628bcbe59457e9cf278e84ff5b" target="_blank">a0ed13c</a>.
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/tree/b19567bf1157463db5747cbefc992e59873a517c" target="_blank">b19567b</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -555,12 +565,38 @@ were generated:
 Ignored files:
     Ignored:    .Rproj.user/
 
+Untracked files:
+    Untracked:  data/~$toolbox_evidence.xlsx
+
 Unstaged changes:
+    Modified:   README.md
+    Modified:   _workflowr.R
+    Modified:   analysis/_site.yml
+    Deleted:    code/README.md
     Deleted:    data/README.md
-    Modified:   data/toolbox_concept.xlsx
-    Modified:   data/toolbox_evidence.xlsx
+    Deleted:    images/Criticalignoring_lnos.png
+    Deleted:    images/Debunking_lnos.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.24.44.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.25.18.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.26.04.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.27.33.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.46.36.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.51.23.png
+    Deleted:    images/debunk_4steps.png
+    Deleted:    images/debunk_steps.png
+    Deleted:    images/debunking.png
+    Deleted:    images/minimal-media-literacy-tips.jpeg
+    Deleted:    images/warning-labels-01.png
+    Deleted:    images/warning-labels-02.png
+    Deleted:    images/warning-labels.png
+    Deleted:    output/README.md
+    Modified:   output/figure_map.pdf
+    Deleted:    output/figure_map.png
+    Deleted:    output/figure_map2.pdf
     Modified:   output/infos_raw.json
     Modified:   output/infos_refined.json
+    Deleted:    output/table_concept.png
+    Deleted:    output/tbl_concept.tex
 
 </code></pre>
 <p>
@@ -611,16 +647,16 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/askozyreva/toolbox/blob/a0ed13c271874f628bcbe59457e9cf278e84ff5b/analysis/index.Rmd" target="_blank">a0ed13c</a>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/1a1a155d89d156e606ac8a5fb1bcce8f5e5f4f54/analysis/index.Rmd" target="_blank">1a1a155</a>
 </td>
 <td>
 Kozyreva
 </td>
 <td>
-2022-12-14
+2023-11-30
 </td>
 <td>
-wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+minor updates
 </td>
 </tr>
 <tr>
@@ -628,13 +664,115 @@ wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
 html
 </td>
 <td>
-<a href="https://rawcdn.githack.com/askozyreva/toolbox/803ec1e914fd9756ae7a02d7372a05d8f2c20a52/public/index.html" target="_blank">803ec1e</a>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/1a1a155d89d156e606ac8a5fb1bcce8f5e5f4f54/public/index.html" target="_blank">1a1a155</a>
 </td>
 <td>
 Kozyreva
 </td>
 <td>
-2022-12-14
+2023-11-30
+</td>
+<td>
+minor updates
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/920cc759d1a7441847d8ffe3c11a673d3095b4c9/analysis/index.Rmd" target="_blank">920cc75</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-29
+</td>
+<td>
+index page update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/920cc759d1a7441847d8ffe3c11a673d3095b4c9/public/index.html" target="_blank">920cc75</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-29
+</td>
+<td>
+index page update
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/5be9264d045f06d64f3b29c863dadac460d98e93/analysis/index.Rmd" target="_blank">5be9264</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-24
+</td>
+<td>
+what should be the final version of the toolbox 2.0
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/5be9264d045f06d64f3b29c863dadac460d98e93/public/index.html" target="_blank">5be9264</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-24
+</td>
+<td>
+what should be the final version of the toolbox 2.0
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/22a40df6ae28d62b7c0ea9115e7f0ec5f97b4e3b/public/index.html" target="_blank">22a40df</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+<td>
+v2 updates
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/index.html" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
 </td>
 <td>
 Build site.
@@ -645,13 +783,13 @@ Build site.
 Rmd
 </td>
 <td>
-<a href="https://github.com/askozyreva/toolbox/blob/67aaf8d6a8d8c4b60ebd7c94a51fe59b2e80c904/analysis/index.Rmd" target="_blank">67aaf8d</a>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/3efec23801d2f2de155fa947451f7caa5a436a36/analysis/index.Rmd" target="_blank">3efec23</a>
 </td>
 <td>
 Kozyreva
 </td>
 <td>
-2022-12-14
+2023-10-24
 </td>
 <td>
 wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
@@ -662,16 +800,16 @@ wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
 Rmd
 </td>
 <td>
-<a href="https://github.com/askozyreva/toolbox/blob/caa5a423f90c9020a43bd382f2bf29647a281aa9/analysis/index.Rmd" target="_blank">caa5a42</a>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/c2b8b9052ef16d5018e3f1585d26d8da7cd4c1d9/analysis/index.Rmd" target="_blank">c2b8b90</a>
 </td>
 <td>
 Kozyreva
 </td>
 <td>
-2022-12-01
+2023-10-12
 </td>
 <td>
-initial commit
+v2 branch update
 </td>
 </tr>
 <tr>
@@ -679,16 +817,798 @@ initial commit
 html
 </td>
 <td>
-<a href="https://rawcdn.githack.com/askozyreva/toolbox/caa5a423f90c9020a43bd382f2bf29647a281aa9/public/index.html" target="_blank">caa5a42</a>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/c2b8b9052ef16d5018e3f1585d26d8da7cd4c1d9/public/index.html" target="_blank">c2b8b90</a>
 </td>
 <td>
 Kozyreva
 </td>
 <td>
+2023-10-12
+</td>
+<td>
+v2 branch update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/168d4c7d2eda45ecafaa3c5f6bab4c5bb152ea8e/public/index.html" target="_blank">168d4c7</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-02-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/8c384423d5c386372044901e44ab68713380cf40/public/index.html" target="_blank">8c38442</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2023-01-05
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/c1057c84937077af0b12ec6125f2fd40f1d7915f/analysis/index.Rmd" target="_blank">c1057c8</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2023-01-05
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/0b025346927bc95988769e5aeacec21a9ba73ba3/public/index.html" target="_blank">0b02534</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-12-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/ecbd28e0c6da103ddc0724d0750b98739df4e586/analysis/index.Rmd" target="_blank">ecbd28e</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-12-16
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/e57774a5a05fffaaaffb48db594dadcb38f7b2c8/analysis/index.Rmd" target="_blank">e57774a</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-12-05
+</td>
+<td>
+update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/295f5803709e0b166616a85db09fa4d41a9ed7cb/public/index.html" target="_blank">295f580</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-12-05
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/1a9c195562c0fa041a4397af710f39c7c73c0b99/analysis/index.Rmd" target="_blank">1a9c195</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
 2022-12-01
 </td>
 <td>
-initial commit
+update and folder reorg
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/2b13b6294025066a0d55eaf7c158c49f527f568c/public/index.html" target="_blank">2b13b62</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-12-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/b8df76ec52d184e6dee941bbe304acd2b0ed0391/public/index.html" target="_blank">b8df76e</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-11-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/51ffb876a4b4292754b481023573fb265b9fa69d/public/index.html" target="_blank">51ffb87</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-11-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/1fcecbdd076a7323019612211b17d03c9b60dca7/analysis/index.Rmd" target="_blank">1fcecbd</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-11-16
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/421eeda63cadf22f10eb25615e972ee265c0ad28/public/index.html" target="_blank">421eeda</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-11-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/355e92af17922bf1f7ec1bebf9c3acb628544e9e/public/index.html" target="_blank">355e92a</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-10-11
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/0cec29f87ad90622ca41c77ad645aa9e207ae897/analysis/index.Rmd" target="_blank">0cec29f</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-08-17
+</td>
+<td>
+tables update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/0cec29f87ad90622ca41c77ad645aa9e207ae897/public/index.html" target="_blank">0cec29f</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-08-17
+</td>
+<td>
+tables update
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/7c28e6793a034b9817f978abe680b8630a3b52a0/analysis/index.Rmd" target="_blank">7c28e67</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-07-28
+</td>
+<td>
+design and tables update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/7c28e6793a034b9817f978abe680b8630a3b52a0/public/index.html" target="_blank">7c28e67</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-07-28
+</td>
+<td>
+design and tables update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/4effdc51fc34c82fa6584eca6556bcf35fed08b3/public/index.html" target="_blank">4effdc5</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-07-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/5372d96a1072e3b575a6a1c7111ad016806750d8/analysis/index.Rmd" target="_blank">5372d96</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-07-27
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/d069c9f340fc0e6bdec3c51389a884539efc585f/analysis/index.Rmd" target="_blank">d069c9f</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-07-27
+</td>
+<td>
+update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/d069c9f340fc0e6bdec3c51389a884539efc585f/public/index.html" target="_blank">d069c9f</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-07-27
+</td>
+<td>
+update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/f182d728e90a4942a02ebd51dead53bf0bb599ae/public/index.html" target="_blank">f182d72</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-07-20
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/f9405d666c6edecf3dd8ff85e4d7dd6f1324d2c5/public/index.html" target="_blank">f9405d6</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-06-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/fe780ff805d53704b1bac2650a4db66834d2b234/public/index.html" target="_blank">fe780ff</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-06-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/8ab172cc3f1d6e6a1a2e1a5a725064cb52cbda8d/public/index.html" target="_blank">8ab172c</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-06-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/2eaf83118e46e03ac0c60860d052158c2b4dfae8/public/index.html" target="_blank">2eaf831</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-06-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/4f9aedf653c62954ea8f33d4624d895308c09ed6/analysis/index.Rmd" target="_blank">4f9aedf</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-06-02
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/adf0386aa151a45e7f6e84758869018a8efd7435/public/index.html" target="_blank">adf0386</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-05-20
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/33c2f643f77cdb0894b27805305b486737d2d953/public/index.html" target="_blank">33c2f64</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-05-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/ad714146cd0adb86e215b044f55f43a118b30ed8/analysis/index.Rmd" target="_blank">ad71414</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-05-19
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/77a734a9e8267e020fb3c12eabd25ed9ca17c965/public/index.html" target="_blank">77a734a</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-05-17
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/1504401af906bb6f12e4b62048c8b3b4c817f32a/public/index.html" target="_blank">1504401</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-05-16
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/7a81fdc492f9cfc444f6eaa5da3b36920b6c2b98/public/index.html" target="_blank">7a81fdc</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-04-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/c79c85805c4f7fb3c2e04c38b4d332b20187f32a/public/index.html" target="_blank">c79c858</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-04-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/280c6e4bbc22c57a827a7764eef2f1fa6206b2b7/public/index.html" target="_blank">280c6e4</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-04-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/3524d8867c7bb0d58aef7fbec529cae4128b15cc/analysis/index.Rmd" target="_blank">3524d88</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-04-27
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/c35a82df639ed4f66a5cb21cd90284e1aa7300e7/public/index.html" target="_blank">c35a82d</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-04-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/14c638fa168265fa10c3d843ae119b0da2c9c399/public/index.html" target="_blank">14c638f</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-03-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/7ea496ea95f7053c3ae5cf2ce82b6acbdc8d9d75/public/index.html" target="_blank">7ea496e</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-02-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/17e42921e238142a19bef3a84bfed50f1ae08bcf/public/index.html" target="_blank">17e4292</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-02-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/6ab970baf6b2147f053bc39ac379876b25f20ba8/public/index.html" target="_blank">6ab970b</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-02-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/f157d6cca444de253daf288ef42ad2180dae1d9e/public/index.html" target="_blank">f157d6c</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-02-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/94e9baed0f35c950199284186318d942459cc66c/analysis/index.Rmd" target="_blank">94e9bae</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-02-28
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/42cee4849b1ecf1124fd23c8305628a36a8612d5/public/index.html" target="_blank">42cee48</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-02-28
+</td>
+<td>
+Host with GitLab.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/34f0350e7b9af96812601e5de0e8d8642be4ac1b/analysis/index.Rmd" target="_blank">34f0350</a>
+</td>
+<td>
+Anastasia Kozyreva
+</td>
+<td>
+2022-02-28
+</td>
+<td>
+Start workflowr project.
 </td>
 </tr>
 </tbody>
@@ -699,58 +1619,70 @@ initial commit
 </div>
 </div>
 <p>This is an online supplement for the expert review project “Toolbox
-of Interventions Against Online Misinformation and Manipulation”</p>
+of Interventions Against Online Misinformation”</p>
 <p><em>Coordinating authors</em>: Anastasia Kozyreva<sup>1</sup>,
 Philipp Lorenz-Spreen <sup>1</sup>, Stefan Herzog<sup>1</sup>, Ullrich
 Ecker<sup>2</sup>, Stephan Lewandowsky<sup>2,3,4</sup>, and Ralph
 Hertwig <sup>1</sup></p>
-<p><em>Contributing authors</em>: Melisa Basol<sup>5</sup>, Adam J.
-Berinsky<sup>6</sup>, Cornelia Betsch<sup>7,8</sup>, John
-Cook<sup>9</sup>, Lisa K. Fazio<sup>10</sup>, Michael
-Geers<sup>1,11</sup>, Andrew M. Guess<sup>12</sup>, Rakoen
-Maertens<sup>5</sup>, Folco Panizza<sup>13</sup>, Gordon
-Pennycook<sup>14</sup>, David J. Rand<sup>6</sup>, Steve
-Rathje<sup>15</sup>, Jason Reifler<sup>16</sup>, Jon
-Roozenbeek<sup>5</sup>, Philipp Schmid<sup>7,8</sup>, Mark
-Smith<sup>17</sup>, Briony Swire-Thomson<sup>18</sup>, Paula
-Szewach<sup>16,19</sup>, Sander van der Linden<sup>5</sup>, Sam
-Wineburg<sup>17</sup>.</p>
+<p><em>Contributing authors</em>: Ayesha Ali<sup>5</sup>, Joe
+Bak-Coleman<sup>6</sup>, Sarit Barzilai<sup>7</sup>, Melisa
+Basol<sup>8</sup>, Adam J. Berinsky<sup>9</sup>, Cornelia
+Betsch<sup>10,11</sup>, John Cook<sup>12</sup>, Lisa K.
+Fazio<sup>13</sup>, Michael Geers<sup>1,14</sup>, Andrew M.
+Guess<sup>15</sup>, Haifeng Huang<sup>16</sup>, Horacio
+Larreguy<sup>17</sup>, Rakoen Maertens<sup>18</sup>, Folco
+Panizza<sup>19</sup>, Gordon Pennycook<sup>20,21</sup>, David J.
+Rand<sup>9</sup>, Steve Rathje<sup>22</sup>, Jason Reifler<sup>23</sup>,
+Philipp Schmid<sup>10,11,24</sup>, Mark Smith<sup>25</sup>, Briony
+Swire-Thomson<sup>26</sup>, Paula Szewach<sup>23,27</sup>, Sander van
+der Linden<sup>8</sup>, Sam Wineburg<sup>25</sup>.</p>
 <p><sup>1</sup>Center for Adaptive Rationality, Max Planck Institute for
 Human Development, Germany. <sup>2</sup>School of Psychological Science,
 University of Western Australia. <sup>3</sup>School of Psychological
 Science, University of Bristol, England. <sup>4</sup>University of
-Potsdam, Germany. <sup>5</sup>University of Cambridge, United Kingdom.
-<sup>6</sup>Massachusetts Institute of Technology, United States.
-<sup>7</sup>University of Erfurt, Germany. <sup>8</sup>Bernhard Nocht
-Institute for Tropical Medicine, Germany. <sup>9</sup>Climate Change
-Communication Research Hub, Monash University, Australia.
-<sup>10</sup>Vanderbilt University, United States. <sup>11</sup>Humboldt
-University of Berlin, Germany. <sup>12</sup>Princeton University, United
-States. <sup>13</sup>IMT School for Advanced Studies Lucca, Italy.
-<sup>14</sup>University of Regina, Canada. <sup>15</sup>New York
-University, United States. <sup>16</sup>University of Exeter, United
-Kingdom. <sup>17</sup>Stanford University, United States.
-<sup>18</sup>Northeastern University, United States.
-<sup>19</sup>University of Essex, United Kingdom.</p>
-<p><em>Research assistance</em>: Spela Vrtovec, Friederike Stock.</p>
+Potsdam, Germany. <sup>5</sup>Lahore University of Management Sciences,
+Pakistan. <sup>6</sup>Craig Newmark Center, School of Journalism,
+Columbia University. <sup>7</sup>University of Haifa, Israel.
+<sup>8</sup>University of Cambridge, United Kingdom.
+<sup>9</sup>Massachusetts Institute of Technology, United States.
+<sup>10</sup>University of Erfurt, Germany. <sup>11</sup>Bernhard Nocht
+Institute for Tropical Medicine, Germany. <sup>12</sup>Melbourne Centre
+for Behaviour Change, University of Melbourne, Australia.
+<sup>13</sup>Vanderbilt University, United States. <sup>14</sup>Humboldt
+University of Berlin, Germany. <sup>15</sup>Princeton University, United
+States. <sup>16</sup>Ohio State University, United States.
+<sup>17</sup>Instituto Tecnológico Autónomo de México, Mexico.
+<sup>18</sup>University of Oxford, United Kingdom. <sup>19</sup>IMT
+School for Advanced Studies Lucca, Italy. <sup>20</sup>Cornell
+University, United States. <sup>21</sup>University of Regina, Canada.
+<sup>22</sup>New York University, United States. <sup>23</sup>University
+of Exeter, United Kingdom. <sup>24</sup>Radboud University Nijmegen, The
+Netherlands. <sup>25</sup>Stanford University, United States.
+<sup>26</sup>Northeastern University, United States.
+<sup>27</sup>Barcelona Supercomputing Center, Spain.</p>
+<p><em>Research assistance</em>: Spela Vrtovec, Friederike Stock,
+Alexandra Horsley.</p>
 <p><em>Editorial assistance</em>: Deb Ain.</p>
 <p><em>Abstract</em>: The spread of misinformation through media and
 social networks threatens many aspects of society, including public
-health and the state of democracies. A wide range of individual-focused
-interventions aimed at reducing harm from online misinformation have
-been developed in the behavioral and cognitive sciences. Here, we
-introduce and analyze the toolbox of interventions against
-misinformation, which includes an up-to-date account of the
-interventions featured in 42 scientific papers. A resource for
-scientists, policy makers, and the public, the toolbox delivers both a
-conceptual overview of the breadth of interventions, including their
-target and scope, and a summary of the empirical evidence supporting the
-interventions, including the methods and experimental paradigms used to
-test them. The toolbox covers 10 types of interventions: accuracy
-prompts, debunking, friction, inoculation, lateral reading,
-media-literacy tips, rebuttals of science denialism, self-reflection
-tools, social norms, and warning and fact-checking labels.</p>
-<p><em>Preprint</em>:</p>
+health and the state of democracies. One approach to mitigating the
+impact of misinformation focuses on individual-level interventions,
+equipping the public and policy-makers with essential tools to curb the
+spread and influence of falsehoods. Here we introduce a toolbox of
+individual-focused interventions aimed at reducing harm from online
+misinformation. Comprising an up-to-date account of the interventions
+featured in 81 scientific papers from across the globe, the toolbox is a
+resource for scientists, policymakers, and the public. It provides both
+a conceptual overview of the breadth of interventions—including their
+target, scope, and examples—and a summary of the empirical evidence
+supporting the interventions—including the methods and experimental
+paradigms used to test them. The toolbox covers nine categories of
+interventions: accuracy prompts, debunking and rebuttals, friction,
+inoculation, lateral reading and verification strategies, media-literacy
+tips, social norms, source-credibility labels, and warning and
+fact-checking labels.</p>
+<p><em>Preprint</em>: <a href="https://psyarxiv.com/x8ejt"
+class="uri">https://psyarxiv.com/x8ejt</a></p>
 <p><a
 href="https://ai_society.mpib.dev/intervention_toolbox/privacy.html">Privacy
 policy</a> - <a
@@ -846,38 +1778,42 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.0 (2021-05-18)
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.3.1 (2023-06-16 ucrt)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 19042)
+Running under: Windows 10 x64 (build 19043)
 
 Matrix products: default
 
+
 locale:
-[1] LC_COLLATE=English_United States.1252 
-[2] LC_CTYPE=English_United States.1252   
-[3] LC_MONETARY=English_United States.1252
+[1] LC_COLLATE=English_United States.utf8 
+[2] LC_CTYPE=English_United States.utf8   
+[3] LC_MONETARY=English_United States.utf8
 [4] LC_NUMERIC=C                          
-[5] LC_TIME=English_United States.1252    
+[5] LC_TIME=English_United States.utf8    
+
+time zone: Europe/Berlin
+tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] workflowr_1.7.0
+[1] workflowr_1.7.1
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        pillar_1.6.4      compiler_4.1.0    bslib_0.2.5.1    
- [5] later_1.2.0       git2r_0.28.0      jquerylib_0.1.4   tools_4.1.0      
- [9] getPass_0.2-2     digest_0.6.27     jsonlite_1.7.2    evaluate_0.14    
-[13] lifecycle_1.0.0   tibble_3.1.6      pkgconfig_2.0.3   rlang_0.4.11     
-[17] rstudioapi_0.13   yaml_2.2.1        xfun_0.31         httr_1.4.2       
-[21] stringr_1.4.0     knitr_1.33        sass_0.4.0        fs_1.5.0         
-[25] vctrs_0.3.8       rprojroot_2.0.2   glue_1.4.2        R6_2.5.0         
-[29] processx_3.5.2    fansi_0.5.0       rmarkdown_2.14    callr_3.7.0      
-[33] magrittr_2.0.1    whisker_0.4       ps_1.6.0          promises_1.2.0.1 
-[37] ellipsis_0.3.2    htmltools_0.5.1.1 httpuv_1.6.1      utf8_1.2.1       
-[41] stringi_1.6.1     crayon_1.4.1     </code></pre>
+ [1] vctrs_0.6.3       httr_1.4.7        cli_3.6.1         knitr_1.43       
+ [5] rlang_1.1.1       xfun_0.40         stringi_1.7.12    processx_3.8.2   
+ [9] promises_1.2.1    jsonlite_1.8.7    glue_1.6.2        rprojroot_2.0.3  
+[13] git2r_0.32.0      htmltools_0.5.6   httpuv_1.6.11     ps_1.7.5         
+[17] sass_0.4.7        fansi_1.0.4       rmarkdown_2.24    jquerylib_0.1.4  
+[21] tibble_3.2.1      evaluate_0.21     fastmap_1.1.1     yaml_2.3.7       
+[25] lifecycle_1.0.3   whisker_0.4.1     stringr_1.5.0     compiler_4.3.1   
+[29] fs_1.6.3          pkgconfig_2.0.3   Rcpp_1.0.11       rstudioapi_0.15.0
+[33] later_1.3.1       digest_0.6.33     R6_2.5.1          utf8_1.2.3       
+[37] pillar_1.9.0      callr_3.7.3       magrittr_2.0.3    bslib_0.5.1      
+[41] tools_4.3.1       cachem_1.0.8      getPass_0.2-2    </code></pre>
 </div>
 
 

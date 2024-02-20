@@ -16,69 +16,69 @@
   ],
   "Pennycook et al., Nature (2021).": [
     {
-      "Study": 3,
-      "Description": "Study 3 experimentally tested whether subtly shifting attention to accuracy increases the veracity of the news people are willing to share.",
-      "Dependent Variable": "Sharing discernement for intentions to share true headlines over false headlines",
-      "n": 727,
-      "es_type": "Beta coefficient (b)",
-      "es_pe": "",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "Treatment condition significantly increased sharing discernment (interaction between headline veracity and treatment): b = 0.053, 95% CI [0.032, 0.074], F(1, 17,413) = 24.21, P < 0.0001."
+      "Study": "3",
+      "Description": "Treatment condition's impact on sharing discernment.",
+      "Dependent Variable": "Sharing discernment",
+      "n": "727",
+      "es_type": "Beta coefficient",
+      "es_pe": "0.053",
+      "es_low": "0.032",
+      "es_high": "0.074",
+      "es_ci": 0.95,
+      "p": "< 0.0001",
+      "es_txt": "Treatment condition significantly increased sharing discernment."
     },
     {
-      "Study": 4,
-      "Description": "Study 4 experimentally tested whether subtly shifting attention to accuracy increases the veracity of the news people are willing to share.",
-      "Dependent Variable": "Sharing discernment (interaction between headline veracity and treatment)",
-      "n": 780,
-      "es_type": "Beta coefficient (b)",
-      "es_pe": "",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "Treatment condition significantly increased sharing discernment (interaction between headline veracity and treatment): b = 0.065, 95% CI [0.036, 0.094], F(1, 18,673) = 19.53, P < 0.0001."
+      "Study": "4",
+      "Description": "Treatment condition's impact on sharing discernment.",
+      "Dependent Variable": "Sharing discernment",
+      "n": "780",
+      "es_type": "Beta coefficient",
+      "es_pe": "0.065",
+      "es_low": "0.036",
+      "es_high": "0.094",
+      "es_ci": 0.95,
+      "p": "< 0.0001",
+      "es_txt": "Treatment condition significantly increased sharing discernment."
     },
     {
-      "Study": 5,
-      "Description": "Study 5 experimentally tested whether subtly shifting attention to accuracy increases the veracity of the news people are willing to share. Study 5 also included an importance treatment condition that tested another approach for making accuracy salient by having participants begin the study by indicating the importance they place on sharing only accurate content (instead of rating the accuracy of a neutral headline).",
-      "Dependent Variable": "Sharing discernment (interaction between headline veracity and condition: treatment)",
-      "n": 671,
-      "es_type": "Beta coefficient (b)",
-      "es_pe": "",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "Both treatments significantly increased sharing discernment relative to the controls (interaction between veracity and condition: treatment, b = 0.054, 95% confidence interval [0.023, 0.085], F = 11.98, P = 0.0005; importance treatment, b = 0.038, 95% confidence interval [0.014, 0.061], F = 9.76, P = 0.0018)."
+      "Study": "5",
+      "Description": "Treatment's impact on sharing discernment relative to controls.",
+      "Dependent Variable": "Sharing discernment",
+      "n": "671",
+      "es_type": "Beta coefficient",
+      "es_pe": "0.054",
+      "es_low": "0.023",
+      "es_high": "0.085",
+      "es_ci": 0.95,
+      "p": "0.0005",
+      "es_txt": "Treatments significantly increased sharing discernment relative to the controls."
     },
     {
-      "Study": 6,
-      "Description": "Study 6 experimentally tested a full-attention treatment that directly forces participants to consider the accuracy of each headline before deciding whether to share it. The goal was to determine how much of the sharing of false headlines in the full-attention treatment was attributable to inattention, confusion, and purposeful sharing.",
-      "Dependent Variable": "",
-      "n": 398,
-      "es_type": "",
-      "es_pe": "",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "Of the sharing intentions for false headlines, the inattention-based account explains 51.2% (95% CI [38.4%, 62.0%]) of sharing, the confusion-based account explains 33.1% (95% CI [25.1%, 42.4%]) of sharing, and the preference-based account explains 15.8% (95% CI [11.1%, 21.5%]) of sharing."
+      "Study": "5 (Importance treatment)",
+      "Description": "Importance treatment's impact on sharing discernment relative to controls.",
+      "Dependent Variable": "Sharing discernment",
+      "n": "671",
+      "es_type": "Beta coefficient",
+      "es_pe": "0.038",
+      "es_low": "0.014",
+      "es_high": "0.061",
+      "es_ci": 0.95,
+      "p": "0.0018",
+      "es_txt": "Importance treatment significantly increased sharing discernment relative to the controls."
     },
     {
-      "Study": 7,
-      "Description": "Study 7 was a field experiment on Twitter and it experimentally tested whether an accuracy prompt would improve the quality of news sources that people share.",
-      "Dependent Variable": "Quality of the news sources shared",
-      "n": 5379,
-      "es_type": "beta coefficient (b)",
-      "es_pe": "",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "Relative to baseline, the accuracy message increased the average quality of the news sources shared (b = 0.007, t(5375) = 2.91, 95% null acceptance region of t [−0.44, 2.59], PFRI = 0.009) and the total quality of shared sources summed over all posts (b = 0.014, t(5375) = 3.12, 95% null acceptance region of t [−0.08, 2.90], PFRI = 0.011)."
+      "Study": "7",
+      "Description": "Accuracy message's impact on the average quality of news sources shared.",
+      "Dependent Variable": "Average quality of news sources shared",
+      "n": "5379",
+      "es_type": "Beta coefficient",
+      "es_pe": "0.007",
+      "es_low": "Not specified",
+      "es_high": "Not specified",
+      "es_ci": 0.95,
+      "p": "0.009",
+      "es_txt": "Accuracy message increased the average quality of the news sources shared."
     }
   ],
   "Epstein et al., Harv Misinfo Review (2021).": [
@@ -113,6 +113,19 @@
       "Description": "Asking participants how important it was to them to share only accurate news",
       "Dependent Variable": "Sharing discernement for intentions to share true headlines over false headlines",
       "n": 1046,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Intervention increased sharing discernment by roughly 50% (3 percentage points)"
+    },
+    {
+      "Study": "Tips",
+      "Description": "Participants were provided with four simple digital literacy tips, taken from an intervention developed by Facebook",
+      "Dependent Variable": "Sharing discernement for intentions to share true headlines over false headlines",
+      "n": 906,
       "es_type": "",
       "es_pe": "",
       "es_low": "",
@@ -165,7 +178,7 @@
       "es_txt": "Accuracy prompts significantly increased sharing discernment (interaction between headline veracity and treatment dummies: b = 0.038, z = 7.102, p < 0.001), which translates into a 71.7% increase over the meta-analytic estimate of baseline sharing discernment in the control condition (headline veracity dummy: b = 0.053, z = 6.636, p < 0.001). This increase in discernment was driven by accuracy prompts significantly decreasing sharing intentions for false news (treatment dummy: b = −0.034, z = 7.851, p < 0.001; Fig. 2), which translates into a 10% decrease relative to the meta-analytic estimate of baseline sharing intentions for false news in the control condition (intercept: b = 0.341, z = 15.695, p < 0.001)."
     }
   ],
-  "Arechar et al., PsyArXiv (2022).": [
+  "Arechar et al., Nat Hum Beh (2023).": [
     {
       "Study": "1 across 16 countries",
       "Description": "Study conducted in 16 countries across 6 continents experimentally tested whether subtly shifting attention to accuracy increases the veracity of the news people are willing to share.",
@@ -177,7 +190,216 @@
       "es_high": "",
       "es_ci": "",
       "p": "",
-      "es_txt": "Prompt condition increased sharing discernment relative to the baseline Sharing condition (meta-analytic estimate, b=0.171, z=4.61, p<0.001). There was significant variation across countries in the magnitude of this effect (χ2=58.57, p<0.001)."
+      "es_txt": "Prompt condition increased sharing discernment relative to the baseline Sharing condition (meta-analytic estimate, b=0.171, z=4.61, p<0.001). There was significant variation across countries in the magnitude of this effect (χ2=58.57, p<0.001). sharing discernment was also higher in the Tips condition compared to the baseline Sharing condition (meta-analytic estimate, b=0.076, z=4.30, p<0.001)."
+    }
+  ],
+  "Offer-Westort et al., preprint (2022).": [
+    {
+      "Study": "Evaluation stage: Fact-checks and related articles",
+      "Description": "Headline-level treatment: Fact-checking labels and related corrective articles",
+      "Dependent Variable": "Sharing discernement",
+      "n": 10531,
+      "es_type": "generalized augmented inverse probability weighted estimator (expressed in percentage points)",
+      "es_pe": "-0,031 (fact-checks); -0,052 (related articles)",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "The two headline-level treatments are not effective at improving sharing discernment. The fact check treatment is associated with a decrease of 0.6 pp (s.e. = 1.1, Z = −0.51, p = 0.61, 95% CI = [−2.78, 1.63]) in false sharing intentions as compared to control. The related articles treatment increases intention to share false stimuli as compared to control, although this estimate is not statistically distinguishable from zero at conventional significance levels (estimate = 0.8 pp, s.e. = 1.1, Z = 0.71, p = 0.48, 95% CI = [−1.39, 2.98])."
+    },
+    {
+      "Study": "Evaluation stage: Accuracy nudge",
+      "Description": "Respondent-level treatment: Accuracy nudge",
+      "Dependent Variable": "Sharing discernement",
+      "n": 10531,
+      "es_type": "generalized augmented inverse probability weighted estimator (expressed in percentage points)",
+      "es_pe": "0.066",
+      "es_low": "0.004",
+      "es_high": "0.129",
+      "es_ci": "0.95",
+      "p": "0.04",
+      "es_txt": "The respondent-level treatments are effective. The accuracy nudge and Facebook tips increase sharing discernment by 0.066 (s.e. = 0.032, Z = 2.074, p = 0.04, 95% CI = [0.004, 0.129]) and 0.054 (s.e. = 0.036, Z = 1.501, p = 0.13, 95% CI = [−0.016, 0.123]) relative to control, respectively. These effects are driven by decreases in false sharing of 2.3 pp (s.e. = 1.0, Z = −2.31, p = 0.02, 95% CI = [−4.2, −0.35]) for the accuracy nudge and 2.0 pp (s.e. = 1.1, Z = −1.82, p = 0.07, 95% CI = [−4.11, 0.16]) for Facebook tips, equivalent to 4.9% and 4.2% reductions in false sharing relative to control. Effects on true sharing are not distinguishable from zero at conventional significance levels for either treatment."
+    },
+    {
+      "Study": "Evaluation stage: Facebook tips",
+      "Description": "Respondents-level treatment: 5 Facebook tips",
+      "Dependent Variable": "Sharing discernement",
+      "n": 10531,
+      "es_type": "generalized augmented inverse probability weighted estimator (expressed in percentage points)",
+      "es_pe": "0.054",
+      "es_low": "-0.016",
+      "es_high": "0.123",
+      "es_ci": "0.95",
+      "p": "0.13",
+      "es_txt": "The respondent-level treatments are effective. The accuracy nudge and Facebook tips increase sharing discernment by 0.066 (s.e. = 0.032, Z = 2.074, p = 0.04, 95% CI = [0.004, 0.129]) and 0.054 (s.e. = 0.036, Z = 1.501, p = 0.13, 95% CI = [−0.016, 0.123]) relative to control, respectively. These effects are driven by decreases in false sharing of 2.3 pp (s.e. = 1.0, Z = −2.31, p = 0.02, 95% CI = [−4.2, −0.35]) for the accuracy nudge and 2.0 pp (s.e. = 1.1, Z = −1.82, p = 0.07, 95% CI = [−4.11, 0.16]) for Facebook tips, equivalent to 4.9% and 4.2% reductions in false sharing relative to control. Effects on true sharing are not distinguishable from zero at conventional significance levels for either treatment."
+    }
+  ],
+  "Swire et al., J Exp Psychol: Learn Mem Cogn (2017).": [
+    {
+      "Study": 1,
+      "Description": "Study 1 experimentally tested effects of corrections on people’s belief in true and false statements. The experiment used a 2 × 2 × 3 within-between design, with within-subjects factors type of item (myth vs. fact) and type of explanation (the veracity of each statement was explained either briefly or in some detail), and the between-subjects factor retention interval (immediate, 30-min, or 1-week).",
+      "Dependent Variable": "Belief ratings; Inference question",
+      "n": 93,
+      "es_type": "Partial-Eta squared (η2p)",
+      "es_pe": "0.15 (Brief/detailed explanation)",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Belief rating η2p = .15 (Brief/detailed explanation); .10 (retention interval); Inference question η2p = .16 (Brief/detailed explanation); .12 (retention interval)"
+    },
+    {
+      "Study": 2,
+      "Description": "Experiment 2 was a conceptual replication of Experiment 1 but tested older adults. An additional 3-week retention interval condition was also added.",
+      "Dependent Variable": "Belief ratings, Inference question",
+      "n": 109,
+      "es_type": "Partial-Eta squared (η2p)",
+      "es_pe": "0.12 (Brief/detailed explanation)",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Belief rating η2p = .12 (Brief/detailed explanation); .25 (retention interval); Inference question η2p = .12 (Brief/detailed explanation); .16 (retention interval)"
+    }
+  ],
+  "Huang, Brit J Polit Sci (2017).": [
+    {
+      "Study": "1",
+      "Description": "The study experimentally tested effects of rebuttals on belief in rumors.",
+      "Dependent Variable": "Belief in rumors",
+      "n": 631,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Some rebuttals did not significantly reduce belief in the rumors. When significant, the effects ranged from 0.29 to 0.86 on a 7-point scale."
+    },
+    {
+      "Study": "2",
+      "Description": "The study experimentally tested effects of rebuttals on political trust.",
+      "Dependent Variable": "Political trust",
+      "n": 799,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Rebuttals improved political trust in some areas and the effects ranged from 0.28 to 0.38 on a 7-point scale."
+    }
+  ],
+  "Gesser-Edelsburg et al., PLOS ONE (2018).": [
+    {
+      "Study": "1",
+      "Description": "",
+      "Dependent Variable": "",
+      "n": 243,
+      "es_type": "Mean difference",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "A significant difference was found in the reliability level attributed to the Health Ministry's response between Condition 1 and Condition 2 (sig<0.001), with the average reliability level of the participants in Condition 2 (M = 5.68) being considerably higher than the average reliability level of the participants in Condition 1 (M = 4.64). A significant difference was found between Condition 1 and Condition 2 (sig<0.001), with the average satisfaction with the Health Ministry’s response of Condition 2 participants (M = 5.75) being significantly higher than the average satisfaction of Condition 1 subjects (M = 4.66).  No significant difference was found between Condition 1 and Condition 2 as to further information searching after the Health Ministry’s response. In Condition 1 a significant association was found between satisfaction and this behavioral intention. The higher the participants' satisfaction with the Health Ministry’s response, the more they tended to vaccinate their children (sig<0.01). In Condition 2, no association was not found and this might be attributed to the fact that Condition 2 lacked statistical power for a regression because only seven of the Condition 2 participants said they would not vaccinate their children versus 80 who said they would.."
+    }
+  ],
+  "Paynter et al., PLOS ONE (2019).": [
+    {
+      "Study": 1,
+      "Description": "Study experimentally compared existing training materials aiming to reduce support for (and ultimately use of) non-empirically-supported autism treatments with an optimized debunking treatment in early-childhood intervention staff immediately and after a 6-week delay.",
+      "Dependent Variable": "Support for evidence-based autism treatments",
+      "n": 856,
+      "es_type": "Partial-Eta squared (η2p)",
+      "es_pe": "0.66 (immediate)",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "η2p = .66 (immediate) [effect size of interaction, i.e. comparison to treatment-as-usual  intervention: η2p = .20] / .45 (delayed) [note the latter is not reported in the paper as there was no longer a significant difference to the treatment-as-usual condition]."
+    }
+  ],
+  "Schmid et al., NHB (2019).": [
+    {
+      "Study": "Across all 6 studies",
+      "Description": "Internal meta-analysis: Rebuttal vs no rebuttal",
+      "Dependent Variable": "Attitudes towards behaviours favoured by science and intentions to perform these behaviours",
+      "n": 1773,
+      "es_type": "Hedges' g",
+      "es_pe": 0.49,
+      "es_low": 0.37,
+      "es_high": 0.6,
+      "es_ci": 0.95,
+      "p": "",
+      "es_txt": "Attitude: g=0.49, 95% CI: 0.37, 0.60; intention: g=0.57, 95% CI: 0.46, 0.68"
+    },
+    {
+      "Study": "Across all 6 studies",
+      "Description": "Internal meta-analysis: Technique rebuttal vs no technique rebuttal",
+      "Dependent Variable": "Attitudes towards behaviours favoured by science and intentions to perform these behaviours",
+      "n": 1773,
+      "es_type": "Hedges' g",
+      "es_pe": 0.31,
+      "es_low": 0.22,
+      "es_high": 0.41,
+      "es_ci": 0.95,
+      "p": "",
+      "es_txt": "Attitude: g = 0.31, 95% CI: 0.22, 0.41; intention: g = 0.31, 95% CI: 0.20, 0.42"
+    },
+    {
+      "Study": "Across all 6 studies",
+      "Description": "Internal meta-analysis: Topic rebuttal vs no topic rebuttal",
+      "Dependent Variable": "Attitudes towards behaviours favoured by science and intentions to perform these behaviours",
+      "n": 1773,
+      "es_type": "Hedges' g",
+      "es_pe": 0.21,
+      "es_low": 0.04,
+      "es_high": 0.38,
+      "es_ci": 0.95,
+      "p": "",
+      "es_txt": "Attitude: g = 0.21, 95% CI: 0.04, 0.38; intention: g = 0.33, 95% CI: 0.24, 0.43."
+    }
+  ],
+  "Schmid et al., J Cogn (2020).": [
+    {
+      "Study": 1,
+      "Description": "Study 1: Outnumbering and rebuttal, results for rebuttal vs no rebuttal.",
+      "Dependent Variable": "Attitudes towards vaccination and intention to vaccinate",
+      "n": 101,
+      "es_type": "Partial-Eta squared (η2p)",
+      "es_pe": "Attitude η²p = .094; Intention η²p = .036",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Watching the public debate significantly damaged individuals’ attitudes towards vaccination and their intention to get vaccinated, but the rebuttal successfully mitigated this damage. The mitigating effect was only marginally significant on intention to get vaccinated."
+    },
+    {
+      "Study": 2,
+      "Description": "Study 2: Outnumbering, forewarning and rebuttal, results for rebuttal vs no rebuttal.",
+      "Dependent Variable": "Attitudes towards vaccination and intention to vaccinate; confidence in vaccination",
+      "n": 390,
+      "es_type": "Partial-Eta squared (η2p)",
+      "es_pe": "Attitude η²p = .116; Intention η²p = .124 ; confidence in vaccination η²p = .154",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Replicating the results from Experiment 1, watching the public debate significantly damaged individuals’ attitudes towards vaccination, including intention to get vaccinated and confidence in vaccination. However, the rebuttal mitigated this damage on all outcome measures, again indicating successful manipulation."
+    },
+    {
+      "Study": 3,
+      "Description": "Study 3: outnumbering by delivering multiple rebuttal sources, forewarning and rebuttal, results for rebuttal vs no rebuttal.",
+      "Dependent Variable": "Attitudes towards vaccination and intention to vaccinate; confidence in vaccination",
+      "n": 390,
+      "es_type": "Partial-Eta squared (η2p)",
+      "es_pe": "Attitude η²p = .059; Intention η²p = .078 ; confidence in vaccination η²p = .108",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": ""
     }
   ],
   "Ecker et al., Cogn Res: Princ Implic (2020).": [
@@ -221,19 +443,62 @@
       "es_txt": "Corrections slightly reduced misinformation beliefs and misinformation reliance in inferences regardless of format, both immediately and after a 2-day delay. η2p = .386 (immediate, non-narrative) / .334 (immediate, narrative) / .196 (delayed, non-narrative) / .185 (delayed, narrative) [not reported in paper; calculated from one-sample t-test of belief change against zero; note zero may not be most appropriate baseline as it does not take demand characteristics into account]."
     }
   ],
-  "Paynter et al., PLOS ONE (2019).": [
+  "Bowles et al, PLOS ONE (2020).": [
     {
       "Study": 1,
-      "Description": "Study experimentally compared existing training materials aiming to reduce support for (and ultimately use of) non-empirically-supported autism treatments with an optimized debunking treatment in early-childhood intervention staff immediately and after a 6-week delay.",
-      "Dependent Variable": "Support for evidence-based autism treatments",
-      "n": 856,
-      "es_type": "Partial-Eta squared (η2p)",
-      "es_pe": "0.66 (immediate)",
+      "Description": "This study experimentally tested the effects of staggered provision of WhatsApp messages targeting COVID-19 misinformation",
+      "Dependent Variable": "COVID-19 knowledge and preventive behavior",
+      "n": 868,
+      "es_type": "Standard deviation units",
+      "es_pe": "Knowledge: 0.07; Behavior: 0.26",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": 0.95,
+      "p": "Knowledge: 0.001; Behavior: < 0.05",
+      "es_txt": "The study found that WhatsApp messages had substantial effects on knowledge, with treated respondents reporting 0.26σ greater factual knowledge (p < 0.001). Additionally, the treatment resulted in a significant reduction in non-compliance with social distancing, from 37% in the control group to 7% in the treatment group, implying a change in behavior (p < 0.05). These effects were robust across different specifications and not explained by demand effects or social desirability bias."
+    }
+  ],
+  "Porter and Wood, Proc Nat Acad Sci (2021).": [
+    {
+      "Study": 1,
+      "Description": "To understand the effects of corrections in aggregate, a meta-analysis with random effects of the 28 experiments was performed",
+      "Dependent Variable": "Belief in misinformation",
+      "n": 8000,
+      "es_type": "",
+      "es_pe": "",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
       "p": "",
-      "es_txt": "η2p = .66 (immediate) [effect size of interaction, i.e. comparison to treatment-as-usual  intervention: η2p = .20] / .45 (delayed) [note the latter is not reported in the paper as there was no longer a significant difference to the treatment-as-usual condition]."
+      "es_txt": "Corrections reduced belief in falsehoods by 0.59 point on the 5-point scale (P < 0.01). On the same scale, misinformation only increased belief in falsehoods by 0.07 (P > 0.05). Fact-checks thus increase factual accuracy by more than eight times the amount that misinformation degrades factual accuracy."
+    }
+  ],
+  "Winters et al., BMJ (2021).": [
+    {
+      "Study": "1",
+      "Description": "The study explored whether directly debunking misinformation or simply providing correct information is more effective in combating these misconception that typhoid is caused by mosquitoes.",
+      "Dependent Variable": "Belief that typhoid is caused by mosquitoes",
+      "n": 736,
+      "es_type": "Adjusted Odds Ratio",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "The belief that typhoid is caused by mosquitoes was significantly reduced in intervention group A compared with the control group in the ITT analysis (group A: adjusted OR (AOR) 0.29, 95% CI 0.18 to 0.47, see table 3 and online supplemental figure S1). In intervention group B, the reduction was not significant (AOR 0.61, 95% CI 0.39 to 0.95, p=0.029)."
+    },
+    {
+      "Study": "1",
+      "Description": "The study explored whether directly debunking misinformation or simply providing correct information is more effective in combating these misconception that typhoid can only co-occur with malaria.",
+      "Dependent Variable": "Belief that typhoid can only co-occur with malaria",
+      "n": 736,
+      "es_type": "Adjusted Odds Ratio",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "The belief that typhoid co-occurs with malaria was significantly reduced in both intervention groups in the ITT analysis (group A: AOR 0.29, 95% CI 0.19 to 0.45; group B: AOR 0.55, 95% CI 0.36 to 0.83)."
     }
   ],
   "Tay et al., Br J Psychol (2022).": [
@@ -264,32 +529,284 @@
       "es_txt": "Debunking resulted in more positive sentiments compared to the no-intervention condition, t(625) = 4.65, p = <.001, d = .46, as well as compared to the prebunking condition, t(625) = 2.44, p = .030, d = .24. There was also a significant difference between prebunking and no-intervention conditions, with prebunking resulting in more positive sentiments, t(625) = 2.23, p = .030, d = .22."
     }
   ],
-  "Swire et al., J Exp Psychol: Learn Mem Cogn (2017).": [
+  "Schmid and Betsch, Sci Comm (2022).": [
     {
       "Study": 1,
-      "Description": "Study 1 experimentally tested effects of corrections on people’s belief in true and false statements. The experiment used a 2 × 2 × 3 within-between design, with within-subjects factors type of item (myth vs. fact) and type of explanation (the veracity of each statement was explained either briefly or in some detail), and the between-subjects factor retention interval (immediate, 30-min, or 1-week).",
-      "Dependent Variable": "Belief ratings; Inference question",
-      "n": 93,
-      "es_type": "Partial-Eta squared (η2p)",
-      "es_pe": "0.15 (Brief/detailed explanation)",
+      "Description": "Study experimentally tested effects of text-based refutations.",
+      "Dependent Variable": "Confidence in the mRNA vaccine and intention to get vaccinated against COVID-19",
+      "n": 1387,
+      "es_type": "Regression coefficient B",
+      "es_pe": "Debunking effect short term: −7.06, Debunking effect long term: −1.01",
+      "es_low": "Debunking effect short term: −9.81; Debunking effect long term: −4.48",
+      "es_high": "Debunking effect short term: −4.31; Debunking effect long term: 2.47",
+      "es_ci": "0.95",
+      "p": "< .001",
+      "es_txt": "Participants who received the debunking text rated the false antivaccine news headline that mRNA vaccines alter the human genome as less credible compared to the control condition."
+    }
+  ],
+  "Bauer and Wilson, China Quart (2022).": [
+    {
+      "Study": 1,
+      "Description": "The study compared the credibility ratings and political attitudes of the control group, the rumor group, and the rebuttal group.",
+      "Dependent Variable": "Accuracy/credibility ratings and political attitudes",
+      "n": 561,
+      "es_type": "Average treatment effects using difference-in-means tests",
+      "es_pe": 0.364,
       "es_low": "",
       "es_high": "",
       "es_ci": "",
-      "p": "",
-      "es_txt": "Belief rating η2p = .15 (Brief/detailed explanation); .10 (retention interval); Inference question η2p = .16 (Brief/detailed explanation); .12 (retention interval)"
+      "p": "< 0.01",
+      "es_txt": "The rebuttal in the study increased support for independence by approximately 0.364 on a 6-point scale."
+    }
+  ],
+  "Schroeder and Kucera, Ed Psyc Rev (2022).": [
+    {
+      "Study": 1,
+      "Description": "A meta-analysis of 473 studies aimed to gauge an effect of refutation texts on learning facilitation.",
+      "Dependent Variable": "",
+      "n": 3869,
+      "es_type": "Hedges g",
+      "es_pe": 0.41,
+      "es_low": "0.30",
+      "es_high": "0.51",
+      "es_ci": 0.95,
+      "p": "< .001",
+      "es_txt": "Refutation text is associated with a positive moderate effect compared to other learning conditions."
+    }
+  ],
+  "Yu et al., Telemat Inform (2022).": [
+    {
+      "Study": "1",
+      "Description": "Comparison of believability across different sources.",
+      "Dependent Variable": "Believability of source",
+      "n": "2965",
+      "es_type": "F statistic",
+      "es_pe": "2.92",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< .05",
+      "es_txt": "The believability of government source was significantly higher than the professional sources, the lay sources, and the mass media source."
     },
     {
-      "Study": 2,
-      "Description": "Experiment 2 was a conceptual replication of Experiment 1 but tested older adults. An additional 3-week retention interval condition was also added.",
-      "Dependent Variable": "Belief ratings, Inference question",
-      "n": 109,
-      "es_type": "Partial-Eta squared (η2p)",
-      "es_pe": "0.12 (Brief/detailed explanation)",
+      "Study": "1",
+      "Description": "Effect of message tone on believability.",
+      "Dependent Variable": "Believability of correction message",
+      "n": "2965",
+      "es_type": "F statistic",
+      "es_pe": "5.85",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< .05",
+      "es_txt": "The believability of the correction message in a formal tone was higher than in a conversational tone."
+    },
+    {
+      "Study": "1",
+      "Description": "Interaction of message tone with topic on correction believability.",
+      "Dependent Variable": "Correction believability by topic and tone",
+      "n": "2965",
+      "es_type": "F statistic",
+      "es_pe": "9.00",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< .01",
+      "es_txt": "Participants tend to believe the 5G correction more when it was written in a formal tone."
+    },
+    {
+      "Study": "1",
+      "Description": "Effect of attitude congruence on correction believability.",
+      "Dependent Variable": "Believability based on attitude congruence",
+      "n": "2713",
+      "es_type": "F statistic",
+      "es_pe": "218.21",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< .001",
+      "es_txt": "Participants with congruent attitudes perceived the correction as more believable."
+    },
+    {
+      "Study": "5",
+      "Description": "Moderation effect of tone on believability based on attitude congruence.",
+      "Dependent Variable": "Believability based on tone and attitude congruence",
+      "n": "2713",
+      "es_type": "F statistic",
+      "es_pe": "5.18",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< .05",
+      "es_txt": "Participants with an incongruent attitude perceived formal corrections as more believable than conversational ones."
+    }
+  ],
+  "Batista Pereira et al., JoP (2022).": [
+    {
+      "Study": 1,
+      "Description": "The study exposed participants to common false rumors and tested reactions provided with or without third-party fact-checking information. Corrective information was provided. The study assessed participants' beliefs regarding the story.",
+      "Dependent Variable": "Belief about the extent to which false rumors constituted misinformation",
+      "n": 2236,
+      "es_type": "",
+      "es_pe": "",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
       "p": "",
-      "es_txt": "Belief rating η2p = .12 (Brief/detailed explanation); .25 (retention interval); Inference question η2p = .12 (Brief/detailed explanation); .16 (retention interval)"
+      "es_txt": "Fact-checking corrections did not lead to a significant reduction in misinformation beliefs, regardless of whether they corresponded to political or nonpolitical rumors."
+    }
+  ],
+  "Badrinathan and Chauchard, IJPP (2023).": [
+    {
+      "Study": 1,
+      "Description": "The study presents a pooled model that averages across all rumors to calculate an overall correction effect.",
+      "Dependent Variable": "Average Belief Across All Rumors",
+      "n": 5104,
+      "es_type": "Bivariate OLS Coefficient",
+      "es_pe": "-0.2010",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": 0.95,
+      "p": "<.01",
+      "es_txt": "Corrections from various sources, such as experts and fact-checkers, significantly reduce overall rates of beliefs in false rumors."
+    }
+  ],
+  "Porter et al., Ro Soc Op Sci (2023).": [
+    {
+      "Study": "Wave 1",
+      "Description": "Study experimentally tested whether exposure to corrections affects participants' belief accuracy.",
+      "Dependent Variable": "Belief accuracy",
+      "n": 10600,
+      "es_type": "Meta-analytic estimate",
+      "es_pe": "0.16",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "0.95",
+      "p": "<0.001",
+      "es_txt": "Exposure to misinformation corrections increases belief accuracy by 0.16 on a 4-point scale, while exposure to misinformation decreases belief accuracy by 0.09 on the same scale.There is no significant evidence that misinformation and factual corrections affect the intent to vaccinate or views about vaccines. "
+    },
+    {
+      "Study": "Wave 2",
+      "Description": "Study experimentally tested whether exposure to corrections affects participants' belief accuracy.",
+      "Dependent Variable": "Belief accuracy",
+      "n": 2460,
+      "es_type": "Meta-analytic estimate",
+      "es_pe": "0.03",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "0.95",
+      "p": "= 0.06",
+      "es_txt": "The effect is reduced to 0.03 points in Wave 2, very narrowly missing the threshold for statistical significance (p= 0.06, two-tailed)."
+    }
+  ],
+  "Armand, Augsburg et. al, preprint (2021).": [
+    {
+      "Study": "Baseline survey + Wave 1 and 2 follow-up panel data",
+      "Description": "The study experimentally tested whether statements from doctors of locally-renowned hospitals debunking common misconceptions about the virus and reminding about evidence-based policy recommendations improve evidence-based behavior.",
+      "Dependent Variable": "Changes in evidence-based practices",
+      "n": 3991,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Agreement with face mask and hand-washing increased by 0.6 percentage points (0.75% above control). Compliance with policy recommendations rose significantly by 4 percentage points (7.09% above control). Need to verify information with others decreased by 2.3 percentage points (3.54% above control). The doctor's message reduced agreement with misconceptions by 0.8 percentage points."
+    }
+  ],
+  "Hirshleifer et al, preprint (2022).": [
+    {
+      "Study": "Study 1: Impact on exposure to and engagement with official information posts",
+      "Description": "Examination of the effect of treatments on exposure to official information and engagement.",
+      "Dependent Variable": "Minutes listened to official posts",
+      "n": "Not Specified",
+      "es_type": "Difference in means",
+      "es_pe": "-0.33",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "<0.05",
+      "es_txt": "Users assigned to the treatments listen to 0.33 (25%) fewer minutes of the official posts relative to users assigned the control."
+    },
+    {
+      "Study": "Study 1: Impact on exposure to user-generated useful information",
+      "Description": "Effect of treatments on exposure to useful user-generated posts.",
+      "Dependent Variable": "Minutes listened to useful posts",
+      "n": "Not Specified",
+      "es_type": "Difference in means",
+      "es_pe": "-0.14",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "<0.05",
+      "es_txt": "Users assigned to either of the two treatments spend 0.14 (38%) less minutes listening to useful posts than in the control."
+    },
+    {
+      "Study": "Study 1: Impact on exposure to misinformation",
+      "Description": "Effect of each treatment on exposure to misinformation.",
+      "Dependent Variable": "Minutes exposed to misinformation",
+      "n": "Not Specified",
+      "es_type": "Difference in means",
+      "es_pe": "-0.122",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "<0.05",
+      "es_txt": "Users in the remove treatment are exposed to effectively zero misinformation, a decrease of 97% relative to the control."
+    }
+  ],
+  "Bruns et al., preprint (2023).": [
+    {
+      "Study": 1,
+      "Description": "Study experimentally tested effects of prebunking and debunking interventions on the agreement, credibility assessment and sharing intentions in regards to the misleading article’s claim",
+      "Dependent Variable": "Agreement with the misleading article's claim",
+      "n": "5228",
+      "es_type": "Odds ratio",
+      "es_pe": "Neutral debunk: 0.51,  European Commission debunk: 0.48",
+      "es_low": "Neutral debunk: 0.44, European Commission debunk: 0.41",
+      "es_high": "Neutral debunk: 0.60, European Commission debunk: 0.56",
+      "es_ci": "",
+      "p": "<0.001",
+      "es_txt": ""
+    },
+    {
+      "Study": 1,
+      "Description": "Study experimentally tested effects of prebunking and debunking interventions on the agreement, credibility assessment and sharing intentions in regards to the misleading article’s claim",
+      "Dependent Variable": "Credibility assessment of the misleading article",
+      "n": "5228",
+      "es_type": "Linear OLS regression as linear estimates",
+      "es_pe": "Neutral debunk: -1.20, European Commission debunk: -1.22",
+      "es_low": "Neutral debunk: -1.60,  European Commission debunk: -1.62",
+      "es_high": "Neutral debunk:  -0.81,  European Commission debunk: -0.83",
+      "es_ci": "",
+      "p": "<0.001",
+      "es_txt": ""
+    },
+    {
+      "Study": 1,
+      "Description": "Study experimentally tested effects of prebunking and debunking interventions on the agreement, credibility assessment and sharing intentions in regards to the misleading article’s claim",
+      "Dependent Variable": "Intention to share the misleading article due to agreeing",
+      "n": "5228",
+      "es_type": "Odds ratio",
+      "es_pe": "Neutral debunk: 0.54, European Commission debunk: 0.64",
+      "es_low": "Neutral debunk: 0.43,  European Commission debunk: 0.51",
+      "es_high": "Neutral debunk: -0.68,  European Commission debunk: -0.79",
+      "es_ci": "",
+      "p": "<0.001",
+      "es_txt": ""
+    },
+    {
+      "Study": 1,
+      "Description": "Study experimentally tested effects of prebunking and debunking interventions on the agreement, credibility assessment and sharing intentions in regards to the misleading article’s claim",
+      "Dependent Variable": "Intention to share the misleading article due to disagreeing",
+      "n": "5228",
+      "es_type": "Odds ratio",
+      "es_pe": "Neutral debunk: 1.19, European Commission debunk: 1.24",
+      "es_low": "Neutral debunk: 0.98,  European Commission debunk: 1.02",
+      "es_high": "Neutral debunk: 1.45,  European Commission debunk: 1.51",
+      "es_ci": "",
+      "p": "Neutral debunk: 0.081, European Commission debunk: 0.028",
+      "es_txt": ""
     }
   ],
   "Fazio, Harv Misinfo Review (2020).": [
@@ -307,116 +824,19 @@
       "es_txt": "In the control condition, over half of the participants (57%) indicated that they would be “likely”, “somewhat likely” or “extremely likely” to share at least one false headline. However, in the explanation condition, only 39% indicated that they would be at least “likely” to share one or more false headlines. A similar decrease occurred in the number of people who indicated that they would be “extremely likely” to share at least one false headline (24% in control condition; 17% in explanation condition)."
     }
   ],
-  "Roozenbeek et al., Palgrave Commun (2019).": [
+  "Pillai and Fazio, Collabra Psychol (2023).": [
     {
       "Study": 1,
-      "Description": "This study experimentally tested whether learning common misinformation techniques through an inoculation game would impact people's recognition of these techniques as reflected in the judgements of headlines reliability.",
-      "Dependent Variable": "Respondents’ ability to recognise misinformation strategies in the form of misleading tweets and news headlines, measured as reliability ratings of tweets pre and post the intervention.",
-      "n": 14163,
-      "es_type": "Cohen’s d",
-      "es_pe": 0.33,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "< 0.0001",
-      "es_txt": "The process of active inoculation through playing the Bad News game significantly reduced the perceived reliability of tweets that embedded several common online misinformation strategies. The observed effect sizes range from small to moderate, and are in line with the average effect-size in the context of research on resistance to persuasion."
-    }
-  ],
-  "Basol et al., BD & S (2021).": [
-    {
-      "Study": "1",
-      "Description": "Study 1 experimentally tested whether playing the Go Viral! game will impact people's recognition of manipulativeness of misinformation about COVID-19.",
-      "Dependent Variable": "Rating of manipulativeness of a social media post",
-      "n": 1771,
-      "es_type": "Cohen’s d",
-      "es_pe": 0.52,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "< 0.001",
-      "es_txt": "Participants, who played Go Viral!, irrespective of their demographic background (aside from political ideology), found misinformation about COVID-19 significantly more manipulative after playing than before, whereas their assessment of real news did not change in a meaningful sense. The effect sizes are in line with previous studies that have used similar designs."
-    },
-    {
-      "Study": "2.  Go Viral! treatment condition",
-      "Description": "This part of study 2 experimentally tested whether playing the Go Viral! game will impact people's recognition of manipulativeness of misinformation about COVID-19, as well as their confidence in their judgements and willingness to share misinformation.",
-      "Dependent Variable": "Rating of manipulativeness of a social media post",
-      "n": 1777,
-      "es_type": "Cohen’s d",
-      "es_pe": 0.56,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "< 0.001",
-      "es_txt": "Go Viral game compared to control condition: d=0.56 (manipulativeness), d=0.44 (confidence), d=0.15 (sharing). The game 1) reduces the perceived reliability of misinformation, 2) increases people's confidence in their assessment of the reliability of misinformation, and 3) reduces intentions to share misinformation with others."
-    },
-    {
-      "Study": "2. Infographics treatment condition",
-      "Description": "This part of study 2 experimentally tested whether exposing people to prebunking Infographics will impact people's recognition of manipulativeness of misinformation about COVID-19, as well as their confidence in their judgements and willingness to share misinformation",
-      "Dependent Variable": "Rating of manipulativeness of a social media post",
-      "n": 1777,
-      "es_type": "Cohen’s d",
-      "es_pe": 0.17,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "< 0.001",
-      "es_txt": "Prebunking infographics compared to control condition: d=0.17 (manipulativeness), d=0.15 (confidence), sharing n.s. This indicates that reading through the UNESCO infographics significantly increases the perceived manipulativeness of COVID-19 misinformation, as well as confidence in their assessment of misinformation manipulativeness. However, for willingness to share there is no significant difference between the Infographics condition and the control group nor the Go Viral! condition. These results are similar (and significant) in all three countries."
-    }
-  ],
-  "Roozenbeek et al., Harv Misinfo Review (2020).": [
-    {
-      "Study": 1,
-      "Description": "The study experimentally tested whether playing the Harmony Square game 1) reduces the perceived reliability of misinformation, 2) increases people's confidence in their assessment of the reliability of misinformation, and 3) reduces intentions to share misinformation with others.",
-      "Dependent Variable": "Reliability ratings of social media posts containing misinformation",
-      "n": 681,
-      "es_type": "Cohen’s d",
-      "es_pe": 0.51,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "< 0.001",
-      "es_txt": "Reliability of real fake news (d = 0.51), experimenter-designed fake news (d = 0.54), confidence (d = 0.30, d = 0.30), and less sharing (d = 0.28, d = 0.27)."
-    }
-  ],
-  "Maertens et al., J Exp Psychol: Appl (2021).": [
-    {
-      "Study": 1,
-      "Description": "In Experiment 1, researchers aimed to test the hypothesis that inoculation effects are subject to decay in repeated measures over time. T1 = pretest; T2 = posttest (0 weeks); T3 = posttest (1 week); T4 = posttest (5 weeks); T5 = posttest (13 weeks).",
-      "Dependent Variable": "Reliability ratings of news headlines",
-      "n": 118,
-      "es_type": "Cohen’s d",
-      "es_pe": 1.0,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "The inoculation effects were significant over all 4 testing points: from the immediate post-test (d = -1.0) to 13 weeks delayed test). Researchers hypothesized that the repeated tests might have confounded the result as they could function as booster sessions or simply testing effects."
-    },
-    {
-      "Study": 2,
-      "Description": "In Experiment 2, researchers eliminated the confound of repeated measurement by removing all follow-ups between the direct posttest and the posttest 2 months later.",
-      "Dependent Variable": "Reliability ratings of news headlines",
-      "n": 110,
-      "es_type": "Cohen’s d",
-      "es_pe": 0.69,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "The inoculation effect decays over the course of 9 weeks, rendering the effect no longer significant. The analyses also show that the decay is only partial. Treatment effect at T2 (immediate post-test): d = 0.69. Between T2 and T3 (in 2 months): non-significant inoculation effect retention of 36%, d = −0.35."
-    },
-    {
-      "Study": 3,
-      "Description": "In Experiment was identical to Experiment 1 (up to T3, the first follow-up) but changed both the item set and fake-to-real ratio for the follow-up measure. It also omitted the control group.",
-      "Dependent Variable": "Reliability ratings of news headlines",
-      "n": 87,
-      "es_type": "Cohen’s d",
-      "es_pe": 0.72,
-      "es_low": "0.48",
-      "es_high": "0.95",
-      "es_ci": "0.95",
-      "p": "",
-      "es_txt": "The inoculation retention over a 1-week period was similar between the two experimental setups (Exp 1 and 3), thereby finding no evidence for item ratio or item set specific retention effects."
+      "Description": "Study experimentally tested whether asking participants to explain why a headline was true or false would affect their intentions to share true and false headlines.",
+      "Dependent Variable": "Likelihood to share headlines",
+      "n": 499,
+      "es_type": "Cohen's d",
+      "es_pe": 0.3,
+      "es_low": "-0.21",
+      "es_high": 0.12,
+      "es_ci": 0.95,
+      "p": "< .001",
+      "es_txt": "As predicted, asking participants to explain the accuracy of headlines reduced sharing intentions for false headlines, t(498) = -6.62, p < .001, d = 0.30, 95% CI of the difference [-0.21, -0.12], but this effect was not significant for true headlines, t(498) = 0.06, p = .952, d < 0.01, 95% CI of the difference [-0.06, 0.06]."
     }
   ],
   "van der Linden et al., Global Challenges (2017).": [
@@ -462,10 +882,122 @@
       "es_txt": "Experiment 2 demonstrated that misinformation—in the form of fake experts casting doubt on a scientific consensus—had a polarizing effect on climate attitudes, such that people with low free-market support increased climate acceptance, while people with high free-market support decreased climate acceptance. However, an inoculating message that explains the misinforming technique without mentioning any specifics fully neutralized the polarizing effect of misinformation. Relative to perceived consensus in the control group (54,5%), Misinformation only: 44,5%, Inoculation only: 50,4%; Inoculation + Misinformation:51,6%"
     }
   ],
+  "Roozenbeek et al., Palgrave Commun (2019).": [
+    {
+      "Study": 1,
+      "Description": "This study experimentally tested whether learning common misinformation techniques through an inoculation game would impact people's recognition of these techniques as reflected in the judgements of headlines reliability.",
+      "Dependent Variable": "Respondents’ ability to recognise misinformation strategies in the form of misleading tweets and news headlines, measured as reliability ratings of tweets pre and post the intervention.",
+      "n": 14163,
+      "es_type": "Cohen’s d",
+      "es_pe": 0.33,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< 0.0001",
+      "es_txt": "The process of active inoculation through playing the Bad News game significantly reduced the perceived reliability of tweets that embedded several common online misinformation strategies. The observed effect sizes range from small to moderate, and are in line with the average effect-size in the context of research on resistance to persuasion."
+    }
+  ],
+  "Roozenbeek et al., Harv Misinfo Review (2020).": [
+    {
+      "Study": 1,
+      "Description": "The study experimentally tested whether playing the Harmony Square game 1) reduces the perceived reliability of misinformation, 2) increases people's confidence in their assessment of the reliability of misinformation, and 3) reduces intentions to share misinformation with others.",
+      "Dependent Variable": "Reliability ratings of social media posts containing misinformation",
+      "n": 681,
+      "es_type": "Cohen’s d",
+      "es_pe": 0.51,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< 0.001",
+      "es_txt": "Reliability of real fake news (d = 0.51), experimenter-designed fake news (d = 0.54), confidence (d = 0.30, d = 0.30), and less sharing (d = 0.28, d = 0.27)."
+    }
+  ],
+  "Basol et al., BD & S (2021).": [
+    {
+      "Study": "1",
+      "Description": "Study 1 experimentally tested whether playing the Go Viral! game will impact people's recognition of manipulativeness of misinformation about COVID-19.",
+      "Dependent Variable": "Rating of manipulativeness of a social media post",
+      "n": 1771,
+      "es_type": "Cohen’s d",
+      "es_pe": 0.52,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< 0.001",
+      "es_txt": "Participants, who played Go Viral!, irrespective of their demographic background (aside from political ideology), found misinformation about COVID-19 significantly more manipulative after playing than before, whereas their assessment of real news did not change in a meaningful sense. The effect sizes are in line with previous studies that have used similar designs."
+    },
+    {
+      "Study": "2.  Go Viral! treatment condition",
+      "Description": "This part of study 2 experimentally tested whether playing the Go Viral! game will impact people's recognition of manipulativeness of misinformation about COVID-19, as well as their confidence in their judgements and willingness to share misinformation.",
+      "Dependent Variable": "Rating of manipulativeness of a social media post",
+      "n": 1777,
+      "es_type": "Cohen’s d",
+      "es_pe": 0.56,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< 0.001",
+      "es_txt": "Go Viral game compared to control condition: d=0.56 (manipulativeness), d=0.44 (confidence), d=0.15 (sharing). The game 1) reduces the perceived reliability of misinformation, 2) increases people's confidence in their assessment of the reliability of misinformation, and 3) reduces intentions to share misinformation with others."
+    },
+    {
+      "Study": "2. Infographics treatment condition",
+      "Description": "This part of study 2 experimentally tested whether exposing people to prebunking Infographics will impact people's recognition of manipulativeness of misinformation about COVID-19, as well as their confidence in their judgements and willingness to share misinformation",
+      "Dependent Variable": "Rating of manipulativeness of a social media post",
+      "n": 1777,
+      "es_type": "Cohen’s d",
+      "es_pe": 0.17,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< 0.001",
+      "es_txt": "Prebunking infographics compared to control condition: d=0.17 (manipulativeness), d=0.15 (confidence), sharing n.s. This indicates that reading through the UNESCO infographics significantly increases the perceived manipulativeness of COVID-19 misinformation, as well as confidence in their assessment of misinformation manipulativeness. However, for willingness to share there is no significant difference between the Infographics condition and the control group nor the Go Viral! condition. These results are similar (and significant) in all three countries."
+    }
+  ],
+  "Maertens et al., J Exp Psychol: Appl (2021).": [
+    {
+      "Study": 1,
+      "Description": "In Experiment 1, researchers aimed to test the hypothesis that inoculation effects are subject to decay in repeated measures over time. T1 = pretest; T2 = posttest (0 weeks); T3 = posttest (1 week); T4 = posttest (5 weeks); T5 = posttest (13 weeks).",
+      "Dependent Variable": "Reliability ratings of news headlines",
+      "n": 118,
+      "es_type": "Cohen’s d",
+      "es_pe": 1.0,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "The inoculation effects were significant over all 4 testing points: from the immediate post-test (d = -1.0) to 13 weeks delayed test). Researchers hypothesized that the repeated tests might have confounded the result as they could function as booster sessions or simply testing effects."
+    },
+    {
+      "Study": 2,
+      "Description": "In Experiment 2, researchers eliminated the confound of repeated measurement by removing all follow-ups between the direct posttest and the posttest 2 months later.",
+      "Dependent Variable": "Reliability ratings of news headlines",
+      "n": 110,
+      "es_type": "Cohen’s d",
+      "es_pe": 0.69,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "The inoculation effect decays over the course of 9 weeks, rendering the effect no longer significant. The analyses also show that the decay is only partial. Treatment effect at T2 (immediate post-test): d = 0.69. Between T2 and T3 (in 2 months): non-significant inoculation effect retention of 36%, d = −0.35."
+    },
+    {
+      "Study": 3,
+      "Description": "In Experiment was identical to Experiment 1 (up to T3, the first follow-up) but changed both the item set and fake-to-real ratio for the follow-up measure. It also omitted the control group.",
+      "Dependent Variable": "Reliability ratings of news headlines",
+      "n": 87,
+      "es_type": "Cohen’s d",
+      "es_pe": 0.72,
+      "es_low": "0.48",
+      "es_high": "0.95",
+      "es_ci": "0.95",
+      "p": "",
+      "es_txt": "The inoculation retention over a 1-week period was similar between the two experimental setups (Exp 1 and 3), thereby finding no evidence for item ratio or item set specific retention effects."
+    }
+  ],
   "Roozenbeek et al., Sci Adv (2022).": [
     {
       "Study": 1,
-      "Description": "Study 1 tested whether a +- 1.5 minute inculation video about emotional manipulation conferred resistance against the use of this manipulation technique in social media content.",
+      "Description": "Study 1 tested whether a +- 1.5 minute inoculation video about emotional manipulation conferred resistance against the use of this manipulation technique in social media content.",
       "Dependent Variable": "Manipulation technique recognition; confidence; trustworthiness discernment; sharing discernment",
       "n": 1072,
       "es_type": "Cohen's d",
@@ -478,7 +1010,7 @@
     },
     {
       "Study": 2,
-      "Description": "Study 2 tested whether a +- 1.5 minute inculation video about incoherence (mutually exclusive arguments) conferred resistance against the use of this manipulation technique in social media content.",
+      "Description": "Study 2 tested whether a +- 1.5 minute inoculation video about incoherence (mutually exclusive arguments) conferred resistance against the use of this manipulation technique in social media content.",
       "Dependent Variable": "Manipulation technique recognition; confidence; trustworthiness discernment; sharing discernment",
       "n": 1086,
       "es_type": "Cohen's d",
@@ -491,7 +1023,7 @@
     },
     {
       "Study": 3,
-      "Description": "Study 1 tested whether a +- 1.5 minute inculation video about false dichotomies conferred resistance against the use of this manipulation technique in social media content.",
+      "Description": "Study 1 tested whether a +- 1.5 minute inoculation video about false dichotomies conferred resistance against the use of this manipulation technique in social media content.",
       "Dependent Variable": "Manipulation technique recognition; confidence; trustworthiness discernment; sharing discernment",
       "n": 1095,
       "es_type": "Cohen's d",
@@ -504,7 +1036,7 @@
     },
     {
       "Study": 4,
-      "Description": "Study 2 tested whether a +- 1.5 minute inculation video about scapegoating conferred resistance against the use of this manipulation technique in social media content.",
+      "Description": "Study 2 tested whether a +- 1.5 minute inoculation video about scapegoating conferred resistance against the use of this manipulation technique in social media content.",
       "Dependent Variable": "Manipulation technique recognition; confidence; trustworthiness discernment; sharing discernment",
       "n": 1080,
       "es_type": "Cohen's d",
@@ -517,7 +1049,7 @@
     },
     {
       "Study": 5,
-      "Description": "Study 5 tested whether a +- 1.5 minute inculation video about ad hominem attacks conferred resistance against the use of this manipulation technique in social media content.",
+      "Description": "Study 5 tested whether a +- 1.5 minute inoculation video about ad hominem attacks conferred resistance against the use of this manipulation technique in social media content.",
       "Dependent Variable": "Manipulation technique recognition; confidence; trustworthiness discernment; sharing discernment",
       "n": 1083,
       "es_type": "Cohen's d",
@@ -530,7 +1062,7 @@
     },
     {
       "Study": 6,
-      "Description": "Study 6 sought to replicate Study 1, i.e., we tested whether a +- 1.5 minute inculation video about emotional manipulation conferred resistance against the use of this manipulation technique in social media content. We also tested whether the order of presentation of the outcome measures (technique recognition, trustworthiness and sharing) interacted with the main effect.",
+      "Description": "Study 6 sought to replicate Study 1, i.e., we tested whether a +- 1.5 minute inoculation video about emotional manipulation conferred resistance against the use of this manipulation technique in social media content. We also tested whether the order of presentation of the outcome measures (technique recognition, trustworthiness and sharing) interacted with the main effect.",
       "Dependent Variable": "Manipulation technique recognition; trustworthiness discernment; sharing discernment",
       "n": 1072,
       "es_type": "Cohen's d",
@@ -555,19 +1087,213 @@
       "es_txt": "Results showed a significant effect of watching an inoculation video on participants' ability to correctly identify a manipulation technique (Cohen's h = 0.09, p < 0.001)."
     }
   ],
-  "Wineburg et al., J Educ Psychol (2022).": [
+  "Lu et al., JMIR (2023).": [
+    {
+      "Study": "Meta-analysis variable 1",
+      "Description": "Misinformation Credibility Assessment",
+      "Dependent Variable": "Misinformation Credibility",
+      "n": "31 studies out of 42",
+      "es_type": "Cohen's d",
+      "es_pe": "-0.36",
+      "es_low": "-0.50",
+      "es_high": "-0.23",
+      "es_ci": 0.95,
+      "p": "<.001",
+      "es_txt": "Psychological inoculation effectively reduced misinformation credibility. Inoculation effects for misinformation credibility assessment remain significant over time, but decrease after two weeks: Immediately d = –0.37 (–0.54 to –0.19); One week  d = –0.43 (–0.62 to –0.23); Two weeks or more d= –0.19 (–0.34 to –0.04)."
+    },
+    {
+      "Study": "Meta-analysis variable 2",
+      "Description": "Real Information Credibility Assessment",
+      "Dependent Variable": "Real Information credibility",
+      "n": "26 studies out of 42",
+      "es_type": "Cohen's d",
+      "es_pe": "0.2",
+      "es_low": "0.06",
+      "es_high": "0.33",
+      "es_ci": 0.95,
+      "p": "0.005",
+      "es_txt": "Psychological inoculation effectively improved real information credibility."
+    },
+    {
+      "Study": "Meta-analysis variable 3",
+      "Description": "Credibility Discernment",
+      "Dependent Variable": "Credibility discernment",
+      "n": "12 studies out of 42",
+      "es_type": "Cohen's d",
+      "es_pe": "0.2",
+      "es_low": "0.13",
+      "es_high": "0.28",
+      "es_ci": 0.95,
+      "p": "<.001",
+      "es_txt": "Psychological inoculation effectively improved credibility discernment."
+    },
+    {
+      "Study": "Meta-analysis variable 4",
+      "Description": "Misinformation Sharing Intention",
+      "Dependent Variable": "misinformation sharing intention",
+      "n": "12 studies out of 42",
+      "es_type": "Cohen's d",
+      "es_pe": "-0.35",
+      "es_low": "-0.79",
+      "es_high": "0.09",
+      "es_ci": 0.95,
+      "p": "0.12",
+      "es_txt": "Psychological inoculation did not effectively reduce misinformation sharing intention."
+    },
+    {
+      "Study": "Meta-analysis variable 5",
+      "Description": "Real Information Sharing Intention",
+      "Dependent Variable": "Real Information Sharing Intention",
+      "n": "11 studies out of 42",
+      "es_type": "Cohen's d",
+      "es_pe": "0.09",
+      "es_low": "0.03",
+      "es_high": "0.16",
+      "es_ci": 0.95,
+      "p": "0.003",
+      "es_txt": "Psychological inoculation effectively improved real information sharing intention."
+    },
+    {
+      "Study": "Meta-analysis variable 6",
+      "Description": "Sharing Discernment",
+      "Dependent Variable": "Sharing discernment",
+      "n": "8 studies out of 42",
+      "es_type": "Cohen's d",
+      "es_pe": "0.18",
+      "es_low": "0.12",
+      "es_high": "0.24",
+      "es_ci": 0.95,
+      "p": "<.001",
+      "es_txt": "Psychological inoculation effectively improved sharing discernment."
+    }
+  ],
+  "Wong and Wu, J Risk Res (2023).": [
     {
       "Study": 1,
-      "Description": "The present study investigated whether high school students would improve as evaluators of online content on the open Web after completing six 50-minute lessons based on Civic Online Reasoning curriculum taught by their teachers.",
-      "Dependent Variable": "Scores for judgements of credibility of online sources",
-      "n": 499,
-      "es_type": "Robust Beta coefficient (b)",
+      "Description": "",
+      "Dependent Variable": "Fake news identification",
+      "n": 122,
+      "es_type": "Cohen's f",
+      "es_pe": 0.09,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": 0.76,
+      "es_txt": "The treatment condition (i.e. playing the fake news game) did not have a significant effect on people’s ability to identify fake news compared to the control group (F(1, 112) = 0.09, p = 0.76)."
+    }
+  ],
+  "Batista Pereira et al., JEPS (2023).": [
+    {
+      "Study": 1,
+      "Description": "A two-wave online survey combined with an experimental intervention conducted during the 2020 mayoral elections in São Paulo, Brazil.",
+      "Dependent Variable": "Rumor acceptance; acceptance of the repeated rumor",
+      "n": 1000,
+      "es_type": "The intent-to-treat estimates from OLS models",
+      "es_pe": "-0.12 points in the additive scale of rumor acceptance and -0.24 points in acceptance of the repeated rumor",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< 0.01",
+      "es_txt": "The intervention reduced on average .12 points in the additive scale of rumor acceptance and .24 points in acceptance of the repeated rumor. "
+    },
+    {
+      "Study": 2,
+      "Description": "A two-wave online survey combined with a similar experimental intervention conducted during the early months of 2022 in São Paulo.",
+      "Dependent Variable": "Rumor acceptance",
+      "n": 1037,
+      "es_type": "The intent-to-treat estimates from OLS and 2SLS models",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "< 0.06",
+      "es_txt": "The interventions did not significantly affect subjects’ acceptance of real news, but increased between 0.03 and 0.04 points the rejection of rumors. The treatment has a significant effect (both ITT and CACE) on the differences in acceptance between real and false stories."
+    }
+  ],
+  "Armand, Fracchia et al., preprint (2021).": [
+    {
+      "Study": "T1: Endorsement",
+      "Description": "This study investigates the effect of interventions T1 (endorsement) on the acceptance of the COVID-19 vaccine and trust in institutions.",
+      "Dependent Variable": "Covid-19 vaccine acceptance, trust in institutions",
+      "n": 1419,
+      "es_type": "OLS regression estimate",
+      "es_pe": "acceptance:0.08; trust: 0,11",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": ""
+    },
+    {
+      "Study": "T2: Endorsement + Social memory",
+      "Description": "This study investigates the effect of interventions T2 (Endorsement + Social memory) on the acceptance of the COVID-19 vaccine and trust in institutions.",
+      "Dependent Variable": "Covid-19 vaccine acceptance, trust in institutions",
+      "n": 1419,
+      "es_type": "OLS regression estimate",
+      "es_pe": "acceptance:0.14; trust: 0,11",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": ""
+    },
+    {
+      "Study": "T3: Endorsement + Social memory + Inoculation",
+      "Description": "This study investigates the effect of interventions T2 (Endorsement + Social memory + Inoculation) on the acceptance of the COVID-19 vaccine and trust in institutions.",
+      "Dependent Variable": "Covid-19 vaccine acceptance, trust in institutions",
+      "n": 1419,
+      "es_type": "OLS regression estimate",
+      "es_pe": "acceptance:0.27; trust: 0,19",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": ""
+    }
+  ],
+  "Garg and Yadav, preprint (2022).": [
+    {
+      "Study": 1,
+      "Description": "",
+      "Dependent Variable": "Credibility of false and true statements",
+      "n": 1301,
+      "es_type": "Beta coefficient (b)",
+      "es_pe": "0.107 (false statements); -0.038 (true statements)",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Intervention increased the ability to identify misinformation by 11 percentage points, but also reduced beliefs in true statements by 4 percentage points."
+    }
+  ],
+  "Bowles et al., preprint (2023).": [
+    {
+      "Study": "1",
+      "Description": "The study examined whether preemptive exposure to fact-checks increased respondents' ability to discern between true and false content.",
+      "Dependent Variable": "Accuracy discernement",
+      "n": 4541,
+      "es_type": "",
       "es_pe": "",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
       "p": "",
-      "es_txt": "Students in the treatment condition (n = 271) were more likely to show improvement from pretest to posttest than control students (n = 228), Robust beta coefficient for condition x time(pre-post) = 1.66, SE = .44, t = 3.77, 95% CI (.44, 3.77)."
+      "es_txt": "Consumption of fact-checks increased by 0.65 standard deviations across pooled podcast treatment conditions. Podcast-treated participants became 36 percentage points more likely to report listening to the podcast relative to the control group. Treated respondents who received fact-check quiz incentives increased the number of questions relating to fact-check content that they answered correctly by 0.41 standard deviations. Treated respondents with incentives to consume fact-checks became 0.2 standard deviations more likely to subscribe to Africa Check's content. Any treatment with fact-check quiz incentives increased respondents' discernment between true and false information by 0.06 standard deviations, skepticism of conspiracy theories by 0.1 standard deviations, and information verification knowledge by 0.1 standard deviations. The treatments incentivizing participants to consume fact-checks reduced trust in social media platforms by 0.09 standard deviations. There is no statistically significant effects on information consumption and verification behavior. Any treatment with fact-check quiz incentives reduced sharing of information received via social media by around 0.1 standard deviations. Attitudes and behaviors relating to COVID-19 and government fact-checks delivered by text messages increased an index of COVID-19 knowledge and preventative behavior by 0.14 standard deviations and an index of incumbent government performance by 0.07 standard deviations."
+    }
+  ],
+  "Athey et al., preprint (2023).": [
+    {
+      "Study": 1,
+      "Description": "",
+      "Dependent Variable": "Sharing rate",
+      "n": 7688,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Relative to the No-course baseline sharing rate of 63.9 p.p., the treatment courses decrease the Sharing Rate by 18.1 p.p. (SE = 1.16 p.p.) or approximately 28%. Relative to the Facts baseline, the treatment course decreases the Sharing Rate by 10.4 p.p. (SE = 1.19 p.p.) or approximately 18% relative to the 56.3 p.p. sharing rate for the Facts baseline. The difference between the No-course and Facts baselines of 7.7 p.p (SE = 1.44 p.p.) shows that making misinformation salient to participants on a daily basis does have some beneficial impact on sharing behavior, but the treatment courses are providing educational content beyond this salience effect."
     }
   ],
   "Wineburg et al., Teach Coll Rec (2019).": [
@@ -615,7 +1341,35 @@
       "es_txt": "1. Ad Identification. Change from pre to post was not significant (Z = 1.44; p = .15). 2. Lateral Reading. Pre-to-post change was significant (Z =  3.59; p < .001). 3. Analyzing Evidence. Pre-to-post change was significant (Z =  6.23; p < .001). 4. Claim Research. Pre-to-post change was significant (Z = 3.77; p < .001)."
     }
   ],
-  "Brodsky et al., Cogn Res: Princ Implic  (2021).": [
+  "Donovan et al., Mem Cogn (2020).": [
+    {
+      "Study": 1,
+      "Description": "Study 1 experimentally tested whether opportunities for online search would reduce inaccurate reproductions of information.",
+      "Dependent Variable": "Accuracy of reproduced information",
+      "n": 231,
+      "es_type": "Partial-Eta squared (η2p)",
+      "es_pe": "use of inaccurate statements: 0.05; use of accurate statements: 0.13",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Participants in the search condition (M = 5.17%, SD = 10.97) were less likely to reproduce inaccurate information than were participants in the no-search condition (M = 7.40%, SD = 15.10) [F (1, 214) = 11.01, MS = 0.83, p = .001, ηp2 = .05]. Participants in the search condition produced more correct responses (M = 72.37%, SD = 30.74) than did participants in the no-search condition (M = 59.30%, SD = 35.74), [F (1, 214) = 31.82, MS = 22.25, p < .001, ηp2 = .13]."
+    },
+    {
+      "Study": 2,
+      "Description": "Study 2 experimentally tested whether opportunities for online search  would reduce inaccurate reproductions of information. The study was conducted in the lab.",
+      "Dependent Variable": "Accuracy of reproduced information",
+      "n": 96,
+      "es_type": "Partial-Eta squared (η2p)",
+      "es_pe": "use of inaccurate statements: 0.14; use of accurate statements: 0.46",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Participants in the search condition (M = 4.30%, SD = 9.61) used inaccurate information to answer questions less often than did participants in the no-search condition (M = 7.52%, SD = 14.73), [F (1,95) = 14.94, MS = 0.72, p < .001, ηp2 =.14]."
+    }
+  ],
+  "Brodsky et al., Cogn Res: Princ Implic (2021).": [
     {
       "Study": 1,
       "Description": "This field experiment tested the efficacy of teaching university students Digital Polarization Initiative's (DPI) four fact-checking strategies.",
@@ -628,6 +1382,66 @@
       "es_ci": "",
       "p": "",
       "es_txt": "At posttest, students in DPI sections had an average score of M = 2.22 (SD = 0.92) across the four problems and received a score of 4 on an average of 1.07 problems (SD = 1.07). In contrast, students in control sections had an average score of M = 1.15 (SD = 0.30) and received a score of 4 on an average of 0.03 problems (SD = 0.23). For the self-reported lateral reading at posttest, there was a significant main effect of condition, F(1, 228) = 4.13, p = .043, ηp2 = 0.02, with students in the DPI sections reporting higher use of lateral reading (M = 3.45, SD = 0.84) than students in the control sections (M = 3.25, SD = 0.88). The interaction of time and condition was not significant, F(1, 228) = 1.06, p = .304, ηp2 = 0.01."
+    }
+  ],
+  "Breakstone et al., HKS Misinfo Rev (2021).": [
+    {
+      "Study": 1,
+      "Description": "A treatment-only, pre-and-post intervention in which students in an online, university-level nutrition course received instruction in fact-checking strategies for evaluating the credibility of online sources.",
+      "Dependent Variable": "Student evaluations of the credibility of online sources.",
+      "n": 87,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "<.001",
+      "es_txt": "Average scores improved from 3.95 points out of 13 at pretest to 7.08 at posttest, an average gain of 3.13 points. A repeated-measures ANOVA revealed that the gains from pretest to posttest were statistically significant, Meandiff = 3.13; F(1, 85) = 136.03, p < .001."
+    }
+  ],
+  "Yang et al., Comput Educ (2021).": [
+    {
+      "Study": 1,
+      "Description": "",
+      "Dependent Variable": "",
+      "n": "",
+      "es_type": "F-test",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "The experimental conditions did not have a significant effect on skepticism toward online information. Meanwhile, the results demonstrated that participants’ intellectual civic skills positively predicted their levels of skepticism toward online information, F(1, 204) = 9.12, p = 0.003. With regard to information discernment skills, there were significant differences among the experimental conditions, F(2, 204) = 4.62, p = 0.011. Pairwise comparisons revealed that participants in the game group showed statistically significant higher achievement compared to those in the control group (p = 0.003). On the other hand, the quiz group did not show difference compared to the control group (p = 0.267), and showed marginally significant difference to the game group (p = 0.064).The game was equally effective for the participants with various levels of perceived intellectual civic skills."
+    }
+  ],
+  "Kobayashi et al., PLOS ONE (2021).": [
+    {
+      "Study": 1,
+      "Description": "Investigated the average treatment effect of online search on the likelihood of believing misinformation.",
+      "Dependent Variable": "Subjective truthfulness of the statement",
+      "n": 1032,
+      "es_type": "OLS regression coefficient",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Online search reduces the likelihood of believing misinformation on average. 37.94% of the control group believed the misinformation to be true, falling to 25.62% in the treatment group."
+    }
+  ],
+  "Wineburg et al., J Educ Psychol (2022).": [
+    {
+      "Study": 1,
+      "Description": "The present study investigated whether high school students would improve as evaluators of online content on the open Web after completing six 50-minute lessons based on Civic Online Reasoning curriculum taught by their teachers.",
+      "Dependent Variable": "Scores for judgements of credibility of online sources",
+      "n": 499,
+      "es_type": "Robust Beta coefficient (b)",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Students in the treatment condition (n = 271) were more likely to show improvement from pretest to posttest than control students (n = 228), Robust beta coefficient for condition x time(pre-post) = 1.66, SE = .44, t = 3.77, 95% CI (.44, 3.77)."
     }
   ],
   "Panizza et al., Sci Rep (2022).": [
@@ -658,35 +1472,145 @@
       "es_txt": "In the second study, results revealed a significant effect of pop-up on accuracy scores (β=0.137 [−0.018,0.292], z=2.115, p=0.034; Mixed-effects regression with errors clustered by post: p=0.052), but not on correct guessing (β=0.076 [−0.112,0.265], z=0.966, p=0.334). The combination of the two interventions significantly increased both accuracy indices compared to control (accuracy score: β=0.487 [0.268, 0.705], z=5.315, p<0.001; correct guessing: β=0.389 [0.123, 0.654], z=3.496, p<0.001), and that the contribution of incentive was greater than the contribution of pop-up (accuracy score: β=0.213 [−0.007,0.432], z=2.307, p=0.028; correct guessing: β=0.2362 [−0.032,0.504], z=2.103, p=0.047). According to the ordinal logistic regression model, the combination of the two interventions led to a 10.4% [5.4%,14.2%] increase in correct guessing, and a 6.9% [2.8%,12.4%] increase in  correct responses compared to control."
     }
   ],
-  "Donovan et al., Mem Cogn (2020).": [
+  "McGrew and Breakstone, AERA Open (2023).": [
     {
       "Study": 1,
-      "Description": "Study 1 experimentally tested whether opportunities for online search would reduce inaccurate reproductions of information.",
-      "Dependent Variable": "Accuracy of reproduced information",
-      "n": 231,
-      "es_type": "Partial-Eta squared (η2p)",
-      "es_pe": "use of inaccurate statements: 0.05; use of accurate statements: 0.13",
+      "Description": "A pre-and-post, treatment-only intervention in which Civic Online Reasoning lessons were integrated into ninth grade biology and geography courses at a large suburban high school in the United States. ANOVA was used to measure the significance of the within-participant changes in scores from pretest to posttest.",
+      "Dependent Variable": "Credibility evaluations of online sources.",
+      "n": 574,
+      "es_type": "",
+      "es_pe": "",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
-      "p": "",
-      "es_txt": "Participants in the search condition (M = 5.17%, SD = 10.97) were less likely to reproduce inaccurate information than were participants in the no-search condition (M = 7.40%, SD = 15.10) [F (1, 214) = 11.01, MS = 0.83, p = .001, ηp2 = .05]. Participants in the search condition produced more correct responses (M = 72.37%, SD = 30.74) than did participants in the no-search condition (M = 59.30%, SD = 35.74), [F (1, 214) = 31.82, MS = 22.25, p < .001, ηp2 = .13]."
-    },
-    {
-      "Study": 2,
-      "Description": "Study 2 experimentally tested whether opportunities for online search  would reduce inaccurate reproductions of information. The study was conducted in the lab.",
-      "Dependent Variable": "Accuracy of reproduced information",
-      "n": 96,
-      "es_type": "Partial-Eta squared (η2p)",
-      "es_pe": "use of inaccurate statements: 0.14; use of accurate statements: 0.46",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "Participants in the search condition (M = 4.30%, SD = 9.61) used inaccurate information to answer questions less often than did participants in the no-search condition (M = 7.52%, SD = 14.73), [F (1,95) = 14.94, MS = 0.72, p < .001, ηp2 =.14]."
+      "p": "<.001.",
+      "es_txt": "ANOVA revealed he difference in scores from pre to post was statistically significant (Mpre = 2.24, Mpost = 3.75; F (1,572) = 299.91, p < .001). Results also indicated significant main effects of time (ATStime = 301.88, p < .001) and class type (ATS class = 149.44, p < .001), which suggested that students’ scores were significantly different from pretest to posttest and that there were significant differences in scores across class type (general vs. honors). The results also indicate a significant interaction between class type and time (ATS class x time = 13.14, p < .001), which supports a rejection of the null hypothesis that students’ scores exhibited the same patterns from pretest to posttest across class type (general versus honors)."
     }
   ],
-  "Resnick et al., arXiv (2021).": [
+  "Fendt et al., Comp Hum Beh (2023).": [
+    {
+      "Study": 1,
+      "Description": "A lab-based experiment with at 3X2 factorial design that tested the efficacy of cognitive apprenticeship interventions on participants' abilities to identify 'truthful' and 'fake' news.",
+      "Dependent Variable": "Credibility rating scale for online news articles",
+      "n": 312,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Training effects on truthful news credibility: The within-subject effect was significant, F(1, 305) = 3.92, p = .049, partial η2 = 0.01 (small effect). The interaction effect datapoint*training type was marginally significant, F(2, 305) = 2.97, p = .053, partial η2 = 0.02 (small effect). There was also a significant interaction effect datapoint*political opinion, F(1, 305) = 7.06, p = .01, partial η2 = 0.02 (small effect). The between-subject effects of training type and trainer education were not significant. There was a significant covariate effect of political opinion, F(1, 305) = 17.53, p < .001, partial η2 = 0.05 (small to medium effect). Training effects on fake news credibility: The within-subject effect was not significant F(1, 305) = 2.62, p = .11. However, there were significant interaction effects datapoint*training type, F(2, 305) = 14.17, p < .001, partial η2 = 0.09 (medium effect) and datapoint*trainer education, F(2, 305) = 5.44, p = .02, partial η2 = 0.02 (small effect). The between-subject effect of training type was significant, F(2, 305) = 18.16, p < .001, partial η2 = 0.11 (medium to large effect). Multiple Bonferroni adjusted comparisons showed significant differences between the written instructions and the control group, p < .001, MDiff = − 0.45, 95%-CI = [0.18, 0.73], as well as between the cognitive apprenticeship and the control group, p < .001, MDiff = 0.64, 95%-CI = [0.38, 0.90]. The difference between the written instructions and the cognitive apprenticeship group was not significant (p > .05). The trainer education effect was not significant, F(1, 305) = 2.91, p = .09, partial η2 = 0.01. The covariate effects were significant for online news-related self confidence with F(1, 305) = 7.64, p = .01, partial η2 = 0.02 (small effect)."
+    }
+  ],
+  "Barzilai et al., Comput Educ (2023).": [
+    {
+      "Study": "1&2, Variable: Accuracy discernement",
+      "Description": "Study comparing accuracy discernment between players of a misinformation game and a control group.",
+      "Dependent Variable": "Accuracy discernment",
+      "n": "215",
+      "es_type": "Cohen's d",
+      "es_pe": "0.49, 0.41",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": 0.028,
+      "es_txt": "Accuracy discernment was higher among players of the misinformation game."
+    },
+    {
+      "Study": "1&2, Variable: Sharing discernment",
+      "Description": "Study comparing sharing discernment between players of a misinformation game and a control group.",
+      "Dependent Variable": "Sharing discernment",
+      "n": "215",
+      "es_type": "Cohen's d",
+      "es_pe": "0.46, 0.59",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": 0.04,
+      "es_txt": "Sharing discernment was higher among players of the misinformation game."
+    },
+    {
+      "Study": "1&2, Variable: Stances regarding sharing misinformation",
+      "Description": "Study comparing stances towards sharing COVID-19 misinformation between the experimental and control groups.",
+      "Dependent Variable": "Stance towards sharing COVID-19 misinformation",
+      "n": "215",
+      "es_type": "Cohen's d",
+      "es_pe": "0.02, 0.18",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": 0.936,
+      "es_txt": "There were no significant differences in self-reported stances toward sharing COVID-19 misinformation between the experimental and control groups."
+    },
+    {
+      "Study": "1&2, Variable: Metastrategic knowledge about evaluation strategies",
+      "Description": "Study comparing the number of misinformation evaluation strategies described by players of a misinformation game and a control group.",
+      "Dependent Variable": "Strategies of corroboration and consultation",
+      "n": "215",
+      "es_type": "Cohen's d",
+      "es_pe": "0.35, 0.41",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": 0.133,
+      "es_txt": "In study 1, the difference failed to achieve significance. In Study 2, players of the misinformation game described a signficantly higher number of strategies than control group participants."
+    }
+  ],
+  "Apuke & Gever, J Acad Libr (2023).": [
+    {
+      "Study": "1",
+      "Description": "Pre- and post-intervention of participants' knowledge of social media.",
+      "Dependent Variable": "Knowledge of social media",
+      "n": "235",
+      "es_type": "t-Value",
+      "es_pe": "8.84",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "0.01",
+      "es_txt": "Participants in the treatment group reported a significant improvement in their knowledge of social media post-intervention."
+    },
+    {
+      "Study": "1",
+      "Description": "Pre- and post-intervention of participants' ability to recognize false news.",
+      "Dependent Variable": "Ability to recognize false news",
+      "n": "235",
+      "es_type": "t-Value",
+      "es_pe": "7.23",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "0.01",
+      "es_txt": "The experimental group significantly outperformed the control group in identifying fake news post-intervention."
+    },
+    {
+      "Study": "Table 5",
+      "Description": "Pre- and post-intervention of participants' fake news verification capability.",
+      "Dependent Variable": "Fake news verification capability",
+      "n": "235",
+      "es_type": "t-Value",
+      "es_pe": "6.43",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "0.02",
+      "es_txt": "The treatment group's scores on their ability to verify information significantly improved post-intervention."
+    },
+    {
+      "Study": "Table 6",
+      "Description": "Pre- and post-intervention of participants likelihood of fake news sharing.",
+      "Dependent Variable": "Likelihood of fake news sharing",
+      "n": "235",
+      "es_type": "t-Value",
+      "es_pe": "8.43",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "0.01",
+      "es_txt": "The experimental group scored better in their ability to distinguish real news from fake news post-intervention."
+    }
+  ],
+  "Resnick et al., preprint (2021).": [
     {
       "Study": 1,
       "Description": "The study investigated whether requirement to search for corroborating evidence either in a collective or individual research conditions would improve misinformation detection in lay people ratings (journalists' ratings were taken as a benchmark).",
@@ -742,21 +1666,6 @@
       "es_txt": "The study found no evidence that the media literacy treatment systematically affected beliefs in false news stories or discrimination between false and mainstream news among India face-to-face respondents."
     }
   ],
-  "Ali et al., arXiv (2021).": [
-    {
-      "Study": 1,
-      "Description": "The study aimed to evaluate the effectiveness of two educational interventions to counter misinformation among low-digital literacy populations. Treatment one = educational video. Treatment 2 = video + personalized feedback.",
-      "Dependent Variable": "Sharing intentions for true headlines over false headlines",
-      "n": 750,
-      "es_type": "Cohen’s d",
-      "es_pe": 0.14,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "Treatment 1 does not have any significant impact. Participants who received treatment 2 were 0.14 standard deviations more likely to correctly identify fake news relative to the control group. There is no significant effect on correctly identifying true news. As a result, the overall effect of treatment 2 on all news is 0.076 standard deviations, which points to improved discernment of news."
-    }
-  ],
   "Badrinathan, Am Political Sci Rev (2021).": [
     {
       "Study": 1,
@@ -772,55 +1681,113 @@
       "es_txt": "The study found no evidence that the intervention increased respondents' ability to identify misinformation, on average. While there was no average treatment effect, the interaction effect of the treatment on BJP partisans produces a negative effect on the ability to identify misinformation. For pro-BJP stories, the treatment effect for non-BJP supporters was 0.277, indicating that those who did not support the BJP and received the treatment identified an additional 0.277 stories. However, the treatment effect for BJP supporters was -0.135, indicating that those who supported the BJP and received the treatment identified 0.135 fewer stories."
     }
   ],
-  "Epstein et al (2021). Harv Misinfo Review.": [
+  "Ali & Qazi, JDE (2023).": [
     {
-      "Study": "Tips",
-      "Description": "Participants were provided with four simple digital literacy tips, taken from an intervention developed by Facebook",
-      "Dependent Variable": "Sharing discernement for intentions to share true headlines over false headlines",
-      "n": 906,
+      "Study": 1,
+      "Description": "The study aimed to evaluate the effectiveness of two educational interventions to counter misinformation among low-digital literacy populations. Treatment one = educational video. Treatment 2 = video + personalized feedback.",
+      "Dependent Variable": "Accuracy rate",
+      "n": 750,
+      "es_type": "Average treatment effect",
+      "es_pe": 3.3,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Treatment 1 does not have any significant impact. Participants who received treatment 2 were 5.6 percentage points (7.9%) more likely to correctly identify fake news relative to the control group. There is no significant effect on correctly identifying true news. As a result, the overall effect of treatment 2 on all news is 3.3 percentage points (4.5%), which points to improved discernment of news."
+    }
+  ],
+  "Qian et al, J Comput-Mediat Comm (2023).": [
+    {
+      "Study": "1",
+      "Description": "This study investigates the effects of active and passive interventions on the perceived credibility of visual posts and the intention to use the reverse image search in the future.",
+      "Dependent Variable": "Perceived credibility of visual posts, discernment between accurately attributed and misattributed visual posts, and intention to use the reverse image search in the future",
+      "n": "880",
+      "es_type": "F-statistic and Beta coefficient",
+      "es_pe": "F (2, 877) = 32.52 for intention to use reverse image search, B = 0.75 for active intervention, B = 0.53 for passive intervention",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "p < .001 for intention to use reverse image search, p < .001 for active intervention, p < .001 for passive intervention",
+      "es_txt": "Active and passive interventions significantly increased the intention to use the reverse image search in the future compared to the control group. Active intervention was more effective than passive intervention."
+    },
+    {
+      "Study": "1",
+      "Description": "This study investigates whether digital media literacy would moderate the effects of intervention on discernment.",
+      "Dependent Variable": "Discernment between accurately attributed and misattributed visual posts",
+      "n": "834",
+      "es_type": "F-statistic",
+      "es_pe": "F (2,831) = 0.994",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "p = .371",
+      "es_txt": "Digital media literacy did not moderate the relationship between intervention and discernment."
+    },
+    {
+      "Study": "1",
+      "Description": "This study uses time spent on evaluating visual posts as a proxy measure to check if participants performed reverse image search.",
+      "Dependent Variable": "Time spent on evaluating visual posts",
+      "n": "894",
+      "es_type": "F-statistic",
+      "es_pe": "F (2, 891) = 12.08",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "p < .001",
+      "es_txt": "Participants spent significantly longer time in the active intervention group when evaluating the four visual posts than in the passive and the control group."
+    }
+  ],
+  "Kim et al., JMIS (2019).": [
+    {
+      "Study": "1",
+      "Description": "Investigates the effect of rating mechanisms on the believability of articles.",
+      "Dependent Variable": "Believability of articles",
+      "n": "590",
       "es_type": "",
       "es_pe": "",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
       "p": "",
-      "es_txt": "Intervention increased sharing discernment by roughly 50% (3 percentage points)"
+      "es_txt": "Ratings affected believability, with larger effects for low ratings than high ratings, and expert > user-article-based > user-source. Some smaller effects on reading/liking/sharing intentions.."
+    },
+    {
+      "Study": "2",
+      "Description": "Further investigates the effect of rating mechanisms and confirmation bias on the believability of articles.",
+      "Dependent Variable": "Believability of articles",
+      "n": "299",
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Only strongest effects survive (a low expert or user-article-based rating reducing believability)."
     }
   ],
-  "Schmid et al., J Cogn (2020).": [
+  "Aslett et al, Sci Adv (2022).": [
     {
       "Study": 1,
-      "Description": "Study 1: Outnumbering and rebuttal, results for rebuttal vs no rebuttal.",
-      "Dependent Variable": "Attitudes towards vaccination and intention to vaccinate",
-      "n": 101,
-      "es_type": "Partial-Eta squared (η2p)",
-      "es_pe": "Attitude η²p = .094; Intention η²p = .036",
+      "Description": "The study focused on the impact of source reliability labels on the news consumption of online users.",
+      "Dependent Variable": "News consumption quality",
+      "n": "968 for behavioral news consumption data collection",
+      "es_type": "",
+      "es_pe": "",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
       "p": "",
-      "es_txt": "Watching the public debate significantly damaged individuals’ attitudes towards vaccination and their intention to get vaccinated, but the rebuttal successfully mitigated this damage. The mitigating effect was only marginally significant on intention to get vaccinated."
-    },
+      "es_txt": "The study found no significant effect of the source reliability labels on the quality of news consumption of online users. Even after the intervention, the news consumption patterns did not change significantly. However, a slight effect was observed among those who consume the most low-quality news. Relative to the average pretreatment value,  authors estimate a 5.4% increase in the treatment period and a 8.6% increase beginning July 1 in the average reliability score of news consumed."
+    }
+  ],
+  "Shahid et al,  Proc. ACM Hum Comput Interact (2022).": [
     {
-      "Study": 2,
-      "Description": "Study 2: Outnumbering, forewarning and rebuttal, results for rebuttal vs no rebuttal.",
-      "Dependent Variable": "Attitudes towards vaccination and intention to vaccinate; confidence in vaccination",
-      "n": 390,
-      "es_type": "Partial-Eta squared (η2p)",
-      "es_pe": "Attitude η²p = .116; Intention η²p = .124 ; confidence in vaccination η²p = .154",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "Replicating the results from Experiment 1, watching the public debate significantly damaged individuals’ attitudes towards vaccination, including intention to get vaccinated and confidence in vaccination. However, the rebuttal mitigated this damage on all outcome measures, again indicating successful manipulation."
-    },
-    {
-      "Study": 3,
-      "Description": "Study 3: outnumbering by delivering multiple rebuttal sources, forewarning and rebuttal, results for rebuttal vs no rebuttal.",
-      "Dependent Variable": "Attitudes towards vaccination and intention to vaccinate; confidence in vaccination",
-      "n": 390,
-      "es_type": "Partial-Eta squared (η2p)",
-      "es_pe": "Attitude η²p = .059; Intention η²p = .078 ; confidence in vaccination η²p = .108",
+      "Study": "",
+      "Description": "",
+      "Dependent Variable": "",
+      "n": "",
+      "es_type": "",
+      "es_pe": "",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
@@ -828,73 +1795,62 @@
       "es_txt": ""
     }
   ],
-  "Schmid et al., NHB (2019).": [
+  "Celadin et al., Journal of Online Trust and Safety (2023).": [
     {
-      "Study": "Across all 6 studies",
-      "Description": "Internal meta-analysis: Rebuttal vs no rebuttal",
-      "Dependent Variable": "Attitudes towards behaviours favoured by science and intentions to perform these behaviours",
-      "n": 1773,
-      "es_type": "Hedges' g",
-      "es_pe": 0.49,
-      "es_low": 0.37,
-      "es_high": 0.6,
+      "Study": "1",
+      "Description": "Examination of the impact of fact-checker ratings on sharing of false headlines.",
+      "Dependent Variable": "Sharing of false headlines",
+      "n": "1627",
+      "es_type": "Beta coefficient",
+      "es_pe": "-0.084",
+      "es_low": "-0.118",
+      "es_high": "-0.050",
       "es_ci": 0.95,
-      "p": "",
-      "es_txt": "Attitude: g=0.49, 95% CI: 0.37, 0.60; intention: g=0.57, 95% CI: 0.46, 0.68"
+      "p": "< 0.001",
+      "es_txt": "Sharing of false headlines was significantly reduced by the fact-checker ratings."
     },
     {
-      "Study": "Across all 6 studies",
-      "Description": "Internal meta-analysis: Technique rebuttal vs no technique rebuttal",
-      "Dependent Variable": "Attitudes towards behaviours favoured by science and intentions to perform these behaviours",
-      "n": 1773,
-      "es_type": "Hedges' g",
-      "es_pe": 0.31,
-      "es_low": 0.22,
-      "es_high": 0.41,
+      "Study": "2",
+      "Description": "Examination of the impact of layperson ratings on sharing of false headlines.",
+      "Dependent Variable": "Sharing of false headlines",
+      "n": "1627",
+      "es_type": "Beta coefficient",
+      "es_pe": "-0.042",
+      "es_low": "-0.076",
+      "es_high": "-0.008",
       "es_ci": 0.95,
-      "p": "",
-      "es_txt": "Attitude: g = 0.31, 95% CI: 0.22, 0.41; intention: g = 0.31, 95% CI: 0.20, 0.42"
-    },
-    {
-      "Study": "Across all 6 studies",
-      "Description": "Internal meta-analysis: Topic rebuttal vs no topic rebuttal",
-      "Dependent Variable": "Attitudes towards behaviours favoured by science and intentions to perform these behaviours",
-      "n": 1773,
-      "es_type": "Hedges' g",
-      "es_pe": 0.21,
-      "es_low": 0.04,
-      "es_high": 0.38,
-      "es_ci": 0.95,
-      "p": "",
-      "es_txt": "Attitude: g = 0.21, 95% CI: 0.04, 0.38; intention: g = 0.33, 95% CI: 0.24, 0.43."
+      "p": "0.017",
+      "es_txt": "Sharing of false headlines was significantly reduced by the layperson ratings."
     }
   ],
-  "Lorenz-Spreen et al., Sci Rep (2021).": [
+  "Cookson et al., PLOS ONE (2021).": [
     {
       "Study": 1,
-      "Description": "Experiment 1 tested whether receiving a self-reflection boost in the form of personality assessment would impact participants' ability to identify personalized ads.",
-      "Dependent Variable": "Identification of targeted ads",
-      "n": 284,
-      "es_type": "Common Language Effect Size (CL)",
-      "es_pe": 0.78,
-      "es_low": 0.7,
-      "es_high": 0.84,
-      "es_ci": 0.95,
-      "p": "",
-      "es_txt": "Relative to the control condition, participants in the boosting condition correctly identified, on average, 26 percentage points more ads targeted at them (95% Bayesian credible interval, CI 18–35)—raising the mean accuracy from 64% (95% CI 53–73) to 90% (95% CI 85–94)."
-    },
+      "Description": "The study tested the effectiveness of a Social Norms intervention, which corrects misperceptions using normative feedback, to reduce UK parents’ anti-vaccine conspiracy beliefs and increase vaccination intentions.",
+      "Dependent Variable": "Anti-vaccine conspiracy beliefs",
+      "n": 202,
+      "es_type": "Partial eta squared (η2p)",
+      "es_pe": 0.03,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": 0.016,
+      "es_txt": "There was a significant interaction between time and condition on belief in anti-vaccine conspiracy theories, indicating the effectiveness of the intervention, F(1.56, 253.27) = 4.73, p = .016, ηp2 = .03. There was no difference in belief in anti-vaccine conspiracy theories from baseline to the six-week follow up."
+    }
+  ],
+  "Andi et al., Digit Journal (2021).": [
     {
-      "Study": 2,
-      "Description": "Experiment 2 aimed to disentangle the components underlying the effects found in Experiment 1 by omitting individual parts of the intervention step-by-step and observing the resulting effects",
-      "Dependent Variable": "Identification of targeted ads",
-      "n": 544,
-      "es_type": "Common Language Effect Size (CL)",
-      "es_pe": 0.62,
-      "es_low": 0.52,
-      "es_high": 0.71,
-      "es_ci": 0.95,
+      "Study": 1,
+      "Description": "The study experimentally tested whether  a social norm-based message would impact participants' willingness to share a false news article.",
+      "Dependent Variable": "willingness to share a false news article",
+      "n": 1004,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
       "p": "",
-      "es_txt": "Reflecting on one’s relevant personality dimension—without receiving any relevant feedback—is necessary, but also sufficient to boost people’s ability to identify ads that have been targeted at them. The boosting condition that included the extraversion questionnaire improved participants’ performance by, on average, 10 percentage points (95% CI 2–20) compared to the boosting condition with only the extraversion description, raising mean accuracy from 72% (95% CI 62–80) to 83% (95% CI 76–88)."
+      "es_txt": "5.17% reduction in willingness to share (SE = 0.02) or 27.5% reduction compared to control sharing (18.8%)"
     }
   ],
   "Ecker et al., QJEP (2022).": [
@@ -938,34 +1894,127 @@
       "es_txt": "Belief change was significantly different from zero in all conditions of Experiment 3A (refutation: M = −8.93, SD = 9.71, d = 0.92; narrow-norm: M = −8.11, SD = 10.54, d = 0.77; wide-norm: M = −6.55, SD = 10.15, d = 0.65), as well as all conditions of Experiment 3B (refutation: M = −10.00, SD = 18.45, d = 0.54; refutation-plus-narrow-norm: M = −18.66, SD = 17.29, d = 1.08; refutation-plus-wide-norm: M = −15.04, SD = 14.36, d = 1.05), all t(75/77) ⩽ 4.79, all p < .001, establishing that claim belief was reduced significantly by a refutation or either type of norm."
     }
   ],
-  "Cookson et al., PLOS ONE (2021).": [
+  "Prike et al, preprint (2023).": [
     {
-      "Study": 1,
-      "Description": "The study tested the effectiveness of a Social Norms intervention, which corrects misperceptions using normative feedback, to reduce UK parents’ anti-vaccine conspiracy beliefs and increase vaccination intentions.",
-      "Dependent Variable": "Anti-vaccine conspiracy beliefs",
-      "n": 202,
-      "es_type": "Partial eta squared (η2p)",
+      "Study": "1. Credibility badges, engagement",
+      "Description": "The study investigates the impact of credibility badges on engagement with social media posts containing false claims.",
+      "Dependent Variable": "Engagement with social media posts containing false claims",
+      "n": 411,
+      "es_type": "Eta squared (ηp2)",
+      "es_pe": 0.09,
+      "es_low": 0.04,
+      "es_high": 0.15,
+      "es_ci": 0.95,
+      "p": "<0.001",
+      "es_txt": "There was a significant main effect of credibility badge, with less positive engagements when credibility badges were included."
+    },
+    {
+      "Study": "2. Social norms, engagement",
+      "Description": "The study examines the effect of social norms on engagement with social media posts containing false claims.",
+      "Dependent Variable": "Engagement with social media posts containing false claims",
+      "n": 411,
+      "es_type": "Eta squared (ηp2)",
+      "es_pe": 0.01,
+      "es_low": 0.0,
+      "es_high": 0.04,
+      "es_ci": 0.95,
+      "p": "0.044",
+      "es_txt": "There was a significant main effect of social norm, with less positive engagements when a social norm was included."
+    },
+    {
+      "Study": "3. Credibility badges, beliefs",
+      "Description": "The study explores the impact of credibility badges on beliefs in false claims.",
+      "Dependent Variable": "Beliefs in false claims",
+      "n": 411,
+      "es_type": "Eta squared (ηp2)",
       "es_pe": 0.03,
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": 0.016,
-      "es_txt": "There was a significant interaction between time and condition on belief in anti-vaccine conspiracy theories, indicating the effectiveness of the intervention, F(1.56, 253.27) = 4.73, p = .016, ηp2 = .03. There was no difference in belief in anti-vaccine conspiracy theories from baseline to the six-week follow up."
+      "es_low": 0.01,
+      "es_high": 0.07,
+      "es_ci": 0.95,
+      "p": "<0.001",
+      "es_txt": "The presence of a credibility badge significantly reduced belief in false claims."
+    },
+    {
+      "Study": "4. Social norms, beliefs",
+      "Description": "The study investigates the effect of social norms on beliefs in false claims.",
+      "Dependent Variable": "Beliefs in false claims",
+      "n": 411,
+      "es_type": "Eta squared (ηp2)",
+      "es_pe": 0.02,
+      "es_low": 0.0,
+      "es_high": 0.05,
+      "es_ci": 0.95,
+      "p": "0.007",
+      "es_txt": "The presence of a social norm intervention significantly reduced belief in false claims."
     }
   ],
-  "Andi et al., Digit Journal (2021).": [
+  "Ecker et al., (2010). Mem Cogn.": [
     {
       "Study": 1,
-      "Description": "The study experimentally tested whether  a social norm-based message would impact participants' willingness to share a false news article.",
-      "Dependent Variable": "willingness to share a false news article",
-      "n": 1004,
+      "Description": "Study 1 experimentally tested whether the continued influence of misinformation can be reduced by explicitly warning people at the outset that they may be misled.",
+      "n": 125,
       "es_type": "",
       "es_pe": "",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
       "p": "",
-      "es_txt": "5.17% reduction in willingness to share (SE = 0.02) or 27.5% reduction compared to control sharing (18.8%)"
+      "es_txt": "A general warning did not reduce the level of continued influence effect (CIE) found with a mere retraction. Both a specific warning and the provision of an alternative explanation strongly reduced the CIE The alternative and the specific warning reduced references to misinformation  by 51%–65% (42%–67% in the alternative condition, 53%–63% in the specific warning condition)."
+    },
+    {
+      "Study": 2,
+      "Description": "Study 2 experimentally tested whether alerting people to the effects of misinformation could eliminate the CIE in cases in which there is alternative information available.",
+      "n": 92,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "The combined effect of the specific warning and the provision of an alternative account reduced reliance on misinformation more than the constituent strategies alone."
+    }
+  ],
+  "Kim et al., Manag Inf Syst (2019).": [
+    {
+      "Study": 1,
+      "Description": "Study tested the effectiveness of three different types of source ratings: expert rating, user article rating and user source rating.",
+      "Dependent Variable": "Rating of article's believability",
+      "n": 590,
+      "es_type": "Chi-Squared",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "When ratings were high, both expert rating and user article rating had significant effects, but user source ratings had no effect. For low-rated sources, all three mechanisms had significant effects; expert ratings had stronger impacts than did user source ratings (Chi-Squared = 15.39, 𝑝<0.001), as did user article ratings (Chi-Squared = 4.87, 𝑝<0.05); there was, however, no significant differences between expert rating and user article rating (Chi-Squared = 2.89, 𝑝>0.05)."
+    },
+    {
+      "Study": 2,
+      "Description": "Study tested the effectiveness of three different types of source ratings: expert rating, user article rating and user source rating.",
+      "Dependent Variable": "Rating of article's believability",
+      "n": 299,
+      "es_type": "",
+      "es_pe": "",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "High ratings had no significant effect across all rating mechanisms, while low ratings from expert rating and user article rating mechanisms had a negative influence on believability (H2 is partially supported); user source ratings had no effect. Comparing the rating mechanisms that had significant effects, there were no differences in the effects of the expert rating and user article rating mechanisms for low ratings (Chi-Squared = 0.64, p >.05)."
+    }
+  ],
+  "Mena, Pol & Int (2019).": [
+    {
+      "Study": 1,
+      "Description": "This study experimentally tests the effectiveness of warning labels designed to reduce the sharing of false news.",
+      "Dependent Variable": "Likelihood to share content on Facebook",
+      "n": 501,
+      "es_type": "Cohen’s d",
+      "es_pe": 0.36,
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "The flagging of false news had a small to moderate effect on decreasing the likelihood of sharing the fabricated post on Facebook."
     }
   ],
   "Clayton et al., Political Behav (2020).": [
@@ -1009,32 +2058,6 @@
       "es_txt": "Average perceived accuracy for participants who saw a headline with a Rated False tag was 0.34 points lower on our four-point scale than for participants who saw no tag (p < 0.01; Cohen’s d = 0.38)."
     }
   ],
-  "Ecker et al., (2010). Mem Cogn.": [
-    {
-      "Study": 1,
-      "Description": "Study 1 experimentally tested whether the continued influence of misinformation can be reduced by explicitly warning people at the outset that they may be misled.",
-      "n": 125,
-      "es_type": "",
-      "es_pe": "",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "A general warning did not reduce the level of continued influence effect (CIE) found with a mere retraction. Both a specific warning and the provision of an alternative explanation strongly reduced the CIE The alternative and the specific warning reduced references to misinformation  by 51%–65% (42%–67% in the alternative condition, 53%–63% in the specific warning condition)."
-    },
-    {
-      "Study": 2,
-      "Description": "Study 2 experimentally tested whether alerting people to the effects of misinformation could eliminate the CIE in cases in which there is alternative information available.",
-      "n": 92,
-      "es_type": "",
-      "es_pe": "",
-      "es_low": "",
-      "es_high": "",
-      "es_ci": "",
-      "p": "",
-      "es_txt": "The combined effect of the specific warning and the provision of an alternative account reduced reliance on misinformation more than the constituent strategies alone."
-    }
-  ],
   "Pennycook et al., Manag Sci (2020).": [
     {
       "Study": 1,
@@ -1063,47 +2086,58 @@
       "es_txt": "Participants were less likely to consider sharing false headlines tagged with a warning (16.1%) compared with false headlines in the control (29.8%; p<0.001). The warning effect was significantly larger for concordant false headlines (warned: 16.7%; control: 33.7%) than for discordant false headlines (warned: 14.7%; control: 26.0%)."
     }
   ],
-  "Kim et al., Manag Inf Syst (2019).": [
+  "Ecker et al., Brit Psych Soc (2020).": [
     {
-      "Study": 1,
-      "Description": "Study tested the effectiveness of three different types of source ratings: expert rating, user article rating and user source rating.",
-      "Dependent Variable": "Rating of article's believability",
-      "n": 590,
-      "es_type": "Chi-Squared",
-      "es_pe": "",
+      "Study": "1",
+      "Description": "The experiments used true and false claims across various experimental conditions; claim veracity was manipulated within subjects, and experimental condition was a between-subjects factor.",
+      "Dependent Variable": "Belief-change scores (BC = BR2 − BR1) across conditions 1 and 2",
+      "n": "531",
+      "es_type": "Partial eta squared (η2p)",
+      "es_pe": "0.01",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
-      "p": "",
-      "es_txt": "When ratings were high, both expert rating and user article rating had significant effects, but user source ratings had no effect. For low-rated sources, all three mechanisms had significant effects; expert ratings had stronger impacts than did user source ratings (Chi-Squared = 15.39, 𝑝<0.001), as did user article ratings (Chi-Squared = 4.87, 𝑝<0.05); there was, however, no significant differences between expert rating and user article rating (Chi-Squared = 2.89, 𝑝>0.05)."
+      "p": ".31",
+      "es_txt": "Refutations were not more effective than plain retractions at reducing claim belief after a 1-day retention interval."
     },
     {
-      "Study": 2,
-      "Description": "Study tested the effectiveness of three different types of source ratings: expert rating, user article rating and user source rating.",
-      "Dependent Variable": "Rating of article's believability",
-      "n": 299,
-      "es_type": "",
-      "es_pe": "",
+      "Study": "1",
+      "Description": "The experiments used true and false claims across various experimental conditions; claim veracity was manipulated within subjects, and experimental condition was a between-subjects factor.",
+      "Dependent Variable": "Belief-change scores across conditions 1 and 2",
+      "n": "369",
+      "es_type": "Partial eta squared (η2p)",
+      "es_pe": "0.03",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
-      "p": "",
-      "es_txt": "High ratings had no significant effect across all rating mechanisms, while low ratings from expert rating and user article rating mechanisms had a negative influence on believability (H2 is partially supported); user source ratings had no effect. Comparing the rating mechanisms that had significant effects, there were no differences in the effects of the expert rating and user article rating mechanisms for low ratings (Chi-Squared = 0.64, p >.05)."
-    }
-  ],
-  "Amazeen et al., Journal Mass Commun Q (2018).": [
+      "p": ".03",
+      "es_txt": "Refutations are more effective than plain false-tag retractions at reducing claim belief after a 1-week retention interval."
+    },
     {
-      "Study": 1,
-      "Description": "The study experimentally tested effectiveness of fact-checking corrections with or without a visual rating scale",
-      "Dependent Variable": "Truthfulness ratings of a statement",
-      "n": 1020,
-      "es_type": "",
-      "es_pe": "",
+      "Study": "1,2",
+      "Description": "The experiments used true and false claims across various experimental conditions; claim veracity was manipulated within subjects, and experimental condition was a between-subjects factor.",
+      "Dependent Variable": "Belief-change score",
+      "n": "900",
+      "es_type": "Partial eta squared (η2p)",
+      "es_pe": "Study 1: 0.12; Study 2: 0.03",
       "es_low": "",
       "es_high": "",
       "es_ci": "",
-      "p": "",
-      "es_txt": "There was a significant effect of correction format type on non-political beliefs, F(2, 340) = 4.74, p < .01. In non-political condition, adding a rating scale to a contextual correction increased its effectiveness. Among participants exposed to the pooled political misinformation, there was a significant effect of correction format on political beliefs, as well, F(2, 674) = 10.35, p < .0001. Planned contrasts revealed that both the context only (M = 3.05, SD = 0.65) and context with ratings (M = 3.14, SD = 0.70) correction formats were equally successful at correcting beliefs compared with those receiving no correction (M = 2.81, SD = 0.72). The effectiveness of the correction was higher for those who have the same-party affiliation as the candidate (i.e., those predisposed to react with distrust toward the correction) and those who have the opposing affiliation (predisposed to believe the correction)."
+      "p": "Study 1: < .001; Study 2: .008",
+      "es_txt": "Detailed refutations lead to lower inferential-reasoning scores compared to plain retractions."
+    },
+    {
+      "Study": "1; 2",
+      "Description": "The experiments used true and false claims across various experimental conditions; claim veracity was manipulated within subjects, and experimental condition was a between-subjects factor.",
+      "Dependent Variable": "Belief-change score",
+      "n": "900",
+      "es_type": "Partial eta squared (η2p)",
+      "es_pe": "Study 1: 0.03; Study 2: 0.1",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "Study 1: .001; Study 2: .38",
+      "es_txt": "Refutations might reduce belief in true claims."
     }
   ],
   "Grady et al., Cogn Res: Princ Implic (2021).": [
@@ -1119,6 +2153,129 @@
       "es_ci": "",
       "p": "",
       "es_txt": "Participants in the Warning-Before condition believed the false news items less than those the Warning-After condition for both the congruent (b = 1.283, SE = 0.149, p < 0.001) and incongruent (b = 0.734, SE = .120, p < 0.001) items, while the interaction shows that the former was especially pronounced."
+    }
+  ],
+  "Lee et al., Health Comm (2023).": [
+    {
+      "Study": "1",
+      "Description": "Examined the effectiveness of fact-checking labels in reducing vaccine conspiracy beliefs",
+      "Dependent Variable": "Vaccine conspiracy beliefs",
+      "n": "206",
+      "es_type": "Cohen's d",
+      "es_pe": "-0.28",
+      "es_low": "-0.53",
+      "es_high": "-0.03",
+      "es_ci": 0.95,
+      "p": 0.03,
+      "es_txt": "Fact-checking had a small negative effect on vaccine conspiracy beliefs"
+    },
+    {
+      "Study": "1",
+      "Description": "Examined the effectiveness of fact-checking labels on misinformation engagement intentions",
+      "Dependent Variable": "Misinformation engagement intentions",
+      "n": "206",
+      "es_type": "Cohen's d",
+      "es_pe": "-0.21",
+      "es_low": "-0.46",
+      "es_high": "0.04",
+      "es_ci": 0.95,
+      "p": 0.12,
+      "es_txt": "There was no statistically significant effect of fact-checking on misinformation engagement intentions."
+    },
+    {
+      "Study": "1",
+      "Description": "Examined the effectiveness of fact-checking labels on vaccination intentions",
+      "Dependent Variable": "Vaccination intentions",
+      "n": "206",
+      "es_type": "Cohen's d",
+      "es_pe": "-0.05",
+      "es_low": "-0.30",
+      "es_high": "0.20",
+      "es_ci": 0.95,
+      "p": 0.7,
+      "es_txt": "There was no statistically significant effect of fact-checking on vaccination intentions"
+    }
+  ],
+  "Koch et al, J App Soc Psych (2023).": [
+    {
+      "Study": 1,
+      "Description": "This study experimentally tested the effect of warning labels on a fake news post to measure perceived credibility .",
+      "Dependent Variable": "Perceived credibility",
+      "n": 571,
+      "es_type": "R-squared (R²)",
+      "es_pe": ".04",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Warning labels reduced the perceived credibility of fake news posts. Social endorsement cues had no such effect on credibility perceptions."
+    },
+    {
+      "Study": 1,
+      "Description": "This study experimentally tested the effect of warning labels on a fake news post to measure amplification likelihood",
+      "Dependent Variable": "Amplification likelihood",
+      "n": 571,
+      "es_type": "R-squared (R²)",
+      "es_pe": ".05",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Participants who saw the warning label reported a lower likelihood that they would amplify the fake news post. Social endorsement cues had no significant effect."
+    },
+    {
+      "Study": 1,
+      "Description": "This study experimentally tested the effect of warning labels on a fake news post to measure elaboration likelihood.",
+      "Dependent Variable": "Elaboration",
+      "n": 571,
+      "es_type": "R-squared (R²)",
+      "es_pe": ".05",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": "",
+      "es_txt": "Neither warning labels nor social endorsement or their interaction predicted participants' elaboration likelihood."
+    }
+  ],
+  "Moon et al, Mass Comm and Soc (2023).": [
+    {
+      "Study": "H1",
+      "Description": "Comparison of participants' perceived credibility of a false news story about COVID-19 based on in-group and out-group news condition.",
+      "Dependent Variable": "Perceived credibility of the article",
+      "n": "353",
+      "es_type": "η2 (partial eta)",
+      "es_pe": ".011",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": ".045",
+      "es_txt": "Those who read an article from their supporting party reported greater perceived credibility than those who read from their opponent party."
+    },
+    {
+      "Study": "H2",
+      "Description": "Perception of the credibility of fact-checking messages based on the in-group and out-group condition.",
+      "Dependent Variable": "Perceived credibility of fact-checking messages",
+      "n": "353",
+      "es_type": "η2",
+      "es_pe": ".013",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": ".030",
+      "es_txt": "Participants in the in-group condition were less likely to perceive fact-checking messages as credible than those in the out-group condition."
+    },
+    {
+      "Study": "H3",
+      "Description": "Investigation of the effectiveness of alternative fact-checking sources in decreasing motivated reasoning.",
+      "Dependent Variable": "Perceived credibility of fact-checking messages from different sources",
+      "n": "349",
+      "es_type": "η2",
+      "es_pe": ".018",
+      "es_low": "",
+      "es_high": "",
+      "es_ci": "",
+      "p": ".041",
+      "es_txt": "The pattern of motivated reasoning varied by fact-checking sources, with significant differences observed when the fact-checker was a human expert."
     }
   ]
 }

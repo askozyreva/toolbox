@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Toolbox: Examples</title>
+
+<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Toolbox of interventions</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="table_concept.html">Conceptual toolbox</a>
+</li>
+<li>
+  <a href="table_evidence.html">Evidence toolbox</a>
+</li>
+<li>
+  <a href="table_examples.html">Examples of interventions</a>
+</li>
+<li>
+  <a href="toolbox_map.html">Map of evidence</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Toolbox: Examples</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr <span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2024-02-20
+</p>
+<p>
+<strong>Checks:</strong> <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>toolbox/</code> <span
+class="glyphicon glyphicon-question-sign" aria-hidden="true"
+title="This is the local directory in which the code in this file was executed.">
+</span>
+</p>
+<p>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.1). The <em>Checks</em> tab describes the reproducibility checks
+that were applied when the results were created. The <em>Past
+versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the
+global environment can affect the analysis in your R Markdown file in
+unknown ways. For reproduciblity it’s best to always run the code in an
+empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220228code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20220228)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20220228code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20220228)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsarcgitmpibberlinmpgdeaisocietyinterventiontoolboxtreeb19567bf1157463db5747cbefc992e59873a517ctargetblankb19567ba">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/tree/b19567bf1157463db5747cbefc992e59873a517c" target="_blank">b19567b</a>
+</a>
+</p>
+</div>
+<div
+id="strongRepositoryversionstrongahrefhttpsarcgitmpibberlinmpgdeaisocietyinterventiontoolboxtreeb19567bf1157463db5747cbefc992e59873a517ctargetblankb19567ba"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development
+and connecting the code version to the results is critical for
+reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/tree/b19567bf1157463db5747cbefc992e59873a517c" target="_blank">b19567b</a>.
+See the <em>Past versions</em> tab to see a history of the changes made
+to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for
+the analysis have been committed to Git prior to generating the results
+(you can use <code>wflow_publish</code> or
+<code>wflow_git_commit</code>). workflowr only checks the R Markdown
+file, but you know if there are other scripts or data files that it
+depends on. Below is the status of the Git repository when the results
+were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  data/~$toolbox_evidence.xlsx
+
+Unstaged changes:
+    Modified:   README.md
+    Modified:   _workflowr.R
+    Modified:   analysis/_site.yml
+    Deleted:    code/README.md
+    Deleted:    data/README.md
+    Deleted:    images/Criticalignoring_lnos.png
+    Deleted:    images/Debunking_lnos.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.24.44.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.25.18.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.26.04.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.27.33.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.46.36.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.51.23.png
+    Deleted:    images/debunk_4steps.png
+    Deleted:    images/debunk_steps.png
+    Deleted:    images/debunking.png
+    Deleted:    images/minimal-media-literacy-tips.jpeg
+    Deleted:    images/warning-labels-01.png
+    Deleted:    images/warning-labels-02.png
+    Deleted:    images/warning-labels.png
+    Deleted:    output/README.md
+    Modified:   output/figure_map.pdf
+    Deleted:    output/figure_map.png
+    Deleted:    output/figure_map2.pdf
+    Modified:   output/infos_raw.json
+    Modified:   output/infos_refined.json
+    Deleted:    output/table_concept.png
+    Deleted:    output/tbl_concept.tex
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not
+included in this status report because it is ok for generated content to
+have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>analysis/table_examples.Rmd</code>) and
+HTML (<code>public/table_examples.html</code>) files. If you’ve
+configured a remote Git repository (see <code>?wflow_git_remote</code>),
+click on the hyperlinks in the table below to view the files as they
+were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/1a1a155d89d156e606ac8a5fb1bcce8f5e5f4f54/public/table_examples.html" target="_blank">1a1a155</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-30
+</td>
+<td>
+minor updates
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/5be9264d045f06d64f3b29c863dadac460d98e93/analysis/table_examples.Rmd" target="_blank">5be9264</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-24
+</td>
+<td>
+what should be the final version of the toolbox 2.0
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/5be9264d045f06d64f3b29c863dadac460d98e93/public/table_examples.html" target="_blank">5be9264</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-24
+</td>
+<td>
+what should be the final version of the toolbox 2.0
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/22a40df6ae28d62b7c0ea9115e7f0ec5f97b4e3b/public/table_examples.html" target="_blank">22a40df</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+<td>
+v2 updates
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/table_examples.html" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/3efec23801d2f2de155fa947451f7caa5a436a36/analysis/table_examples.Rmd" target="_blank">3efec23</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/c2b8b9052ef16d5018e3f1585d26d8da7cd4c1d9/analysis/table_examples.Rmd" target="_blank">c2b8b90</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-12
+</td>
+<td>
+v2 branch update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/c2b8b9052ef16d5018e3f1585d26d8da7cd4c1d9/public/table_examples.html" target="_blank">c2b8b90</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-12
+</td>
+<td>
+v2 branch update
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<p>This part of the online supplement provides examples for each
+intervention types included in our toolbox. Please note that these are
+not exaustive examples and implementation of each intervention type can
+take on different forms.</p>
+<div id="accuracy-prompts" class="section level3">
+<h3>Accuracy Prompts</h3>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-1-1.png" width="480" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-1">
+Past versions of unnamed-chunk-1-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-1-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>To the best of your knowledge, is the above headline accurate?</p>
+<p>◯ Yes</p>
+<p>◯ No</p>
+<hr />
+<p><em>Source:</em> A reproduction of a treatment condition from <a
+href="https://psycnet.apa.org/record/2020-53156-002">Pennycook et
+al. (2020)</a>, <a href="https://osf.io/mdtq8">Study 2
+Materials.</a></p>
+<hr />
+</div>
+<div id="debunking" class="section level3">
+<h3>Debunking</h3>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-2-1.png" width="480" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-2-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr />
+<p><em>Source:</em> <a
+href="https://skepticalscience.com/docs/DebunkingHandbook2020.pdf">The
+Debunking Handbook, 2020</a>.</p>
+<hr />
+</div>
+<div id="rebuttals-of-science-denialism" class="section level3">
+<h3>Rebuttals of science denialism</h3>
+<p>Florian Hantzsch (Interviewer): Mr. Stefan Müller from the
+Neustaedter Vaccine-Sceptics, how safe is the vaccine against
+dysomeria?’</p>
+<p><strong>Science denialism.</strong> Stefan Müller (Science Denier 1):
+‘The lack of safety is an important issue with the dysomeria vaccine.
+The side effects and risks of the vaccine are incalculable. As a
+patient, you do not know how the body reacts to the vaccine before
+administration. Even if you feel healthy immediately after the shot,
+harmful substances may have entered your body. Doctors cannot guarantee
+in advance that there will not be any complications. In my opinion, you
+cannot expect any fellow citizen to vaccinate as long as the vaccine is
+not 100% safe. Surely, it is not too much to ask that a product injected
+into a healthy human be 100% safe.’</p>
+<p>Florian Hantzsch (Interviewer): ‘Thank you, Mr. Müller. Mr. Jürgen
+Schmidt from the Health Office in Neustadt, how do you respond to
+that?’</p>
+<p><strong>Rebuttal.</strong> Jürgen Schmidt (Science Advocate 1):
+‘Mr. Müller demands 100% safety from the vaccine against dysomeria. In
+science, this argument is called impossible expectation. It is an
+impossible expectation because science can never guarantee 100% safety
+for any medical product, neither for aspirin nor for heart surgery. Any
+treatment poses a residual risk of complications for patients either
+during or after treatment. The scientific evidence is clear: The vaccine
+against dysomeria is a safe way to avoid the disease. The risk of
+dysomeria by far exceeds the risk from vaccination. This is why we, the
+Health Office in Neustadt, recommend the vaccination against the DS
+virus for citizens of all ages. And please let me add the following
+regarding the safety of the vaccine: We follow a very strict protocol to
+ensure the high quality of vaccines in the Federal States. This also is
+demonstrated by the fact that every batch of the vaccine against
+dysomeria constantly is monitored and independently screened by official
+control laboratories.’</p>
+<hr />
+<p><em>Source:</em> A transcript of messages delivered by deniers and
+advocates in a video used as a treatment condition, available in the <a
+href="https://doi.org/10.5334/joc.125.s1">Supplementary Information</a>
+in <a href="http://doi.org/10.5334/joc.125">Schmid et al. (2020)</a>.
+Note: original materials were in German.</p>
+<hr />
+</div>
+<div id="friction" class="section level3">
+<h3>Friction</h3>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-3-1.png" width="480" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-3-1">
+Past versions of unnamed-chunk-3-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-3-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-3-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Please explain how you know that the headline is true or false.</p>
+<hr />
+<p><em>Source:</em> A reproduction of a treatment condition with a
+friction sentence taken from <a
+href="https://misinforeview.hks.harvard.edu/article/pausing-reduce-false-news/">Fazio
+(2020)</a>.</p>
+<hr />
+</div>
+<div id="inoculation" class="section level3">
+<h3>Inoculation</h3>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-4-1.png" width="384" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
+Past versions of unnamed-chunk-4-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-4-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-4-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-5-1.png" width="384" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-5-1">
+Past versions of unnamed-chunk-5-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-5-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-5-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr />
+<p><em>Source:</em> Screenshots from the instructional video on the use
+of Emotional Language. All videos can be viewed on the <a
+href="https://inoculation.science/inoculation-videos/">Inoculation
+Science website</a>.</p>
+<p><em>Relevant scientific article:</em> <a
+href="https://www.science.org/doi/epdf/10.1126/sciadv.abo6254">Rozenbeek
+et al., 2022</a>.</p>
+<hr />
+</div>
+<div id="lateral-reading" class="section level3">
+<h3>Lateral Reading</h3>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-6-1.png" width="288" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
+Past versions of unnamed-chunk-6-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-6-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-6-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr />
+<p><em>Source:</em> A poster to remind students to implement this
+strategy when they come across an unfamiliar source. This poster and
+more materials available on the <a
+href="https://cor.stanford.edu/curriculum/?tab=collections">Civic Online
+Reasoning website</a>.</p>
+<p><em>Relevant scientific article:</em> <a
+href="https://doi.org/10.1037/edu0000740">Wineburg et al., 2022</a>.</p>
+<hr />
+</div>
+<div id="media-literacy-tips" class="section level3">
+<h3>Media-Literacy Tips</h3>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-7-1.png" width="480" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
+Past versions of unnamed-chunk-7-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-7-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr />
+<p><em>Source:</em> Pictured ten “Tips to spot fake news” created and
+made accessible by <a
+href="https://www.facebook.com/formedia/b%20log/third-party-fact-checking-tips-to-spot-false-news">Facebook</a>.</p>
+<p><em>Relevant scientific article:</em> <a
+href="https://www.pnas.org/doi/10.1073/pnas.1920498117#supplementary-materials">Guess
+et al, 2020</a>.</p>
+<hr />
+</div>
+<div id="minimal-media-literacy-tips" class="section level3">
+<h3>Minimal Media-Literacy Tips</h3>
+<p>Think carefully about the news with these tips</p>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-8-1.png" width="288" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
+Past versions of unnamed-chunk-8-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-8-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-8-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li>Be skeptical of headlines.</li>
+<li>Investigate the source.</li>
+<li>Watch for unusual formatting.</li>
+<li>Check the evidence.</li>
+</ul>
+<hr />
+<p><em>Source:</em> A reproduction of the treatment condition with
+minimal media literacy tips from <a
+href="https://psyarxiv.com/a9frz/">Arechar et al. (2023)</a>.</p>
+<hr />
+</div>
+<div id="refutations-and-social-norms" class="section level3">
+<h3>Refutations and Social Norms</h3>
+<p><strong>Claim.</strong> “The debate about how many refugees Australia
+should take in continues. The main aim is to keep refugees safe, and
+while there is some immediate cost, Jack Western from the Australian
+Refugee Resource Centre argued today that there was no reason to be
+concerned about economic consequences:”Within a short period of time,
+most refugees integrate into society, and a moderate increase in
+refugees will have a positive impact on the Australian economy”. Western
+claimed that within two decades, a slight increase in refugee intake
+would boost the Australian economy by an estimated 2%. Accepting a
+slightly increased uptake of refugees will have a positive impact on the
+Australian economy within 20 years.”</p>
+<p><strong>Refutation.</strong> Later today, Dr Michael Smith from the
+Centre for Independent Studies strongly refuted earlier statements
+regarding an economic benefit associated with asylum seekers. According
+to Smith, recent modelling by the Centre shows that “there is absolutely
+no economic gain to be expected in the foreseeable future by increasing
+the intake of refugees in Australia. Evidence also comes from Germany,
+where the intake of asylum seekers over the years has been an economic
+drain. Unfortunately, the reality is that each additional refugee comes
+at a certain long-term cost.</p>
+<p><strong>Claim-endorsement norm.</strong> Before you re-rate your
+belief in the original claim, let’s first have a look at what your peers
+said. We surveyed a representative sample of 25 UWA students, asking
+them how they rated their belief in the claim. The original claim was:
+“Accepting a slightly increased uptake of refugees will have a positive
+impact on the Australian economy.” This is how your peers rated their
+belief in the claim. The below graph shows their claim endorsement on a
+scale from 0 (confidently disagree with claim) to 100 (confidently agree
+with claim):</p>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-9-1.png" width="480" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-9-1">
+Past versions of unnamed-chunk-9-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-9-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-9-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr />
+<p><em>Source:</em> Refutation and Claim-endorsement norm in the form of
+a graph taken from <a
+href="https://doi.org/10.1177/17470218221111750">Ecker et
+al. (2022)</a>, <a
+href="EMS156630-supplement-Supplement.pdf">Supplementary
+information</a>.</p>
+<hr />
+</div>
+<div id="source-credibility-labels" class="section level3">
+<h3>Source-Credibility Labels</h3>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-10-1.png" width="480" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
+Past versions of unnamed-chunk-10-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-10-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-10-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr />
+<p><em>Source:</em> 1-to-5 star trustworthiness ratings applied to news
+headlines in <a
+href="https://tsjournal.org/index.php/jots/article/view/100">Celadin et
+al. (2023)</a>.</p>
+<hr />
+</div>
+<div id="warning-and-fact-checking-labels" class="section level3">
+<h3>Warning and Fact-Checking Labels</h3>
+<p><img src="figure/table_examples.Rmd/unnamed-chunk-11-1.png" width="480" style="display: block; margin: auto auto auto 0;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
+Past versions of unnamed-chunk-11-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-11-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/663ae9cced3f32b917933b5d6cb6d5a74b749056/public/figure/table_examples.Rmd/unnamed-chunk-11-1.png" target="_blank">663ae9c</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr />
+<p><em>Source:</em> A false headline with the fact-checking label with
+“Rated False” tag from <a
+href="https://static-content.springer.com/esm/art%3A10.1007%2Fs11109-019-09533-0/MediaObjects/11109_2019_9533_MOESM1_ESM.pdf">Online
+appendix A</a> in <a
+href="https://doi.org/10.1007/s11109-019-09533-0">Clayton et
+al. (2020)</a>.</p>
+<hr />
+<p><a
+href="https://ai_society.mpib.dev/intervention_toolbox/privacy.html">Privacy
+policy</a> - <a
+href="https://ai_society.mpib.dev/intervention_toolbox/terms.html">Imprint/Provider
+Identification</a></p>
+<style type="text/css">
+p {
+ font-size: 20px;
+ width: 1200px;
+  margin: 10px 15px 15px 0px;
+ }
+
+
+
+li {
+  font-size: 20px;
+  }
+
+
+
+h1 {
+  font-size: 32px;
+  width: 1200px;
+}
+
+body {
+  # background-color: rgba(176, 219, 234, 0.5);
+  # margin-left: 0px;
+  # padding-left: 0px;
+   width: 100%;
+}
+# h1 {
+#   color: white;
+#   text-align: center;
+# }
+# p {
+#   color: red;
+#   text-align: center;
+# }
+
+.btn-workflowr {
+  display: none
+}
+
+
+.btn-workflowr-sessioninfo {
+  visibility: hidden
+}
+
+.btn-default {
+  visibility: hidden
+}
+
+
+</style>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre><code>R version 4.3.1 (2023-06-16 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19043)
+
+Matrix products: default
+
+
+locale:
+[1] LC_COLLATE=English_United States.utf8 
+[2] LC_CTYPE=English_United States.utf8   
+[3] LC_MONETARY=English_United States.utf8
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.utf8    
+
+time zone: Europe/Berlin
+tzcode source: internal
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+[1] vembedr_0.1.5   png_0.1-8       here_1.0.1      pacman_0.5.1   
+[5] workflowr_1.7.1
+
+loaded via a namespace (and not attached):
+ [1] jsonlite_1.8.7    highr_0.10        compiler_4.3.1    promises_1.2.1   
+ [5] Rcpp_1.0.11       stringr_1.5.0     git2r_0.32.0      callr_3.7.3      
+ [9] later_1.3.1       jquerylib_0.1.4   yaml_2.3.7        fastmap_1.1.1    
+[13] R6_2.5.1          knitr_1.43        tibble_3.2.1      rprojroot_2.0.3  
+[17] bslib_0.5.1       pillar_1.9.0      rlang_1.1.1       utf8_1.2.3       
+[21] cachem_1.0.8      stringi_1.7.12    httpuv_1.6.11     xfun_0.40        
+[25] getPass_0.2-2     fs_1.6.3          sass_0.4.7        cli_3.6.1        
+[29] magrittr_2.0.3    ps_1.7.5          digest_0.6.33     processx_3.8.2   
+[33] rstudioapi_0.15.0 lifecycle_1.0.3   vctrs_0.6.3       evaluate_0.21    
+[37] glue_1.6.2        whisker_0.4.1     fansi_1.0.4       rmarkdown_2.24   
+[41] httr_1.4.7        tools_4.3.1       pkgconfig_2.0.3   htmltools_0.5.6  </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

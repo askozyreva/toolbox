@@ -58,9 +58,9 @@ df1 <- data  %>%
 # %>% 
 #   filter (Intervention != "Rebuttals of science denialism")
   # mutate (Logo = "", .before = "Description")
-colnames(df1)
-
-
+# colnames(df1)
+# 
+# df1$Intervention
 
 ```
 
@@ -137,8 +137,8 @@ reactable(
   width = 1800,
   defaultColDef = colDef(minWidth = 100),
   showPageSizeOptions = TRUE,
-  pageSizeOptions = c(4, 8, 12),
-  defaultPageSize = 11,
+  # pageSizeOptions = c(4, 8, 12),
+  defaultPageSize = 10,
   theme = reactableTheme(
     borderColor = "#dfe2e5",
     stripedColor = "#f6f8fa",
@@ -149,7 +149,7 @@ reactable(
   ),
   columns = list(
     Intervention = colDef(
-      minWidth = 110,
+      minWidth = 100,
        align = "center",
       html = TRUE,
       style = list(fontWeight = 600),
@@ -162,12 +162,12 @@ reactable(
                 value)
       }
     ),
-    Description= colDef(minWidth = 150),
+    Description= colDef(minWidth = 190),
     Example = colDef(minWidth = 150),
     "Conceptual framework" = colDef(minWidth = 120),
     "Targeted process" = colDef(minWidth = 160),
     Implementation = colDef(minWidth = 160),
-    Scalability = colDef(minWidth = 140),
+    Scalability = colDef(minWidth = 120),
     Limitations = colDef(minWidth = 170),
     Links = colDef(show = FALSE)),
     details = colDef(width = 75, name = "Details", details = row_details,

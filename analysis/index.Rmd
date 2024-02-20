@@ -1,5 +1,5 @@
 ---
-title: "Toolbox of interventions against online misinformation and manipulation"
+title: "Toolbox of interventions against online misinformation -- Version 2.0"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -11,42 +11,50 @@ output:
 ---
 
 
-This is an online supplement for the expert review project "Toolbox of Interventions Against Online Misinformation and Manipulation"
+This is an online supplement for the expert review project "Toolbox of Interventions Against Online Misinformation"
 
 _Coordinating authors_: 
 Anastasia Kozyreva<sup>1</sup>, Philipp Lorenz-Spreen <sup>1</sup>, Stefan Herzog<sup>1</sup>, Ullrich Ecker<sup>2</sup>, Stephan Lewandowsky<sup>2,3,4</sup>, and Ralph Hertwig <sup>1</sup>
 
 
-_Contributing authors_: Melisa Basol<sup>5</sup>, Adam J. Berinsky<sup>6</sup>, Cornelia Betsch<sup>7,8</sup>, John Cook<sup>9</sup>, Lisa K. Fazio<sup>10</sup>, Michael Geers<sup>1,11</sup>, Andrew M. Guess<sup>12</sup>, Rakoen Maertens<sup>5</sup>, Folco Panizza<sup>13</sup>, Gordon Pennycook<sup>14</sup>, David J. Rand<sup>6</sup>, Steve Rathje<sup>15</sup>, Jason Reifler<sup>16</sup>, Jon Roozenbeek<sup>5</sup>, Philipp Schmid<sup>7,8</sup>, Mark Smith<sup>17</sup>, Briony Swire-Thomson<sup>18</sup>, Paula Szewach<sup>16,19</sup>, Sander van der Linden<sup>5</sup>, Sam Wineburg<sup>17</sup>.
+_Contributing authors_: Ayesha Ali<sup>5</sup>, Joe Bak-Coleman<sup>6</sup>, Sarit Barzilai<sup>7</sup>, Melisa Basol<sup>8</sup>, Adam J. Berinsky<sup>9</sup>, Cornelia Betsch<sup>10,11</sup>, John Cook<sup>12</sup>, Lisa K. Fazio<sup>13</sup>, Michael Geers<sup>1,14</sup>, Andrew M. Guess<sup>15</sup>, Haifeng Huang<sup>16</sup>, Horacio Larreguy<sup>17</sup>, Rakoen Maertens<sup>18</sup>, Folco Panizza<sup>19</sup>, Gordon Pennycook<sup>20,21</sup>, David J. Rand<sup>9</sup>, Steve Rathje<sup>22</sup>, Jason Reifler<sup>23</sup>, Philipp Schmid<sup>10,11,24</sup>, Mark Smith<sup>25</sup>, Briony Swire-Thomson<sup>26</sup>, Paula Szewach<sup>23,27</sup>, Sander van der Linden<sup>8</sup>, Sam Wineburg<sup>25</sup>.
 
 <sup>1</sup>Center for Adaptive Rationality, Max Planck Institute for Human Development, Germany.
 <sup>2</sup>School of Psychological Science, University of Western Australia.
 <sup>3</sup>School of Psychological Science, University of Bristol, England.
 <sup>4</sup>University of Potsdam, Germany.
-<sup>5</sup>University of Cambridge, United Kingdom.
-<sup>6</sup>Massachusetts Institute of Technology, United States.
-<sup>7</sup>University of Erfurt, Germany.
-<sup>8</sup>Bernhard Nocht Institute for Tropical Medicine, Germany.
-<sup>9</sup>Climate Change Communication Research Hub, Monash University, Australia.
-<sup>10</sup>Vanderbilt University, United States.
-<sup>11</sup>Humboldt University of Berlin, Germany.
-<sup>12</sup>Princeton University, United States.
-<sup>13</sup>IMT School for Advanced Studies Lucca, Italy.
-<sup>14</sup>University of Regina, Canada.
-<sup>15</sup>New York University, United States.
-<sup>16</sup>University of Exeter, United Kingdom.
-<sup>17</sup>Stanford University, United States.
-<sup>18</sup>Northeastern University, United States.
-<sup>19</sup>University of Essex, United Kingdom.
+<sup>5</sup>Lahore University of Management Sciences, Pakistan.
+<sup>6</sup>Craig Newmark Center, School of Journalism, Columbia University.
+<sup>7</sup>University of Haifa, Israel.
+<sup>8</sup>University of Cambridge, United Kingdom.
+<sup>9</sup>Massachusetts Institute of Technology, United States.
+<sup>10</sup>University of Erfurt, Germany.
+<sup>11</sup>Bernhard Nocht Institute for Tropical Medicine, Germany.
+<sup>12</sup>Melbourne Centre for Behaviour Change, University of Melbourne, Australia.
+<sup>13</sup>Vanderbilt University, United States.
+<sup>14</sup>Humboldt University of Berlin, Germany.
+<sup>15</sup>Princeton University, United States.
+<sup>16</sup>Ohio State University, United States.
+<sup>17</sup>Instituto Tecnológico Autónomo de México, Mexico.
+<sup>18</sup>University of Oxford, United Kingdom.
+<sup>19</sup>IMT School for Advanced Studies Lucca, Italy.
+<sup>20</sup>Cornell University, United States.
+<sup>21</sup>University of Regina, Canada.
+<sup>22</sup>New York University, United States.
+<sup>23</sup>University of Exeter, United Kingdom.
+<sup>24</sup>Radboud University Nijmegen, The Netherlands.
+<sup>25</sup>Stanford University, United States.
+<sup>26</sup>Northeastern University, United States.
+<sup>27</sup>Barcelona Supercomputing Center, Spain.
 
 
-_Research assistance_: Spela Vrtovec, Friederike Stock.
+_Research assistance_: Spela Vrtovec, Friederike Stock, Alexandra Horsley.
 
 _Editorial assistance_: Deb Ain.
 
-_Abstract_: The spread of misinformation through media and social networks threatens many aspects of society, including public health and the state of democracies. A wide range of individual-focused interventions aimed at reducing harm from online misinformation have been developed in the behavioral and cognitive sciences. Here, we introduce and analyze the toolbox of interventions against misinformation, which includes an up-to-date account of the interventions featured in 42 scientific papers. A resource for scientists, policy makers, and the public, the toolbox delivers both a conceptual overview of the breadth of interventions, including their target and scope, and a summary of the empirical evidence supporting the interventions, including the methods and experimental paradigms used to test them. The toolbox covers 10 types of interventions: accuracy prompts, debunking, friction, inoculation, lateral reading, media-literacy tips, rebuttals of science denialism, self-reflection tools, social norms, and warning and fact-checking labels.
+_Abstract_: The spread of misinformation through media and social networks threatens many aspects of society, including public health and the state of democracies. One approach to mitigating the impact of misinformation focuses on individual-level interventions, equipping the public and policy-makers with essential tools to curb the spread and influence of falsehoods. Here we introduce a toolbox of individual-focused interventions aimed at reducing harm from online misinformation. Comprising an up-to-date account of the interventions featured in 81 scientific papers from across the globe, the toolbox is a resource for scientists, policymakers, and the public. It provides both a conceptual overview of the breadth of interventions---including their target, scope, and examples---and a summary of the empirical evidence supporting the interventions---including the methods and experimental paradigms used to test them. The toolbox covers nine categories of interventions: accuracy prompts, debunking and rebuttals, friction, inoculation, lateral reading and verification strategies, media-literacy tips, social norms, source-credibility labels, and warning and fact-checking labels.
 
-_Preprint_:
+_Preprint_: https://psyarxiv.com/x8ejt
 
 [Privacy policy](https://ai_society.mpib.dev/intervention_toolbox/privacy.html) - [Imprint/Provider Identification](https://ai_society.mpib.dev/intervention_toolbox/terms.html)
 

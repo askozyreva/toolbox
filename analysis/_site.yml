@@ -10,34 +10,11 @@ navbar:
     href: table_concept.html
   - text: Evidence toolbox
     href: table_evidence.html
-  # - text: Public facing toolbox
-  #   href: toolbox_public.html
-  #   menu:
-  #       - text: "Overview"
-  #         href: toolbox_public.html
-  #       - text: "Nudges"
-  #         href: toolbox_nudge.html
-  #       - text: "Boosts"
-  #         href: toolbox_boost.html
-  #       - text: "Refutation strategies"
-  #         href: toolbox_refutation.html
-  # - text: Toolbox @LNoS2022
-  #   href: boosting_lnos.html
-  #   menu:
-  #       - text: "Boosting toolbox LNoS2022"
-  #         href: boosting_lnos.html
-  #       - text: "Lateral reading"
-  #         href: boosting_lr.html
-  #       - text: "Inoculation"
-  #         href: boosting_inoc.html
-  #       - text: "Debunking"
-  #         href: boosting_debunk.html
-  #       - text: "Self-nudging and critical ignoring"
-  #         href: boosting_selfnudge.html
-        # right:
-  # - icon: fa-gitlab
-  #   text: Source code
-  #   href: https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox
+  - text: Examples of interventions
+    href: table_examples.html
+  - text: Map of evidence
+    href: toolbox_map.html
+
 output:
   workflowr::wflow_html:
     # toc: false

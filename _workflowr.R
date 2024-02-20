@@ -1,5 +1,7 @@
 ### workflowr management
+#
 
+#install.packages("workflowr")
 library(workflowr)
 
 
@@ -8,6 +10,8 @@ library(workflowr)
 files <- c("analysis/index.Rmd",
   "analysis/table_concept.Rmd",
   "analysis/table_evidence.Rmd",
+  "analysis/table_examples.Rmd",
+  "analysis/toolbox_map.Rmd",
   "analysis/privacy.rmd",
   "analysis/terms.rmd"
  )

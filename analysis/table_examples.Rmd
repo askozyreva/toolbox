@@ -1,0 +1,269 @@
+---
+title: "Toolbox: Examples"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    # rmdcss::html_air
+    # toc: false
+    # code_folding: hide
+    theme: flatly
+    highlight: monochrome
+    # css: modest.css
+---
+
+```{r setup, include=FALSE}
+
+if(!require("pacman")) install.packages("pacman"); library(pacman)
+p_load("here","png","grid", "vembedr")
+
+
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+This part of the online supplement provides examples for each intervention types included in our toolbox. Please note that these are not exaustive examples and implementation of each intervention type can take on different forms.
+
+
+### Accuracy Prompts
+
+```{r, fig.height=4, fig.width=5, fig.align="left"}
+
+img_tips <- readPNG("images/nudge-seinfeld.png")
+grid.raster(img_tips,  width = .9)
+```
+
+To the best of your knowledge, is the above headline accurate?
+
+◯ Yes
+
+◯ No
+
+------------------------------------------------------------------------
+
+*Source:* A reproduction of a treatment condition from [Pennycook et al. (2020)](https://psycnet.apa.org/record/2020-53156-002), [Study 2 Materials.](https://osf.io/mdtq8)
+
+------------------------------------------------------------------------
+
+### Debunking
+
+```{r, fig.height=6, fig.width=5, fig.align="left"}
+
+img_tips <- readPNG("images/debunking-refutation.png")
+grid.raster(img_tips,  width = .9)
+```
+
+------------------------------------------------------------------------
+
+*Source:* [The Debunking Handbook, 2020](https://skepticalscience.com/docs/DebunkingHandbook2020.pdf).
+
+------------------------------------------------------------------------
+
+### Rebuttals of science denialism
+
+Florian Hantzsch (Interviewer): Mr. Stefan Müller from the Neustaedter Vaccine-Sceptics, how safe is the vaccine against dysomeria?'
+
+**Science denialism.** Stefan Müller (Science Denier 1): 'The lack of safety is an important issue with the dysomeria vaccine. The side effects and risks of the vaccine are incalculable. As a patient, you do not know how the body reacts to the vaccine before administration. Even if you feel healthy immediately after the shot, harmful substances may have entered your body. Doctors cannot guarantee in advance that there will not be any complications. In my opinion, you cannot expect any fellow citizen to vaccinate as long as the vaccine is not 100% safe. Surely, it is not too much to ask that a product injected into a healthy human be 100% safe.'
+
+Florian Hantzsch (Interviewer): 'Thank you, Mr. Müller. Mr. Jürgen Schmidt from the Health Office in Neustadt, how do you respond to that?'
+
+**Rebuttal.** Jürgen Schmidt (Science Advocate 1): 'Mr. Müller demands 100% safety from the vaccine against dysomeria. In science, this argument is called impossible expectation. It is an impossible expectation because science can never guarantee 100% safety for any medical product, neither for aspirin nor for heart surgery. Any treatment poses a residual risk of complications for patients either during or after treatment. The scientific evidence is clear: The vaccine against dysomeria is a safe way to avoid the disease. The risk of dysomeria by far exceeds the risk from vaccination. This is why we, the Health Office in Neustadt, recommend the vaccination against the DS virus for citizens of all ages. And please let me add the following regarding the safety of the vaccine: We follow a very strict protocol to ensure the high quality of vaccines in the Federal States. This also is demonstrated by the fact that every batch of the vaccine against dysomeria constantly is monitored and independently screened by official control laboratories.'
+
+------------------------------------------------------------------------
+
+*Source:* A transcript of messages delivered by deniers and advocates in a video used as a treatment condition, available in the [Supplementary Information](https://doi.org/10.5334/joc.125.s1) in [Schmid et al. (2020)](http://doi.org/10.5334/joc.125). Note: original materials were in German.
+
+------------------------------------------------------------------------
+
+### Friction
+
+```{r, fig.height=4, fig.width=5, fig.align="left"}
+
+img_tips <- readPNG("images/friction-example.png")
+grid.raster(img_tips,  width = .9)
+```
+
+Please explain how you know that the headline is true or false.
+
+------------------------------------------------------------------------
+
+*Source:* A reproduction of a treatment condition with a friction sentence taken from [Fazio (2020)](https://misinforeview.hks.harvard.edu/article/pausing-reduce-false-news/).
+
+------------------------------------------------------------------------
+
+### Inoculation
+
+```{r, fig.height=2, fig.width=4, fig.align="left"}
+
+img_tips <- readPNG("images/inoculation-2.png")
+grid.raster(img_tips,  width = .9)
+```
+
+```{r, fig.height=2, fig.width=4, fig.align="left"}
+
+img_tips <- readPNG("images/inoculation-3.png")
+grid.raster(img_tips,  width = .9)
+```
+
+------------------------------------------------------------------------
+
+*Source:* Screenshots from the instructional video on the use of Emotional Language. All videos can be viewed on the [Inoculation Science website](https://inoculation.science/inoculation-videos/).
+
+*Relevant scientific article:* [Rozenbeek et al., 2022](https://www.science.org/doi/epdf/10.1126/sciadv.abo6254).
+
+------------------------------------------------------------------------
+
+### Lateral Reading
+
+```{r, fig.height=4, fig.width=3, fig.align="left"}
+
+img_tips <- readPNG("images/lateral-reading.png")
+grid.raster(img_tips,  width = .9)
+```
+
+------------------------------------------------------------------------
+
+*Source:* A poster to remind students to implement this strategy when they come across an unfamiliar source. This poster and more materials available on the [Civic Online Reasoning website](https://cor.stanford.edu/curriculum/?tab=collections).
+
+*Relevant scientific article:* [Wineburg et al., 2022](https://doi.org/10.1037/edu0000740).
+
+------------------------------------------------------------------------
+
+### Media-Literacy Tips
+
+```{r, fig.height=6, fig.width=5, fig.align="left"}
+
+img_tips <- readPNG("images/tips-fake-news.png")
+grid.raster(img_tips,  width = .7)
+```
+
+------------------------------------------------------------------------
+
+*Source:* Pictured ten "Tips to spot fake news" created and made accessible by [Facebook](https://www.facebook.com/formedia/b%20log/third-party-fact-checking-tips-to-spot-false-news).
+
+*Relevant scientific article:* [Guess et al, 2020](https://www.pnas.org/doi/10.1073/pnas.1920498117#supplementary-materials).
+
+------------------------------------------------------------------------
+
+### Minimal Media-Literacy Tips
+
+Think carefully about the news with these tips
+
+```{r, fig.height=3, fig.width=3, fig.align="left"}
+
+img_tips <- readPNG("images/minimal-media-literacy-tips.png")
+grid.raster(img_tips,  width = .7)
+
+
+```
+
+-   Be skeptical of headlines.
+-   Investigate the source.
+-   Watch for unusual formatting.
+-   Check the evidence.
+
+------------------------------------------------------------------------
+
+*Source:* A reproduction of the treatment condition with minimal media literacy tips from [Arechar et al. (2023)](https://psyarxiv.com/a9frz/).
+
+------------------------------------------------------------------------
+
+
+### Refutations and Social Norms
+
+**Claim.** "The debate about how many refugees Australia should take in continues. The main aim is to keep refugees safe, and while there is some immediate cost, Jack Western from the Australian Refugee Resource Centre argued today that there was no reason to be concerned about economic consequences:"Within a short period of time, most refugees integrate into society, and a moderate increase in refugees will have a positive impact on the Australian economy". Western claimed that within two decades, a slight increase in refugee intake would boost the Australian economy by an estimated 2%. Accepting a slightly increased uptake of refugees will have a positive impact on the Australian economy within 20 years."
+
+**Refutation.** Later today, Dr Michael Smith from the Centre for Independent Studies strongly refuted earlier statements regarding an economic benefit associated with asylum seekers. According to Smith, recent modelling by the Centre shows that "there is absolutely no economic gain to be expected in the foreseeable future by increasing the intake of refugees in Australia. Evidence also comes from Germany, where the intake of asylum seekers over the years has been an economic drain. Unfortunately, the reality is that each additional refugee comes at a certain long-term cost.
+
+**Claim-endorsement norm.** Before you re-rate your belief in the original claim, let's first have a look at what your peers said. We surveyed a representative sample of 25 UWA students, asking them how they rated their belief in the claim. The original claim was: "Accepting a slightly increased uptake of refugees will have a positive impact on the Australian economy." This is how your peers rated their belief in the claim. The below graph shows their claim endorsement on a scale from 0 (confidently disagree with claim) to 100 (confidently agree with claim):
+
+```{r, fig.height=1, fig.width=5, fig.align="left"}
+
+img_tips <- readPNG("images/claim-endorsement.png")
+grid.raster(img_tips,  width = .9)
+```
+
+------------------------------------------------------------------------
+
+*Source:* Refutation and Claim-endorsement norm in the form of a graph taken from [Ecker et al. (2022)](https://doi.org/10.1177/17470218221111750), [Supplementary information](EMS156630-supplement-Supplement.pdf).
+
+------------------------------------------------------------------------
+
+### Source-Credibility Labels
+
+```{r, fig.height=3, fig.width=5, fig.align="left"}
+
+img_tips <- readPNG("images/source-credibility.png")
+grid.raster(img_tips,  width = .9)
+```
+
+------------------------------------------------------------------------
+
+*Source:* 1-to-5 star trustworthiness ratings applied to news headlines in [Celadin et al. (2023)](https://tsjournal.org/index.php/jots/article/view/100).
+
+------------------------------------------------------------------------
+
+### Warning and Fact-Checking Labels
+
+```{r, fig.height=4, fig.width=5, fig.align="left"}
+
+img_tips <- readPNG("images/fact-checking-label.png")
+grid.raster(img_tips,  width = .9)
+```
+
+------------------------------------------------------------------------
+
+*Source:* A false headline with the fact-checking label with "Rated False" tag from [Online appendix A](https://static-content.springer.com/esm/art%3A10.1007%2Fs11109-019-09533-0/MediaObjects/11109_2019_9533_MOESM1_ESM.pdf) in [Clayton et al. (2020)](https://doi.org/10.1007/s11109-019-09533-0).
+
+------------------------------------------------------------------------
+
+[Privacy policy](https://ai_society.mpib.dev/intervention_toolbox/privacy.html) - [Imprint/Provider Identification](https://ai_society.mpib.dev/intervention_toolbox/terms.html)
+
+```{css, echo=FALSE}
+p {
+ font-size: 20px;
+ width: 1200px;
+  margin: 10px 15px 15px 0px;
+ }
+
+
+
+li {
+  font-size: 20px;
+  }
+
+
+
+h1 {
+  font-size: 32px;
+  width: 1200px;
+}
+
+body {
+  # background-color: rgba(176, 219, 234, 0.5);
+  # margin-left: 0px;
+  # padding-left: 0px;
+   width: 100%;
+}
+# h1 {
+#   color: white;
+#   text-align: center;
+# }
+# p {
+#   color: red;
+#   text-align: center;
+# }
+
+.btn-workflowr {
+  display: none
+}
+
+
+.btn-workflowr-sessioninfo {
+  visibility: hidden
+}
+
+.btn-default {
+  visibility: hidden
+}
+
+
+```

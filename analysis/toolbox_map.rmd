@@ -1,0 +1,381 @@
+---
+title: "Toolbox: World map of evidence"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+
+---
+
+This section of the online supplement offers an interactive world map showcasing the studies featured in our evidence toolbox. By double-clicking the intervention name in the legend, you can isolate that specific intervention on the map. When you hover over the circles on the map, it will display the counts of studies by country.
+
+```{r setup, include=FALSE}
+# Load required packages
+if(!require("pacman")) install.packages("pacman")
+library(pacman)
+### to do: re-check which packages were actually used
+p_load(
+  "tidyverse", "here", "readr",  "workflowr",
+  "readxl", "jtools", "broom", "kableExtra",
+  "knitr", "maps", "countrycode", "plotly", "htmlwidgets"
+)
+
+options(scipen = 999)
+
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, fig.width = 8.37)
+```
+
+```{r read_and_filter_data, echo=FALSE}
+# read in data
+df <- read_excel("data/toolbox_evidence.xlsx", na = c("", "NA"))
+
+
+# drop irrelevant columns & data
+country_data <- df %>%
+  select(Intervention, `Sample Country`) %>%
+  rename(Country = `Sample Country`) %>%
+  # deal with multiple countries & interventions
+  # account for paper w/ 2 studies (only the second is relevant)
+  separate_rows(Country, sep = "2: ") %>%
+  # drop entries without specific origins
+  filter(!grepl("international|global", Country, ignore.case = TRUE)) %>%
+  # expand lists in `Country` into separate entries
+  separate_rows(Country, sep = ", ") %>%
+  separate_rows(Country, sep = " and the ") %>%
+  # don't double count entries with "and" in them
+  # but still consider entries with multiple interventions
+  # !!! NOTE: this will no longer behave properly if entries are added which:
+  #     - have multiple types of interventions named in one row separated by the string " and "
+  #     - AND at least one of the categories containing the string " and "
+  #       (e.g., "Debunking and rebuttals") is included in this list
+  #     - solution (and also probably better to keep formatting uniform):
+  #       - separate multiple `Intervention`s with " & " or ", "
+  mutate(
+         Intervention = case_when(
+           (grepl(" and ", Intervention) &
+              # don't modify entries with "and" in their category titles
+              !grepl("Debunking and|Lateral reading and|Warning and", Intervention)) ~
+             str_replace(Intervention, " and ", " & "),
+           TRUE ~ Intervention
+         )) %>%
+  # separate & remove the "Multiple interventions:" tag
+  separate_rows(Intervention, sep = ": ") %>%
+  filter(!grepl("multiple", Intervention, ignore.case = TRUE)) %>%
+  # expand lists of `Intervention`s into separate entries
+  separate_rows(Intervention, sep = " & ") %>%
+  separate_rows(Intervention, sep = ", ") %>%
+  # fix entries to fit official country names & intervention categories
+  mutate(
+         Country = case_when(
+           # fix some inconsistencies/trailing spaces
+           grepl("United St", Country) ~ "United States",
+           grepl("South Africa", Country) ~ "South Africa",
+           grepl("Taiwan", Country) ~ "Taiwan",
+           TRUE ~ Country
+         ),
+         Intervention = case_when(
+           # format to categories
+           grepl("Debunking|Rebuttals", Intervention, ignore.case = TRUE) ~ "Debunking & rebuttals",
+           grepl("Lateral|verification", Intervention, ignore.case = TRUE) ~ "Lateral reading & verification strategies", 
+           grepl("credibility", Intervention, ignore.case = TRUE) ~ "Source-credibility labels",
+           grepl("Warning|checking", Intervention, ignore.case = TRUE) ~ "Warning & fact-checking labels",
+           TRUE ~ Intervention
+         )) %>%
+  drop_na()
+
+
+# count interventions by country
+counts <- country_data %>%
+  group_by(Country, Intervention) %>%
+  summarise(n = n())
+
+# join counts with country longitude/latitude (from Google – https://developers.google.com/public-data/docs/canonical/countries_csv)
+countries <- read.csv("data/countries.csv")
+counts <- left_join(counts, countries, by = c("Country" = "name"))
+
+# clean data
+counts <- counts %>%
+  select(-c(X)) %>%
+  rename(country_code = country) %>%
+  group_by(Country) %>%
+  mutate(num_interventions = n_distinct(Intervention)) %>%
+  # sort
+  arrange(desc(n)) %>%
+  # order of interventions/country
+  mutate(rank_order = row_number())
+
+```
+```{r adjust_longitudes}
+
+# if a country has multiple interventions, add or subtract from latitude to plot
+offset_lon <- function(df) {
+  df <- df[order(-df$n),]
+  df <- df %>%
+    group_by(Country) %>%
+    subset(!is.na(Country))
+  by_country <- split(df, df$Country)
+  # for each country
+  for (i in seq_along(by_country)) {
+    # extract current country data
+    curr_df <- by_country[[i]]
+    # skip entries w/ no longitude given
+    if (is.na(curr_df$longitude[1])) {
+      next
+    }
+    # find middle row number
+    mid_row <- nrow(curr_df) %/% 2 + 1
+    # number of unique interventions
+    unique_ints <- nrow(curr_df)
+    # sum of # of interventions
+    int_count <- sum(curr_df$n)
+    if (unique_ints > 1) {
+      if (unique_ints == 2) {
+        # if there are only 2 points to plot
+        # make equidistant from original point
+        curr_df$longitude[1] <- curr_df$longitude[1] - 2*log(curr_df$n[1] + curr_df$n[2])
+        curr_df$longitude[2] <- curr_df$longitude[2] + 2*log(curr_df$n[1] + curr_df$n[2])
+      } else {
+        # iterate backward from middle
+        for (j in rev(1:(mid_row-1))) {
+          curr_df$longitude[j] <- curr_df$longitude[j+1] - 2*log(curr_df$n[j] + curr_df$n[j+1])
+        }
+        if (unique_ints > 2) {
+          # iterate forward from middle
+          for (j in (mid_row+1):nrow(curr_df)) {
+            curr_df$longitude[j] <- curr_df$longitude[j-1] + 2*log(curr_df$n[j] + curr_df$n[j-1])
+          }
+        }
+      }
+      # for unbalanced groups of points, shift all points to the right
+      if (sum(curr_df$n[mid_row:unique_ints]) <= 3) {
+        curr_df$longitude <- curr_df$longitude + 2*log(sum(curr_df$n[mid_row:unique_ints]))
+      }
+    }
+    # replace current country data
+    by_country[[i]] <- curr_df
+  }
+  # recombine data
+  df_edited <- do.call(rbind, by_country)
+  return(df_edited)
+}
+
+
+# calculate longitude offsets
+counts_adjusted <- offset_lon(counts)
+```
+
+```{r plotly_plot, fig.height=8, fig.width=10}
+
+# define color palette
+
+
+wes_colors <- c("#e3342f", "#f6993f", "#ffed4a", "#228B22", "#91c591", "#34495E", "#3498DB", "#9561e2", "#f66d9b")
+
+
+# create plot
+plotly_map <- plot_geo(counts_adjusted) %>%
+  add_markers(
+    x = ~longitude,
+    y = ~latitude,
+    size = ~n,
+    sizes = c(10, 600),
+    color = ~Intervention,
+    text = ~paste(Country, "<br>Intervention:", Intervention, "<br>Count:", n),
+    hoverinfo = "text",
+    colors = wes_colors,
+    opacity = 0.85
+  ) %>%
+  layout(
+    title = list(
+      text = "",
+      xref = "paper"
+    ),
+    # set width, height, & legend specs so they are coerced into 3 columns
+    width = 1000,
+    height = 600,
+    legend = list(
+      orientation = "h",
+      yanchor = "bottom",
+      xanchor = "middle",
+      x = 0.04
+      # xref = "paper",
+      # y = 0.1,
+    ),
+    # to make it display properly in the knitted doc
+    # adjust/remove if rendering html separately
+    margin = list(
+      l = 0,
+      r = 100
+    ),
+    showlegend = TRUE,
+    geo = list(
+      showland = TRUE,
+      landcolor = toRGB("grey90"),
+      countrycolor = toRGB("white"),
+      countrywidth = 0.35,
+      coastlinecolor = toRGB("grey80"),
+      coastlinewidth = 0.5,
+      showcountries = TRUE,
+      fitbounds = "locations"
+       )
+  )
+
+# print
+plotly_map
+```
+
+
+```{r ggplot_plot, include = FALSE}
+
+world <- map_data("world")
+
+ggplot_map <- ggplot() +
+  geom_map(
+    data = world, map = world,
+    aes(map_id = region),
+    color = "white", fill = "grey85", size = 0.1
+  ) +
+  coord_sf(ylim = c(-50, 70), xlim = c(-120, 150), datum = NA) +
+  geom_point(
+    data = counts_adjusted,
+    aes(longitude, latitude, fill = Intervention, size = n),
+    shape = 21, alpha = 0.65, stroke = 0
+  ) +
+  scale_size_continuous(
+    range = c(2, 12),
+    # guide = "none",
+    # if we wanted to include a key for the scale of the points & their corresponding values
+    breaks = c(min(counts_adjusted$n), max(counts_adjusted$n)),
+    labels = c(str(min(counts_adjusted$n)), str(max(counts_adjusted$n)))
+  ) +
+  scale_fill_manual(values = wes_colors) +
+   guides(
+    # coerce legend into 3 column shape;
+    # increase the size of the legend's key markers
+    fill = guide_legend(ncol = 3, override.aes = list(size = 7))
+  ) +
+  ggtitle("Interventions by Country") +
+  theme_void() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 11),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5)
+  )
+
+# print
+ggplot_map
+```
+
+```{r, include = FALSE}
+unique_sizes <- unique(counts_adjusted$n)
+
+ggplot_map2 <- ggplot() +
+  geom_map(
+    data = world, map = world,
+    aes(map_id = region),
+    color = "white", fill = "grey85", size = 0.1
+  ) +
+  coord_sf(ylim = c(-50, 70), xlim = c(-120, 150), datum = NA) +
+  geom_point(
+    data = counts_adjusted,
+    aes(longitude, latitude, fill = Intervention, size = n),
+    shape = 21, alpha = 0.65, stroke = 0
+  ) +
+scale_size_continuous(
+    range = c(2, 12),
+    breaks = unique_sizes,
+    labels = unique_sizes,
+    guide = guide_legend(title = "Size")
+  ) +
+  scale_fill_manual(values = wes_colors) +
+  guides(
+    fill = guide_legend(ncol = 3, override.aes = list(size = 7))
+  ) +
+  ggtitle("Interventions by Country") +
+  theme_void() +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_text(size = 11),
+    legend.text = element_text(size = 11),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5)
+  )
+
+
+
+# print
+print(ggplot_map2)
+
+```
+
+
+```{r ggplot_plot save, include = FALSE}
+ggsave(
+  filename = here("output/figure_map.pdf"),
+  plot = ggplot_map2,
+  dpi = 300,
+  units = 'cm',
+  height = 10,
+  width = 24
+)
+
+```
+----
+
+
+
+
+
+
+[Privacy policy](https://ai_society.mpib.dev/intervention_toolbox/privacy.html) - [Imprint/Provider Identification](https://ai_society.mpib.dev/intervention_toolbox/terms.html)
+
+```{css, echo=FALSE}
+p {
+ font-size: 20px;
+ width: 1200px;
+  margin: 10px 15px 15px 0px;
+ }
+
+
+
+li {
+  font-size: 20px;
+  }
+
+
+
+h1 {
+  font-size: 32px;
+  width: 1200px;
+}
+
+body {
+  # background-color: rgba(176, 219, 234, 0.5);
+  # margin-left: 0px;
+  # padding-left: 0px;
+   width: 100%;
+}
+# h1 {
+#   color: white;
+#   text-align: center;
+# }
+# p {
+#   color: red;
+#   text-align: center;
+# }
+
+.btn-workflowr {
+  display: none
+}
+
+
+.btn-workflowr-sessioninfo {
+  visibility: hidden
+}
+
+.btn-default {
+  visibility: hidden
+}
+
+
+```

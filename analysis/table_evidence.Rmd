@@ -33,19 +33,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 dat_path2 <-
   here("data/toolbox_evidence.xlsx")
-data2 <- read_xlsx(dat_path2)
-# %>% 
-#   filter(Intervention == "Inoculation")
-# %>%
-# filter(Intervention == "Accuracy prompts" |Intervention == "Debunking"|Intervention == "Friction"|Intervention == "Lateral reading in education"|Intervention == "Lateral reading online"|Intervention == "Media literacy tips"|Intervention == "Rebuttals of science denialism"|Intervention == "Self-reflection tools"|Intervention == "Social norms"|Intervention == "Warning & fact-checking labels")
-       # |
-# |Intervention == "Lateral reading in education"|Intervention == "Lateral reading online"|Intervention == "Media literacy tips"|Intervention == "Rebuttals of science denialism"|Intervention == "Self-reflection tools"|Intervention == "Social norms"|Intervention == "Warning & fact-checking labels")
+data2 <- read_xlsx(dat_path2) 
 
-
-# |Intervention == "Debunking"|Intervention == "Friction"|Intervention == "Inoculation"|Intervention == "Lateral reading in education"|Intervention == "Lateral reading online"|Intervention == "Media literacy tips"|Intervention == "Rebutals of science denialism"
-# 
-# versions <- jsonlite::read_json("data/results_all.json", simplifyDataFrame = TRUE)
-# versions <- jsonlite::read_json("output/infos_raw.json", simplifyDataFrame = TRUE)
 versions <- jsonlite::read_json("output/infos_refined.json", simplifyDataFrame = TRUE)
 
 
@@ -55,6 +44,25 @@ colnames(data2)
 
 
 
+```
+
+```{r, include = FALSE, echo = FALSE}
+
+long <- data2 %>% 
+  select("Longevity measured?") %>% 
+    pivot_longer(names_to = "longeiveity", 
+               values_to = "answer",
+               cols= "Longevity measured?") %>% 
+   group_by(longeiveity, answer) %>%
+  summarise(n = n(), .groups = "keep") %>% 
+  ungroup() %>% 
+   mutate(N = sum(n),
+         prop = n / N,
+         value = round(100* prop, digits = 1))
+
+
+par <- data2 %>% 
+  select(Paradigm)
 ```
 
 
@@ -144,12 +152,12 @@ htmltools::browsable(
     ),
     
     
-reactable(data2[, c("Intervention", "References", "Experimental setting", "Design", "Treatment", "Outcome variable", "Sample size",  "Sample Country", "Sample demographics", "Recruitment", "Longevity", "Main findings")],
+reactable(data2[, c("Intervention", "References", "Experimental setting", "Design", "Treatment", "Paradigm", "Outcome variable", "Sample size",  "Sample Country", "Sample demographics", "Recruitment", "Main findings", "Longevity")],
           elementId = "evidence-table",
           searchable = TRUE, showSortable = TRUE, filterable = TRUE,
                   striped = TRUE,   highlight = TRUE,   bordered = TRUE, width = 1800, 
-          defaultColDef = colDef(minWidth = 75),
-            showPageSizeOptions = TRUE, pageSizeOptions = c(4, 8, 12), defaultPageSize = 6,
+          defaultColDef = colDef(minWidth = 80),
+            showPageSizeOptions = TRUE, pageSizeOptions = c(6, 12, 18), defaultPageSize = 12,
                   theme = reactableTheme(
                       borderColor = "#dfe2e5",
                       stripedColor = "#f6f8fa",
@@ -159,18 +167,18 @@ reactable(data2[, c("Intervention", "References", "Experimental setting", "Desig
                       searchInputStyle = list(width = "100%")),
           # groupBy = "Intervention",
                   columns = list(
-                    Intervention = colDef(minWidth = 80, rowHeader = TRUE, style = list(fontWeight = 600)),
+                    Intervention = colDef(minWidth = 85, rowHeader = TRUE, style = list(fontWeight = 600)),
                       References = colDef(minWidth = 100),
                       "Experimental setting" = colDef(minWidth = 90,  aggregate = "frequency"),
                     # "Paradigm" = colDef(minWidth = 100,  aggregate = "frequency"),
                       Design = colDef(minWidth = 80,  aggregate = "frequency"),
                       "Sample Country" = colDef(aggregate = "frequency"),
-                      "Outcome variable" = colDef(minWidth = 100),
+                      "Outcome variable" = colDef(minWidth = 90),
                        Treatment = colDef(minWidth = 120),
                       "Sample demographics" = colDef(name = "Demographics", minWidth = 100,  aggregate = "frequency"),
                       "Main findings" = colDef(minWidth = 160),
                       Recruitement = colDef(aggregate = "frequency"),
-                      "Sample size" = colDef(align = "left", format = colFormat(digits = 0))
+                      "Sample size" = colDef(minWidth = 70, align = "left", format = colFormat(digits = 0))
   #                     "Longevity measured?" = colDef(minWidth = 100, aggregate = "frequency"
   #                                        , cell = function(value) {
   #   # Render as an X mark or check mark

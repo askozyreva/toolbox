@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Toolbox: World map of evidence</title>
+
+<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.3/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Toolbox of interventions</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="table_concept.html">Conceptual toolbox</a>
+</li>
+<li>
+  <a href="table_evidence.html">Evidence toolbox</a>
+</li>
+<li>
+  <a href="table_examples.html">Examples of interventions</a>
+</li>
+<li>
+  <a href="toolbox_map.html">Map of evidence</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Toolbox: World map of evidence</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr <span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2024-02-20
+</p>
+<p>
+<strong>Checks:</strong> <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>toolbox/</code> <span
+class="glyphicon glyphicon-question-sign" aria-hidden="true"
+title="This is the local directory in which the code in this file was executed.">
+</span>
+</p>
+<p>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.1). The <em>Checks</em> tab describes the reproducibility checks
+that were applied when the results were created. The <em>Past
+versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the
+global environment can affect the analysis in your R Markdown file in
+unknown ways. For reproduciblity it’s best to always run the code in an
+empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220228code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20220228)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20220228code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20220228)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsarcgitmpibberlinmpgdeaisocietyinterventiontoolboxtreeb19567bf1157463db5747cbefc992e59873a517ctargetblankb19567ba">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/tree/b19567bf1157463db5747cbefc992e59873a517c" target="_blank">b19567b</a>
+</a>
+</p>
+</div>
+<div
+id="strongRepositoryversionstrongahrefhttpsarcgitmpibberlinmpgdeaisocietyinterventiontoolboxtreeb19567bf1157463db5747cbefc992e59873a517ctargetblankb19567ba"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development
+and connecting the code version to the results is critical for
+reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/tree/b19567bf1157463db5747cbefc992e59873a517c" target="_blank">b19567b</a>.
+See the <em>Past versions</em> tab to see a history of the changes made
+to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for
+the analysis have been committed to Git prior to generating the results
+(you can use <code>wflow_publish</code> or
+<code>wflow_git_commit</code>). workflowr only checks the R Markdown
+file, but you know if there are other scripts or data files that it
+depends on. Below is the status of the Git repository when the results
+were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  data/~$toolbox_evidence.xlsx
+
+Unstaged changes:
+    Modified:   README.md
+    Modified:   _workflowr.R
+    Modified:   analysis/_site.yml
+    Deleted:    code/README.md
+    Deleted:    data/README.md
+    Deleted:    images/Criticalignoring_lnos.png
+    Deleted:    images/Debunking_lnos.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.24.44.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.25.18.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.26.04.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.27.33.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.46.36.png
+    Deleted:    images/Screenshot 2023-10-10 at 08.51.23.png
+    Deleted:    images/debunk_4steps.png
+    Deleted:    images/debunk_steps.png
+    Deleted:    images/debunking.png
+    Deleted:    images/minimal-media-literacy-tips.jpeg
+    Deleted:    images/warning-labels-01.png
+    Deleted:    images/warning-labels-02.png
+    Deleted:    images/warning-labels.png
+    Deleted:    output/README.md
+    Modified:   output/figure_map.pdf
+    Deleted:    output/figure_map.png
+    Deleted:    output/figure_map2.pdf
+    Modified:   output/infos_raw.json
+    Modified:   output/infos_refined.json
+    Deleted:    output/table_concept.png
+    Deleted:    output/tbl_concept.tex
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not
+included in this status report because it is ok for generated content to
+have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>analysis/toolbox_map.rmd</code>) and HTML
+(<code>public/toolbox_map.html</code>) files. If you’ve configured a
+remote Git repository (see <code>?wflow_git_remote</code>), click on the
+hyperlinks in the table below to view the files as they were in that
+past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/b19567bf1157463db5747cbefc992e59873a517c/analysis/toolbox_map.rmd" target="_blank">b19567b</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2024-02-20
+</td>
+<td>
+wflow_publish(files = files, republish = TRUE, delete_cache = TRUE,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/1a1a155d89d156e606ac8a5fb1bcce8f5e5f4f54/public/toolbox_map.html" target="_blank">1a1a155</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-30
+</td>
+<td>
+minor updates
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/5be9264d045f06d64f3b29c863dadac460d98e93/analysis/toolbox_map.rmd" target="_blank">5be9264</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-24
+</td>
+<td>
+what should be the final version of the toolbox 2.0
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/5be9264d045f06d64f3b29c863dadac460d98e93/public/toolbox_map.html" target="_blank">5be9264</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-11-24
+</td>
+<td>
+what should be the final version of the toolbox 2.0
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/22a40df6ae28d62b7c0ea9115e7f0ec5f97b4e3b/analysis/toolbox_map.rmd" target="_blank">22a40df</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+<td>
+v2 updates
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://arc-git.mpib-berlin.mpg.de/ai_society/intervention_toolbox/blob/22a40df6ae28d62b7c0ea9115e7f0ec5f97b4e3b/public/toolbox_map.html" target="_blank">22a40df</a>
+</td>
+<td>
+Kozyreva
+</td>
+<td>
+2023-10-24
+</td>
+<td>
+v2 updates
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<p>This section of the online supplement offers an interactive world map
+showcasing the studies featured in our evidence toolbox. By
+double-clicking the intervention name in the legend, you can isolate
+that specific intervention on the map. When you hover over the circles
+on the map, it will display the counts of studies by country.</p>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-77681f5b5c33594df076" style="width:960px;height:768px;"></div>
+<script type="application/json" data-for="htmlwidget-77681f5b5c33594df076">{"x":{"visdat":{"31e0395a539f":["function () ","plotlyVisDat"]},"cur_data":"31e0395a539f","attrs":{"31e0395a539f":{"alpha_stroke":1,"sizes":[10,600],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","size":{},"color":{},"text":{},"hoverinfo":"text","colors":["#e3342f","#f6993f","#ffed4a","#228B22","#91c591","#34495E","#3498DB","#9561e2","#f66d9b"],"opacity":0.84999999999999998,"inherit":true}},"layout":{"width":1000,"height":600,"margin":{"b":40,"l":0,"t":25,"r":100},"mapType":"geo","title":{"text":"","xref":"paper"},"legend":{"orientation":"h","yanchor":"bottom","xanchor":"middle","x":0.040000000000000001},"showlegend":true,"geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(229,229,229,1)","countrycolor":"rgba(255,255,255,1)","countrywidth":0.34999999999999998,"coastlinecolor":"rgba(204,204,204,1)","coastlinewidth":0.5,"showcountries":true,"fitbounds":"locations"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","text":["Argentina <br>Intervention: Accuracy prompts <br>Count: 1","Australia <br>Intervention: Accuracy prompts <br>Count: 1","Brazil <br>Intervention: Accuracy prompts <br>Count: 1","China <br>Intervention: Accuracy prompts <br>Count: 1","Egypt <br>Intervention: Accuracy prompts <br>Count: 1","India <br>Intervention: Accuracy prompts <br>Count: 1","Italy <br>Intervention: Accuracy prompts <br>Count: 1","Kenya <br>Intervention: Accuracy prompts <br>Count: 1","Mexico <br>Intervention: Accuracy prompts <br>Count: 1","Nigeria <br>Intervention: Accuracy prompts <br>Count: 2","Philippines <br>Intervention: Accuracy prompts <br>Count: 1","Russia <br>Intervention: Accuracy prompts <br>Count: 1","Saudi Arabia <br>Intervention: Accuracy prompts <br>Count: 1","South Africa <br>Intervention: Accuracy prompts <br>Count: 1","Spain <br>Intervention: Accuracy prompts <br>Count: 1","United Kingdom <br>Intervention: Accuracy prompts <br>Count: 1","United States <br>Intervention: Accuracy prompts <br>Count: 6"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"opacity":0.84999999999999998,"name":"Accuracy prompts","marker":{"color":"rgba(227,52,47,1)","size":[10,10,10,10,10,10,10,10,10,94.285714285714278,10,10,10,10,10,10,431.42857142857144],"sizemode":"area","line":{"color":"rgba(227,52,47,1)"}},"textfont":{"color":"rgba(227,52,47,1)","size":[10,10,10,10,10,10,10,10,10,94.285714285714278,10,10,10,10,10,10,431.42857142857144]},"line":{"color":"rgba(227,52,47,1)"},"geo":"geo","lat":[-38.416097000000001,-25.274398000000001,-14.235004,35.861660000000001,26.820553,20.593684,41.871940000000002,-0.023559,23.634501,9.0819989999999997,12.879721,61.524009999999997,23.885942,-30.559481999999999,40.463667000000001,55.378050999999999,37.090240000000001],"lon":[-63.616672000000001,134.58606621621632,-51.925280000000001,105.58169136111989,29.416203638880109,81.160104577336213,11.181085638880109,36.519898638880115,-102.552784,3.1300995555204367,120.38772263888011,103.9324616388801,43.692867638880109,22.937505999999999,-5.135514361119891,-5.397631506023453,-104.47694426934775],"frame":null},{"type":"scattergeo","mode":"markers","text":["Argentina <br>Intervention: Debunking & rebuttals <br>Count: 1","Australia <br>Intervention: Debunking & rebuttals <br>Count: 2","Brazil <br>Intervention: Debunking & rebuttals <br>Count: 2","China <br>Intervention: Debunking & rebuttals <br>Count: 2","France <br>Intervention: Debunking & rebuttals <br>Count: 1","Germany <br>Intervention: Debunking & rebuttals <br>Count: 5","Greece <br>Intervention: Debunking & rebuttals <br>Count: 1","India <br>Intervention: Debunking & rebuttals <br>Count: 3","Indonesia <br>Intervention: Debunking & rebuttals <br>Count: 1","Ireland <br>Intervention: Debunking & rebuttals <br>Count: 1","Israel <br>Intervention: Debunking & rebuttals <br>Count: 1","Mexico <br>Intervention: Debunking & rebuttals <br>Count: 1","Nigeria <br>Intervention: Debunking & rebuttals <br>Count: 2","Pakistan <br>Intervention: Debunking & rebuttals <br>Count: 1","Peru <br>Intervention: Debunking & rebuttals <br>Count: 1","Poland <br>Intervention: Debunking & rebuttals <br>Count: 1","Sierra Leone <br>Intervention: Debunking & rebuttals <br>Count: 1","South Africa <br>Intervention: Debunking & rebuttals <br>Count: 2","Taiwan <br>Intervention: Debunking & rebuttals <br>Count: 1","United Kingdom <br>Intervention: Debunking & rebuttals <br>Count: 1","United States <br>Intervention: Debunking & rebuttals <br>Count: 4","Zimbabwe <br>Intervention: Debunking & rebuttals <br>Count: 1"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"opacity":0.84999999999999998,"name":"Debunking & rebuttals","marker":{"color":"rgba(246,153,63,1)","size":[10,94.285714285714278,94.285714285714278,94.285714285714278,10,347.14285714285711,10,178.57142857142856,10,10,10,10,94.285714285714278,10,10,10,10,94.285714285714278,10,10,262.85714285714283,10],"sizemode":"area","line":{"color":"rgba(246,153,63,1)"}},"textfont":{"color":"rgba(246,153,63,1)","size":[10,94.285714285714278,94.285714285714278,94.285714285714278,10,347.14285714285711,10,178.57142857142856,10,10,10,10,94.285714285714278,10,10,10,10,94.285714285714278,10,10,262.85714285714283,10]},"line":{"color":"rgba(246,153,63,1)"},"geo":"geo","lat":[-38.416097000000001,-25.274398000000001,-14.235004,35.861660000000001,46.227637999999999,51.165691000000002,39.074207999999999,20.593684,-0.78927499999999995,53.412909999999997,31.046050999999999,23.634501,9.0819989999999997,30.375321,-9.1899669999999993,51.919438,8.4605549999999994,-30.559481999999999,23.69781,55.378050999999999,37.090240000000001,-19.015438],"lon":[-62.230377638880114,132.38884163888011,-54.122504577336223,103.38446678378368,0.82745463888010939,6.8680070615438895,21.824311999999999,74.80399691664033,113.92132700000001,-8.2438900000000004,33.465317638880116,-101.16648963888011,5.9026882777602179,67.95882163888011,-75.015152,19.145136000000001,-11.779889000000001,20.740281422663781,120.960515,-4.0113371449035622,-99.871774083359668,29.154857],"frame":null},{"type":"scattergeo","mode":"markers","text":"United States <br>Intervention: Friction <br>Count: 2","hoverinfo":"text","opacity":0.84999999999999998,"name":"Friction","marker":{"color":"rgba(255,237,74,1)","size":[94.285714285714278],"sizemode":"area","line":{"color":"rgba(255,237,74,1)"}},"textfont":{"color":"rgba(255,237,74,1)","size":94.285714285714278},"line":{"color":"rgba(255,237,74,1)","width":94.285714285714278},"geo":"geo","lat":[37.090240000000001],"lon":[-84.443311793661493],"frame":null},{"type":"scattergeo","mode":"markers","text":["Brazil <br>Intervention: Inoculation <br>Count: 1","France <br>Intervention: Inoculation <br>Count: 1","Germany <br>Intervention: Inoculation <br>Count: 1","India <br>Intervention: Inoculation <br>Count: 1","Kenya <br>Intervention: Inoculation <br>Count: 1","Mozambique <br>Intervention: Inoculation <br>Count: 1","Singapore <br>Intervention: Inoculation <br>Count: 1","South Africa <br>Intervention: Inoculation <br>Count: 1","United Kingdom <br>Intervention: Inoculation <br>Count: 1","United States <br>Intervention: Inoculation <br>Count: 3"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text"],"opacity":0.84999999999999998,"name":"Inoculation","marker":{"color":"rgba(34,139,34,1)","size":[10,10,10,10,10,10,10,10,10,178.57142857142856],"sizemode":"area","line":{"color":"rgba(34,139,34,1)"}},"textfont":{"color":"rgba(34,139,34,1)","size":[10,10,10,10,10,10,10,10,10,178.57142857142856]},"line":{"color":"rgba(34,139,34,1)"},"geo":"geo","lat":[-14.235004,46.227637999999999,51.165691000000002,20.593684,-0.023559,-18.665694999999999,1.3520829999999999,-30.559481999999999,55.378050999999999,37.090240000000001],"lon":[-50.538985638880114,3.6000433611198908,10.451525999999999,82.546398938456107,37.906193000000002,35.529561999999999,103.819836,24.32380036111989,-2.625042783783671,-87.6621876185297],"frame":null},{"type":"scattergeo","mode":"markers","text":["Germany <br>Intervention: Lateral reading & verification strategies <br>Count: 1","Israel <br>Intervention: Lateral reading & verification strategies <br>Count: 1","Japan <br>Intervention: Lateral reading & verification strategies <br>Count: 1","Nigeria <br>Intervention: Lateral reading & verification strategies <br>Count: 1","South Korea <br>Intervention: Lateral reading & verification strategies <br>Count: 1","United Kingdom <br>Intervention: Lateral reading & verification strategies <br>Count: 1","United States <br>Intervention: Lateral reading & verification strategies <br>Count: 8"],"hoverinfo":["text","text","text","text","text","text","text"],"opacity":0.84999999999999998,"name":"Lateral reading & verification strategies","marker":{"color":"rgba(145,197,145,1)","size":[10,10,10,10,10,10,600],"sizemode":"area","line":{"color":"rgba(145,197,145,1)"}},"textfont":{"color":"rgba(145,197,145,1)","size":[10,10,10,10,10,10,600]},"line":{"color":"rgba(145,197,145,1)"},"geo":"geo","lat":[51.165691000000002,31.046050999999999,36.204824000000002,9.0819989999999997,35.907756999999997,55.378050999999999,37.090240000000001],"lon":[11.83782036111989,36.23790636111989,138.25292400000001,10.872501577336219,127.76692199999999,-1.2387484226637806,-115.30023637305783],"frame":null},{"type":"scattergeo","mode":"markers","text":["Argentina <br>Intervention: Media-literacy tips <br>Count: 1","Australia <br>Intervention: Media-literacy tips <br>Count: 1","Brazil <br>Intervention: Media-literacy tips <br>Count: 1","China <br>Intervention: Media-literacy tips <br>Count: 1","Egypt <br>Intervention: Media-literacy tips <br>Count: 1","India <br>Intervention: Media-literacy tips <br>Count: 3","Italy <br>Intervention: Media-literacy tips <br>Count: 1","Kenya <br>Intervention: Media-literacy tips <br>Count: 1","Mexico <br>Intervention: Media-literacy tips <br>Count: 1","Nigeria <br>Intervention: Media-literacy tips <br>Count: 2","Pakistan <br>Intervention: Media-literacy tips <br>Count: 1","Philippines <br>Intervention: Media-literacy tips <br>Count: 1","Russia <br>Intervention: Media-literacy tips <br>Count: 1","Saudi Arabia <br>Intervention: Media-literacy tips <br>Count: 1","South Africa <br>Intervention: Media-literacy tips <br>Count: 1","Spain <br>Intervention: Media-literacy tips <br>Count: 1","United Kingdom <br>Intervention: Media-literacy tips <br>Count: 1","United States <br>Intervention: Media-literacy tips <br>Count: 4"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"opacity":0.84999999999999998,"name":"Media-literacy tips","marker":{"color":"rgba(52,73,94,1)","size":[10,10,10,10,10,178.57142857142856,10,10,10,94.285714285714278,10,10,10,10,10,10,10,262.85714285714283],"sizemode":"area","line":{"color":"rgba(52,73,94,1)"}},"textfont":{"color":"rgba(52,73,94,1)","size":[10,10,10,10,10,178.57142857142856,10,10,10,94.285714285714278,10,10,10,10,10,10,10,262.85714285714283]},"line":{"color":"rgba(52,73,94,1)"},"geo":"geo","lat":[-38.416097000000001,-25.274398000000001,-14.235004,35.861660000000001,26.820553,20.593684,41.871940000000002,-0.023559,23.634501,9.0819989999999997,30.375321,12.879721,61.524009999999997,23.885942,-30.559481999999999,40.463667000000001,55.378050999999999,37.090240000000001],"lon":[-60.844083277760227,135.97236057733622,-49.152691277760226,106.96798572223979,32.188792361119887,78.387515855096439,13.953674361119891,39.292487361119889,-99.780195277760214,8.6752769999999995,70.731410361119899,123.16031136111989,106.70505036111989,46.465456361119884,25.710094722239781,-2.3629256388801094,0.14754593845610975,-95.712890999999999],"frame":null},{"type":"scattergeo","mode":"markers","text":["Australia <br>Intervention: Social norms <br>Count: 1","United Kingdom <br>Intervention: Social norms <br>Count: 1","United States <br>Intervention: Social norms <br>Count: 2"],"hoverinfo":["text","text","text"],"opacity":0.84999999999999998,"name":"Social norms","marker":{"color":"rgba(52,152,219,1)","size":[10,10,94.285714285714278],"sizemode":"area","line":{"color":"rgba(52,152,219,1)"}},"textfont":{"color":"rgba(52,152,219,1)","size":[10,10,94.285714285714278]},"line":{"color":"rgba(52,152,219,1)"},"geo":"geo","lat":[-25.274398000000001,55.378050999999999,37.090240000000001],"lon":[137.35865493845611,1.5338402995760003,-81.670723071421719],"frame":null},{"type":"scattergeo","mode":"markers","text":["India <br>Intervention: Source-credibility labels <br>Count: 1","United States <br>Intervention: Source-credibility labels <br>Count: 4"],"hoverinfo":["text","text"],"opacity":0.84999999999999998,"name":"Source-credibility labels","marker":{"color":"rgba(149,97,226,1)","size":[10,262.85714285714283],"sizemode":"area","line":{"color":"rgba(149,97,226,1)"}},"textfont":{"color":"rgba(149,97,226,1)","size":[10,262.85714285714283]},"line":{"color":"rgba(149,97,226,1)"},"geo":"geo","lat":[20.593684,37.090240000000001],"lon":[83.932693299576002,-91.55400791664033],"frame":null},{"type":"scattergeo","mode":"markers","text":["Australia <br>Intervention: Warning & fact-checking labels <br>Count: 1","Germany <br>Intervention: Warning & fact-checking labels <br>Count: 1","Kenya <br>Intervention: Warning & fact-checking labels <br>Count: 1","Nigeria <br>Intervention: Warning & fact-checking labels <br>Count: 1","United States <br>Intervention: Warning & fact-checking labels <br>Count: 8"],"hoverinfo":["text","text","text","text","text"],"opacity":0.84999999999999998,"name":"Warning & fact-checking labels","marker":{"color":"rgba(246,109,155,1)","size":[10,10,10,10,600],"sizemode":"area","line":{"color":"rgba(246,109,155,1)"}},"textfont":{"color":"rgba(246,109,155,1)","size":[10,10,10,10,600]},"line":{"color":"rgba(246,109,155,1)"},"geo":"geo","lat":[-25.274398000000001,51.165691000000002,-0.023559,9.0819989999999997,37.090240000000001],"lon":[138.74494929957601,13.224114722239781,40.678781722239776,12.25879593845611,-109.75505892857826],"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<hr />
+<p><a
+href="https://ai_society.mpib.dev/intervention_toolbox/privacy.html">Privacy
+policy</a> - <a
+href="https://ai_society.mpib.dev/intervention_toolbox/terms.html">Imprint/Provider
+Identification</a></p>
+<style type="text/css">
+p {
+ font-size: 20px;
+ width: 1200px;
+  margin: 10px 15px 15px 0px;
+ }
+
+
+
+li {
+  font-size: 20px;
+  }
+
+
+
+h1 {
+  font-size: 32px;
+  width: 1200px;
+}
+
+body {
+  # background-color: rgba(176, 219, 234, 0.5);
+  # margin-left: 0px;
+  # padding-left: 0px;
+   width: 100%;
+}
+# h1 {
+#   color: white;
+#   text-align: center;
+# }
+# p {
+#   color: red;
+#   text-align: center;
+# }
+
+.btn-workflowr {
+  display: none
+}
+
+
+.btn-workflowr-sessioninfo {
+  visibility: hidden
+}
+
+.btn-default {
+  visibility: hidden
+}
+
+
+</style>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre><code>R version 4.3.1 (2023-06-16 ucrt)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19043)
+
+Matrix products: default
+
+
+locale:
+[1] LC_COLLATE=English_United States.utf8 
+[2] LC_CTYPE=English_United States.utf8   
+[3] LC_MONETARY=English_United States.utf8
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.utf8    
+
+time zone: Europe/Berlin
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] htmlwidgets_1.6.2 plotly_4.10.3     countrycode_1.5.0 maps_3.4.1       
+ [5] knitr_1.43        kableExtra_1.3.4  broom_1.0.5       jtools_2.2.2     
+ [9] readxl_1.4.3      here_1.0.1        lubridate_1.9.2   forcats_1.0.0    
+[13] stringr_1.5.0     dplyr_1.1.3       purrr_1.0.2       readr_2.1.4      
+[17] tidyr_1.3.0       tibble_3.2.1      ggplot2_3.4.3     tidyverse_2.0.0  
+[21] pacman_0.5.1      workflowr_1.7.1  
+
+loaded via a namespace (and not attached):
+ [1] tidyselect_1.2.0   viridisLite_0.4.2  farver_2.1.1       fastmap_1.1.1     
+ [5] lazyeval_0.2.2     promises_1.2.1     digest_0.6.33      timechange_0.2.0  
+ [9] lifecycle_1.0.3    sf_1.0-14          ellipsis_0.3.2     processx_3.8.2    
+[13] magrittr_2.0.3     compiler_4.3.1     rlang_1.1.1        sass_0.4.7        
+[17] tools_4.3.1        utf8_1.2.3         yaml_2.3.7         data.table_1.14.8 
+[21] classInt_0.4-9     xml2_1.3.5         KernSmooth_2.23-21 withr_2.5.0       
+[25] grid_4.3.1         fansi_1.0.4        git2r_0.32.0       e1071_1.7-13      
+[29] colorspace_2.1-0   scales_1.2.1       cli_3.6.1          rmarkdown_2.24    
+[33] crayon_1.5.2       ragg_1.2.5         generics_0.1.3     rstudioapi_0.15.0 
+[37] httr_1.4.7         tzdb_0.4.0         DBI_1.1.3          cachem_1.0.8      
+[41] proxy_0.4-27       pander_0.6.5       rvest_1.0.3        cellranger_1.1.0  
+[45] vctrs_0.6.3        webshot_0.5.5      jsonlite_1.8.7     callr_3.7.3       
+[49] hms_1.1.3          systemfonts_1.0.4  crosstalk_1.2.0    jquerylib_0.1.4   
+[53] units_0.8-3        glue_1.6.2         ps_1.7.5           stringi_1.7.12    
+[57] gtable_0.3.4       later_1.3.1        munsell_0.5.0      pillar_1.9.0      
+[61] htmltools_0.5.6    R6_2.5.1           textshaping_0.3.6  rprojroot_2.0.3   
+[65] evaluate_0.21      highr_0.10         backports_1.4.1    httpuv_1.6.11     
+[69] bslib_0.5.1        class_7.3-22       Rcpp_1.0.11        svglite_2.1.1     
+[73] whisker_0.4.1      xfun_0.40          fs_1.6.3           getPass_0.2-2     
+[77] pkgconfig_2.0.3   </code></pre>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
